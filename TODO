@@ -8,7 +8,7 @@
 
     - [-] interface.el
       - [ ] theme
-      - [ ] dashboard.el
+      - [X] dashboard.el
       - [ ] git-gutter and git-gutter-fringe (custom fringe bitmap)
       - [ ] diminish
       - [X] setup display-line-numbers
