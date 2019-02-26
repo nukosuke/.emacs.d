@@ -10,7 +10,7 @@
 ;;
 ;;  These files are NOT part of GNU Emacs.
 ;;
-;;  * 2019/02/
+;;  * 2019/02/26:
 ;;    Create generic.el
 ;;    - Configure custom-set-variables
 
