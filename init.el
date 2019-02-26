@@ -43,6 +43,9 @@
 ;; General settings
 (require 'generic (concat user-emacs-directory "site-lisp/generic"))
 
+;; User interface settings
+(require 'interface (concat user-emacs-directory "site-lisp/interface"))
+
 (provide 'init)
 
 ;;; init.el ends here
