@@ -1,18 +1,26 @@
 ;;; init.el --- Emacs config -*- lexical-binding: t; -*-
 ;;
-;; Copyright (c) nukosuke
+;; Copyright (c) 2019- nukosuke.
 ;;
-;; Author: nukosuke <nukosuke@lavabit.com>
+;; Author:  nukosuke <nukosuke@lavabit.com>
+;; URL:     https://github.com/nukosuke/.emacs.d
+;; License: GPLv3+
 ;;
 ;;; Commentary:
 ;;
-;;  2019/02/26:
+;;  These files are NOT part of GNU Emacs.
+;;
+;;  * 2019/02/26:
 ;;    Retrieve from old repository;
 ;;    (https://github.com/nukosuke/dotfiles/.emacs.d).
 
 ;;; Code:
 
-;; Use straight.el for package management.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; straight.el
+;; - package management with version lock system
+;; - https://github.com/raxod502/straight.el
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defvar bootstrap-version)
 
