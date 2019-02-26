@@ -22,8 +22,8 @@
 ;; - https://github.com/raxod502/straight.el
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Bootstrap code
 (defvar bootstrap-version)
-
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
       (bootstrap-version 5))
@@ -36,6 +36,10 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; Integration with use-package macro
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Local Emacs Lisp
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -45,6 +49,9 @@
 
 ;; User interface settings
 (require 'interface (concat user-emacs-directory "site-lisp/interface"))
+
+;; Completion settings
+(require 'completion (concat user-emacs-directory "site-lisp/completion"))
 
 (provide 'init)
 
