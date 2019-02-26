@@ -1,0 +1,9 @@
+* .emacs.d
+
+[[https://github.com/nukosuke][@nukosuke]]'s .emacs.d  
+
+** deps
+
+- emacs >= 26
+- git
+
