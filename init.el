@@ -36,7 +36,13 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Emacs Lisp
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; General settings
+(require 'generic (concat user-emacs-directory "site-lisp/generic"))
+
 (provide 'init)
 
 ;;; init.el ends here
-
