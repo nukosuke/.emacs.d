@@ -6,15 +6,15 @@
 *** TODO ~site-lisp/~ [0/5]
     Configure these files with ~use-package~ macro.
 
-    - [ ] interface.el
+    - [-] interface.el
       - [ ] theme
       - [ ] dashboard.el
       - [ ] git-gutter and git-gutter-fringe (custom fringe bitmap)
       - [ ] diminish
-      - [ ] setup display-line-numbers
-    - [ ] completion.el
-      - [ ] ivy and counsel
-      - [ ] smex
+      - [X] setup display-line-numbers
+    - [-] completion.el
+      - [X] ivy and counsel
+      - [ ] swiper
       - [ ] company
       - [ ] yasnippet
     - [ ] workspace.el
@@ -29,3 +29,4 @@
 
 ** Not planned yet
    - [ ] Create transient commands for frequently used packages.
+   - [ ] smex (need?)

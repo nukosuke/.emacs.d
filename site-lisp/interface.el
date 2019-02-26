@@ -16,14 +16,29 @@
 
 ;;; Code:
 
+(eval-when-compile
+  (require 'cl-lib))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; UI settings
+;; General UI settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Disabled modes
 (tool-bar-mode   0)
 (menu-bar-mode   0)
 (scroll-bar-mode 0)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Coding UI settings
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Display line number
+(cl-dolist (hook (list
+                  'prog-mode-hook
+                  'text-mode-hook
+                  'conf-mode-hook))
+  (add-hook hook (lambda ()
+                   (display-line-numbers-mode))))
 
 (provide 'interface)
 
