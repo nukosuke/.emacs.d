@@ -1,0 +1,31 @@
+# -*- mode: org; coding: utf-8; -*-
+#+TITLE: TODO
+#+TODO: TODO WIP | DONE
+
+** Next
+*** TODO ~site-lisp/~ [0/5]
+    Configure these files with ~use-package~ macro.
+
+    - [ ] interface.el
+      - [ ] theme
+      - [ ] dashboard.el
+      - [ ] git-gutter and git-gutter-fringe (custom fringe bitmap)
+      - [ ] diminish
+      - [ ] setup display-line-numbers
+    - [ ] completion.el
+      - [ ] ivy and counsel
+      - [ ] smex
+      - [ ] company
+      - [ ] yasnippet
+    - [ ] workspace.el
+      - [ ] projectile
+      - [ ] perspective or eyebrowse
+      - [ ] neotree (Is it better to be configured in interface.el?)
+    - [ ] vcs.el
+      - [ ] magit
+      - [ ] forge
+    - [ ] transient.el
+      - should have sub-directory ~transient/~
+
+** Not planned yet
+   - [ ] Create transient commands for frequently used packages.
