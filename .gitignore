@@ -6,6 +6,7 @@
 /.emacs.desktop
 /.emacs.desktop.lock
 *.elc
+recentf
 auto-save-list
 tramp
 .\#*
