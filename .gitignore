@@ -30,9 +30,11 @@ tramp
 # AUCTeX auto folder
 /auto/
 
-# cask packages
-.cask/
-dist/
+# straight.el packages
+/straight/build-cache.el
+/straight/build/
+/straight/modified/
+/straight/repos/
 
 # Flycheck
 flycheck_*.el
@@ -49,5 +51,8 @@ flycheck_*.el
 # network security
 /network-security.data
 
+# transient
+/transient/
 
-
+# lsp-mode
+.lsp-session-*
