@@ -1,0 +1,12 @@
+# -*- coding: utf-8; -*-
+#+title: nukosuke/.emacs.d
+
+** Installation
+   #+begin_src console
+   git clone git@github.com:nukosuke/.emacs.d.git ~/.emacs.d
+   #+end_src
+
+** Copying
+   Copyright (c) 2019- [[https://github.com/nukosuke][nukosuke]].
+
+   See the file [[./COPYING][COPYING]].
