@@ -35,10 +35,12 @@
  '(x-select-enable-clipboard    t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Keyboard
+;; Keyboard map
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; macOS
+;;
+;; macOS specific settings
+;;
 (when (eq system-type 'darwin)
   ;; Use <command> as meta key
   (setq ns-command-modifier (quote meta)))
