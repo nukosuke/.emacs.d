@@ -78,7 +78,7 @@
   ;; Org specific
   (:map org-mode-map
         ("C-a" . org-seq-home)
-        ("C-e" . org-seq-end))
+        ("C-e" . org-seq-end)))
 
 (provide 'generic)
 
