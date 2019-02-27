@@ -23,8 +23,8 @@
 
 (use-package magit
   ;; force bind override minor mode keymap like org
-  :bind*
-  ("C-c C-c" . magit-dispatch)) 
+  :bind
+  ("C-c C-c" . magit-dispatch))
 
 (provide 'vcs)
 

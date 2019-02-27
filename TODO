@@ -3,7 +3,7 @@
 #+TODO: TODO WIP | DONE
 
 ** Next
-*** TODO ~site-lisp/~ [0/5]
+*** WIP ~site-lisp/~ [0/5]
     Configure these files with ~use-package~ macro.
 
     - [-] interface.el
@@ -21,8 +21,8 @@
       - [ ] projectile
       - [ ] perspective or eyebrowse
       - [ ] neotree (Is it better to be configured in interface.el?)
-    - [ ] vcs.el
-      - [ ] magit
+    - [-] vcs.el
+      - [X] magit
       - [ ] forge
     - [ ] transient.el
       - should have sub-directory ~transient/~
