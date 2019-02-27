@@ -23,7 +23,10 @@
 
 (use-package magit
   :bind
+  ;; key is NOT mapped after magit load.
+  ;; So, manualy mapping is required.
   ("C-c C-c" . magit-dispatch)
+  ("C-x g"   . magit-status)
   (:map org-mode-map
         ;; bind override by magit and apply other bind
         ("C-c C-c" . magit-dispatch)
