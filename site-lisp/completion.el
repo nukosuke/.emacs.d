@@ -52,16 +52,16 @@
   :custom
   (company-selection-wrap-around t)
 
+  :init
+  (global-company-mode) ;; To enable at startup.
+
   :bind
   (:map company-active-map
         ("C-h" . nil)
         ("M-n" . nil)
         ("M-p" . nil)
         ("C-n" . company-select-next)
-        ("C-p" . company-select-previous))
-
-  :config
-  (global-company-mode))
+        ("C-p" . company-select-previous)))
 
 (provide 'completion)
 
