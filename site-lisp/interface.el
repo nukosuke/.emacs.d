@@ -45,13 +45,32 @@
 ;; Coding UI settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;
 ;; Display line number
+;;
 (cl-dolist (hook (list
                   'prog-mode-hook
                   'text-mode-hook
                   'conf-mode-hook))
   (add-hook hook (lambda ()
                    (display-line-numbers-mode))))
+
+;;
+;; Display VCS diff marker
+;;
+(use-package git-gutter-fringe
+  :config
+  ;; Custom fringe bitmaps
+  (fringe-helper-define 'git-gutter-fr:added    '(center repeated)
+    "XXX.....")
+  (fringe-helper-define 'git-gutter-fr:modified '(center repeated)
+    "XXX.....")
+  (fringe-helper-define 'git-gutter-fr:deleted  'bottom
+    "X......."
+    "XX......"
+    "XXX....."
+    "XXXX....")
+  (global-git-gutter-mode t))
 
 (provide 'interface)
 
