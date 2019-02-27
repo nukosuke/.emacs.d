@@ -1,9 +1,9 @@
 #+title: Dispatcher
 #+author: nukosuke
 
-| Dispatcher          | Description                                                                        |
-|---------------------+------------------------------------------------------------------------------------|
-| ~straight-dispatch~ | Commands for package management with straight.el.                                  |
-| ~zoom-dispatch~     | Commands to zoom in/out window.                                                    |
-| ~magit-dispatch~    | NOT defined here. It's magit built-in command. See the [[https://magit.vc/manual/magit/Transient-Commands.html#Transient-Commands][magit document]] for details. |
-| ~org-dispatch~      | Commands for Org mode.                                                             |
+| Dispatcher        | Description                                                                        |
+|-------------------+------------------------------------------------------------------------------------|
+| [[./straight-dispatch.el][straight-dispatch]] | Commands for package management with straight.el.                                  |
+| [[./zoom-dispatch.el][zoom-dispatch]]     | Commands to zoom in/out window.                                                    |
+| ~magit-dispatch~  | NOT defined here. It's magit built-in command. See the [[https://magit.vc/manual/magit/Transient-Commands.html#Transient-Commands][magit document]] for details. |
+| ~org-dispatch~    | Commands for Org mode.                                                             |
