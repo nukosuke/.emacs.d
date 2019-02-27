@@ -1,0 +1,18 @@
+# -*- coding: utf-8; -*-
+#+title: nukosuke/.emacs.d
+#+author: nukosuke
+
+** Installation
+   #+begin_src console
+   git clone git@github.com:nukosuke/.emacs.d.git ~/.emacs.d
+   #+end_src
+
+** Dispatchers
+   ~/site-lisp/dispatcher/~ holds [[https://github.com/magit/transient#transient-commands][transient commands]] like ~magit-dispatch~.
+
+   Command list is [[./site-lisp/dispatcher/README.org][here]].
+
+** Copying
+   Copyright (c) 2019- [[https://github.com/nukosuke][nukosuke]].
+
+   See the file [[./COPYING][COPYING]].
