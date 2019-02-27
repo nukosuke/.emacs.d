@@ -53,6 +53,9 @@
 ;; Completion settings
 (require 'completion (concat user-emacs-directory "site-lisp/completion"))
 
+;; Version Control System settings
+(require 'vcs (concat user-emacs-directory "site-lisp/vcs"))
+
 (provide 'init)
 
 ;;; init.el ends here

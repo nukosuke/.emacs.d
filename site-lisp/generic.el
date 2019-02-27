@@ -51,6 +51,7 @@
 
 (bind-key "C-h" 'delete-backward-char)
 (bind-key "C-m" 'newline-and-indent)
+(bind-key "C-z" 'winner-undo)
 (bind-key "M-m" 'set-mark-command)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
