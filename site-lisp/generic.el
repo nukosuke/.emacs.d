@@ -16,6 +16,8 @@
 
 ;;; Code:
 
+(require 'bind-key)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Custom variables
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -36,7 +38,29 @@
 ;; Global key bindings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;TODO:
+(bind-key "C-h" 'delete-backward-char)
+(bind-key "C-m" 'newline-and-indent)
+(bind-key "M-m" 'set-mark-command)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Sequential commands
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package sequential-command
+  :init
+  (require 'sequential-command-config)
+  :bind
+  ;; current position
+  ;; -> beginning of line
+  ;; -> beginning of buffer
+  ;; -> return to initial position ^
+  ("C-a" . seq-home)
+
+  ;; current position
+  ;; -> end of line
+  ;; -> end of buffer
+  ;; -> return to initial position ^
+  ("C-e" . seq-end))
 
 (provide 'generic)
 
