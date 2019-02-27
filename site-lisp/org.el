@@ -29,11 +29,7 @@
   
   :custom
   (org-return-to-follows-link t)
-  (org-use-speed-commands     t)
-
-  :bind*
-  (:map org-mode-map
-        ("C-c C-v" . magit-dispatch)))
+  (org-use-speed-commands     t))
 
 (provide 'org)
 

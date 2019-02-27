@@ -22,9 +22,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package magit
-  ;; force bind override minor mode keymap like org
   :bind
-  ("C-c C-c" . magit-dispatch))
+  ("C-c C-c" . magit-dispatch)
+  (:map org-mode-map
+        ;; bind override by magit and apply other bind
+        ("C-c C-c" . magit-dispatch)
+        ("C-c c"   . org-ctrl-c-ctrl-c)))
 
 (provide 'vcs)
 
