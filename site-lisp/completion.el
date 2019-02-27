@@ -43,6 +43,26 @@
   (:map minibuffer-local-map
         ("C-r" . counsel-minibuffer-history)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Company: Modular in-buffer completion framework
+;;          for Emacs
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package company
+  :custom
+  (company-selection-wrap-around t)
+
+  :bind
+  (:map company-active-map
+        ("C-h" . nil)
+        ("M-n" . nil)
+        ("M-p" . nil)
+        ("C-n" . company-select-next)
+        ("C-p" . company-select-previous))
+
+  :config
+  (global-company-mode))
+
 (provide 'completion)
 
 ;;; completion.el ends here
