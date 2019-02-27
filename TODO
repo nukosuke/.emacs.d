@@ -12,6 +12,8 @@
       - [X] theme
       - [ ] diminish
       - [ ] volatile-hightlight
+      - [ ] shackle
+      - [ ] switch-window
     - [-] completion.el
       - [ ] yasnippet
       - [X] smartparen
