@@ -12,20 +12,24 @@
       - [X] git-gutter and git-gutter-fringe (custom fringe bitmap)
       - [ ] diminish
       - [X] setup display-line-numbers
+      - [ ] volatile-hightlight
     - [-] completion.el
       - [X] ivy and counsel
       - [X] swiper
-      - [ ] company
+      - [X] company
       - [ ] yasnippet
-    - [ ] workspace.el
-      - [ ] projectile
+      - [ ] smartparen
+    - [-] workspace.el
+      - [X] projectile
       - [ ] perspective or eyebrowse
-      - [ ] neotree (Is it better to be configured in interface.el?)
+      - [X] neotree (Is it better to be configured in interface.el?)
     - [-] vcs.el
       - [X] magit
       - [ ] forge
+      - [ ] git-gutter hunk operations
+        - Create transient command and add it to magit-dispatch transient
     - [ ] transient.el
-      - should have sub-directory ~transient/~
+      - should have sub-directory ~/site-lisp/dispatcher/~
 
 *** Minor Fixes
     - [ ] Ivy/Counsel map
