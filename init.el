@@ -60,7 +60,10 @@
 (require 'vcs (concat user-emacs-directory "site-lisp/vcs"))
 
 ;; Dispatchers (transient commands)
-(require 'zoom-dispatch (concat user-emacs-directory "site-lisp/dispatcher/zoom-dispatch"))
+(require 'straight-dispatch
+         (concat user-emacs-directory "site-lisp/dispatcher/straight-dispatch"))
+(require 'zoom-dispatch
+         (concat user-emacs-directory "site-lisp/dispatcher/zoom-dispatch"))
 
 (provide 'init)
 
