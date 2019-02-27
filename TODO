@@ -8,23 +8,14 @@
 
     - [-] interface.el
       - [ ] theme
-      - [X] dashboard.el
-      - [X] git-gutter and git-gutter-fringe (custom fringe bitmap)
       - [ ] diminish
-      - [X] setup display-line-numbers
       - [ ] volatile-hightlight
     - [-] completion.el
-      - [X] ivy and counsel
-      - [X] swiper
-      - [X] company
       - [ ] yasnippet
       - [ ] smartparen
     - [-] workspace.el
-      - [X] projectile
       - [ ] perspective or eyebrowse
-      - [X] neotree (Is it better to be configured in interface.el?)
     - [-] vcs.el
-      - [X] magit
       - [ ] forge
       - [ ] git-gutter hunk operations
         - Create transient command and add it to magit-dispatch transient
@@ -39,3 +30,5 @@
 
 ** Not planned yet
    - [ ] Create transient commands for frequently used packages.
+   - [ ] Refresh diff marker of git-gutter-fringe after magit stage
+     - Need to research magit hooks
