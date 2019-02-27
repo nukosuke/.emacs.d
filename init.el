@@ -50,6 +50,9 @@
 ;; User interface settings
 (require 'interface (concat user-emacs-directory "site-lisp/interface"))
 
+;; Workspace settings
+(require 'workspace (concat user-emacs-directory "site-lisp/workspace"))
+
 ;; Completion settings
 (require 'completion (concat user-emacs-directory "site-lisp/completion"))
 
