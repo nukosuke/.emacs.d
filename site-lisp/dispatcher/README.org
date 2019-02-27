@@ -1,7 +1,7 @@
 #+title: Dispatcher
 #+author: nukosuke
 
-Dispatcher list incluging NOT original commands.
+Dispatcher list including NOT original commands.
 
 | Dispatcher            | Description                                                                               |
 |-----------------------+-------------------------------------------------------------------------------------------|
