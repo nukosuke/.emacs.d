@@ -3,19 +3,21 @@
 #+TODO: TODO WIP | DONE
 
 ** Next
-*** WIP ~site-lisp/~ [0/5]
+*** WIP ~site-lisp/~ [0/6]
     Configure these files with ~use-package~ macro.
 
+    - [ ] generic.el
+      - [ ] exec-path-from-shell
     - [-] interface.el
-      - [ ] theme
+      - [X] theme
       - [ ] diminish
       - [ ] volatile-hightlight
     - [-] completion.el
       - [ ] yasnippet
-      - [ ] smartparen
-    - [-] workspace.el
+      - [X] smartparen
+    - [ ] workspace.el
       - [ ] perspective or eyebrowse
-    - [-] vcs.el
+    - [ ] vcs.el
       - [ ] forge
       - [ ] git-gutter hunk operations
         - Create transient command and add it to magit-dispatch transient
@@ -25,7 +27,7 @@
 *** Minor Fixes
     - [ ] Ivy/Counsel map
       - ~C-h~ doesn't work
-    - [ ] Org mode map
+    - [X] Org mode map
       - Use ~org-seq-home~ and ~org-seq-end~ in ~org-mode-map~
 
 ** Not planned yet
