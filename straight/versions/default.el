@@ -1,0 +1,10 @@
+(("emacs-dashboard" . "2d6ad38e0890ecc5eb011aef7681f572639b2756")
+ ("epkgs" . "72d75e9f2ca77fb349c6abcb31035d13390ccb20")
+ ("gnu-elpa-mirror" . "465b72fc1fbef05f876879ee7270b5a312598bd0")
+ ("melpa" . "fded63df1b90e5ae3a1aa4e0a8fbfe5eb6a62756")
+ ("page-break-lines" . "87e801efb816b24e83ebf84c052001e178e180bc")
+ ("sequential-command" . "a48cbcbe273b33edd3ae56e68f44b4100fa3a48a")
+ ("straight.el" . "744b580bf3803f0c75e6706a04f7489e154c5c89")
+ ("swiper" . "2a02343cdf218441158e83323ce507a6d9112445")
+ ("use-package" . "12731665e068a68883bdb280e9844dbfd14e5626"))
+:saturn
