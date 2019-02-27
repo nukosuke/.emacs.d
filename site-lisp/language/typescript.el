@@ -1,4 +1,4 @@
-;;; typescript.el --- lang/typescript settings -*- lexical-binding: t; -*-
+;;; typescript.el --- TypeScript mode settings -*- lexical-binding: t; -*-
 ;;
 ;; Copyright (c) 2019- nukosuke.
 ;;
