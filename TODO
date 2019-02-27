@@ -9,12 +9,13 @@
     - [-] interface.el
       - [ ] theme
       - [X] dashboard.el
-      - [ ] git-gutter and git-gutter-fringe (custom fringe bitmap)
+      - [X] git-gutter and git-gutter-fringe (custom fringe bitmap)
       - [ ] diminish
       - [X] setup display-line-numbers
     - [-] completion.el
       - [X] ivy and counsel
       - [ ] swiper
+      - [ ] smex
       - [ ] company
       - [ ] yasnippet
     - [ ] workspace.el
@@ -27,6 +28,11 @@
     - [ ] transient.el
       - should have sub-directory ~transient/~
 
+*** Minor Fixes
+    - [ ] Ivy/Counsel map
+      - ~C-h~ doesn't work
+    - [ ] Org mode map
+      - Use ~org-seq-home~ and ~org-seq-end~ in ~org-mode-map~
+
 ** Not planned yet
    - [ ] Create transient commands for frequently used packages.
-   - [ ] smex (need?)
