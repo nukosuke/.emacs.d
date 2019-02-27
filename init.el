@@ -65,6 +65,10 @@
 (require 'zoom-dispatch
          (concat user-emacs-directory "site-lisp/dispatcher/zoom-dispatch"))
 
+;; Programming languages
+(require 'typescript
+         (concat user-emacs-directory "site-lisp/language/typescript"))
+
 (provide 'init)
 
 ;;; init.el ends here
