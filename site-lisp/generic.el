@@ -61,6 +61,7 @@
 (use-package sequential-command
   :init
   (require 'sequential-command-config)
+
   :bind
   ;; current position
   ;; -> beginning of line
@@ -72,7 +73,12 @@
   ;; -> end of line
   ;; -> end of buffer
   ;; -> return to initial position ^
-  ("C-e" . seq-end))
+  ("C-e" . seq-end)
+
+  ;; Org specific
+  (:map org-mode-map
+        ("C-a" . org-seq-home)
+        ("C-e" . org-seq-end))
 
 (provide 'generic)
 
