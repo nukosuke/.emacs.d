@@ -35,6 +35,7 @@
 
 (use-package counsel
   :bind
+  ("C-s"     . swiper)
   ("M-x"     . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   (:map minibuffer-local-map
