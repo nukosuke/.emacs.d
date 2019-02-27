@@ -14,8 +14,7 @@
       - [X] setup display-line-numbers
     - [-] completion.el
       - [X] ivy and counsel
-      - [ ] swiper
-      - [ ] smex
+      - [X] swiper
       - [ ] company
       - [ ] yasnippet
     - [ ] workspace.el
