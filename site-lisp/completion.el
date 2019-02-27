@@ -63,6 +63,18 @@
         ("C-n" . company-select-next)
         ("C-p" . company-select-previous)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Smartparens: Minor mode for Emacs that deals with
+;;              parens pairs and tries to be smart
+;;              about it.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package smartparens
+  ;; Enable after open file.
+  :hook ((text-mode . smartparens-mode)
+         (prog-mode . smartparens-mode)
+         (conf-mode . smartparens-mode)))
+
 (provide 'completion)
 
 ;;; completion.el ends here
