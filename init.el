@@ -59,6 +59,9 @@
 ;; Version Control System settings
 (require 'vcs (concat user-emacs-directory "site-lisp/vcs"))
 
+;; Dispatchers (transient commands)
+(require 'zoom-dispatch (concat user-emacs-directory "site-lisp/dispatcher/zoom-dispatch"))
+
 (provide 'init)
 
 ;;; init.el ends here
