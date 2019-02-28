@@ -72,6 +72,10 @@
 (require 'yaml
          (concat user-emacs-directory "site-lisp/language/yaml"))
 
+;; Config format
+(require 'gitignore
+         (concat user-emacs-directory "site-lisp/language/gitignore"))
+
 ;; Programming languages
 (require 'typescript
          (concat user-emacs-directory "site-lisp/language/typescript"))
