@@ -29,7 +29,8 @@
 (scroll-bar-mode 0)
 
 ;; Enabled modes
-(winner-mode     1)
+(winner-mode         1)
+(global-hl-line-mode t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme
