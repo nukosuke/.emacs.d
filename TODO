@@ -17,6 +17,9 @@
     - [-] completion.el
       - [ ] yasnippet
       - [X] smartparen
+    - [ ] search.el
+      - [ ] Move here ivy/counsel from completion.el
+      = [ ] Add migemo
     - [ ] workspace.el
       - [ ] perspective or eyebrowse
     - [ ] vcs.el
