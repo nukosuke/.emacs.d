@@ -3,15 +3,15 @@
 #+TODO: TODO WIP | DONE
 
 ** Next
-*** WIP ~site-lisp/~ [0/6]
+*** WIP ~site-lisp/~ [1/6]
     Configure these files with ~use-package~ macro.
 
-    - [ ] generic.el
-      - [ ] exec-path-from-shell
+    - [X] generic.el
+      - [X] exec-path-from-shell
     - [-] interface.el
       - [X] theme
       - [ ] diminish
-      - [ ] volatile-hightlight
+      - [X] volatile-hightlight
       - [ ] shackle
       - [ ] switch-window
     - [-] completion.el
@@ -24,7 +24,7 @@
       - [ ] git-gutter hunk operations
         - Create transient command and add it to magit-dispatch transient
     - [ ] transient.el
-      - should have sub-directory ~/site-lisp/dispatcher/~
+      - [ ] should have sub-directory ~/site-lisp/dispatcher/~
 
 *** Minor Fixes
     - [ ] Ivy/Counsel map
@@ -38,3 +38,5 @@
      - Need to research magit hooks
    - [ ] Rich and beautiful mode line
      - What package to use?
+   - [ ] Minor Fix: VHl mode hightlight sometimes make content invisible.
+     - Comment color is especially hard to see.
