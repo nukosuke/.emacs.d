@@ -48,7 +48,9 @@
 ;; - Fix vhl/default-face
 (use-package volatile-highlights
   :init
-  (volatile-highlights-mode t))
+  (volatile-highlights-mode t)
+
+  :diminish)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme
@@ -102,7 +104,9 @@
     "XX......"
     "XXX....."
     "XXXX....")
-  (global-git-gutter-mode t))
+  (global-git-gutter-mode t)
+
+  :diminish 'git-gutter-mode)
 
 ;;
 ;; Flycheck

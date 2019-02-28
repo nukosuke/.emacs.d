@@ -28,7 +28,9 @@
   (setq ivy-use-virtual-buffers      t)
   (setq ivy-wrap                     t)
   (setq enable-recursive-minibuffers t)
-  (setq ivy-height                   20))
+  (setq ivy-height                   20)
+
+  :diminish)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Counsel: a collection of Ivy-enhanced versions
@@ -62,7 +64,9 @@
         ("M-n" . nil)
         ("M-p" . nil)
         ("C-n" . company-select-next)
-        ("C-p" . company-select-previous)))
+        ("C-p" . company-select-previous))
+
+  :diminish)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smartparens: Minor mode for Emacs that deals with
@@ -74,7 +78,9 @@
   ;; Enable after open file.
   :hook ((text-mode . smartparens-mode)
          (prog-mode . smartparens-mode)
-         (conf-mode . smartparens-mode)))
+         (conf-mode . smartparens-mode))
+
+  :diminish)
 
 (provide 'completion)
 
