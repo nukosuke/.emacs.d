@@ -32,6 +32,16 @@
 (winner-mode         1)
 (global-hl-line-mode t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Diminish: This package implements hiding or
+;;           abbreviation of the mode line displays
+;;           (lighters) of minor-modes.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; diminish is no longer dependencies of use-package
+;; So, install here.
+(use-package diminish)
+
 ;; volatile-highlights:
 ;;   Minor mode for visual feedback on some operations
 ;; TODO:
