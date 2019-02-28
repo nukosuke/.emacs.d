@@ -25,6 +25,7 @@
         - Create transient command and add it to magit-dispatch transient
     - [ ] transient.el
       - [ ] should have sub-directory ~/site-lisp/dispatcher/~
+      - [ ] ~counsel-dispatch~
 
 *** Minor Fixes
     - [ ] Ivy/Counsel map
