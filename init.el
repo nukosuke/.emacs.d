@@ -79,6 +79,8 @@
 ;; Programming languages
 (require 'typescript
          (concat user-emacs-directory "site-lisp/language/typescript"))
+(require 'golang
+         (concat user-emacs-directory "site-lisp/language/golang"))
 
 (provide 'init)
 
