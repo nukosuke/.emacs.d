@@ -32,6 +32,14 @@
 (winner-mode         1)
 (global-hl-line-mode t)
 
+;; volatile-highlights:
+;;   Minor mode for visual feedback on some operations
+;; TODO:
+;; - Fix vhl/default-face
+(use-package volatile-highlights
+  :init
+  (volatile-highlights-mode t))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
