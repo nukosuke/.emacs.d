@@ -75,6 +75,8 @@
 ;; Config format
 (require 'gitignore
          (concat user-emacs-directory "site-lisp/language/gitignore"))
+(require 'terraform
+         (concat user-emacs-directory "site-lisp/language/terraform"))
 
 ;; Programming languages
 (require 'typescript
