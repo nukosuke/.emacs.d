@@ -47,9 +47,11 @@
 (use-package dashboard
   :init
   (require 'seq)
+
   :custom
   (dashboard-banner-logo-title (concat "GNU Emacs " emacs-version))
   (dashboard-startup-banner    'logo)
+
   :config
   (dashboard-setup-startup-hook))
 
@@ -83,6 +85,28 @@
     "XXX....."
     "XXXX....")
   (global-git-gutter-mode t))
+
+;;
+;; Flycheck
+;; FIXME: move to appropriate file.
+(use-package flycheck
+  :hook
+  (prog-mode . flycheck-mode)
+
+  :custom
+  ;; Because left-fringe is used by git-gutter-fringe
+  (flycheck-indication-mode 'right-fringe)
+
+  :config
+  ;; Custom fringe bitmap
+  (fringe-helper-define 'flycheck-fringe-bitmap-double-arrow 'center
+    "...X...."
+    "..XX...."
+    ".XXX...."
+    "XXXX...."
+    ".XXX...."
+    "..XX...."
+    "...X...."))
 
 (provide 'interface)
 
