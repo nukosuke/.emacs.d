@@ -69,6 +69,8 @@
 ;; Structured text format
 (require 'markdown
          (concat user-emacs-directory "site-lisp/language/markdown"))
+(require 'yaml
+         (concat user-emacs-directory "site-lisp/language/yaml"))
 
 ;; Programming languages
 (require 'typescript
