@@ -50,6 +50,9 @@ projectile-bookmarks.eld
 # directory configuration
 .dir-locals.el
 
+# request.el
+/request/
+
 # network security
 /network-security.data
 
