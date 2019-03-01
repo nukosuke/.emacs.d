@@ -23,6 +23,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package ivy
+  :custom
+  (ivy-count-format "[%d/%d] ")
+
   :config
   (ivy-mode                          1)
   (setq ivy-use-virtual-buffers      t)
