@@ -32,6 +32,15 @@
 
   :diminish)
 
+(use-package ivy-rich
+  :after ivy
+
+  :custom
+  (ivy-format-function #'ivy-format-function-line)
+
+  :config
+  (ivy-rich-mode 1))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Counsel: a collection of Ivy-enhanced versions
 ;;          of common Emacs commands
