@@ -26,24 +26,16 @@
   :custom
   (ivy-count-format "[%d/%d] ")
 
+  :custom
+  (ivy-use-virtual-buffers      t)
+  (ivy-wrap                     t)
+  (enable-recursive-minibuffers t)
+  (ivy-height                   20)
+
   :config
-  (ivy-mode                          1)
-  (setq ivy-use-virtual-buffers      t)
-  (setq ivy-wrap                     t)
-  (setq enable-recursive-minibuffers t)
-  (setq ivy-height                   20)
+  (ivy-mode 1)
 
   :diminish)
-
-(use-package ivy-rich
-  :after
-  (ivy counsel)
-
-  :custom
-  (ivy-format-function #'ivy-format-function-line)
-
-  :config
-  (ivy-rich-mode 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Counsel: a collection of Ivy-enhanced versions
