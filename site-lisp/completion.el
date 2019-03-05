@@ -28,6 +28,7 @@
 
   :custom
   (ivy-use-virtual-buffers      t)
+  (ivy-format-function          'ivy-format-function-arrow)
   (ivy-wrap                     t)
   (enable-recursive-minibuffers t)
   (ivy-height                   20)
