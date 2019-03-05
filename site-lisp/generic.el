@@ -31,7 +31,6 @@
  '(indent-tabs-mode             nil)
  '(make-backup-files            nil)
  '(scroll-step                  1)
- '(show-paren-mode              t)
  '(tab-width                    2)
  '(x-select-enable-clipboard    t))
 

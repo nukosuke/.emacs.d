@@ -32,6 +32,17 @@
 (winner-mode         1)
 (global-hl-line-mode t)
 
+(use-package paren
+  :straight nil
+
+  :hook
+  (after-init . show-paren-mode)
+
+  :custom
+  (show-paren-style 'mixed)
+  (show-paren-when-point-inside-paren t)
+  (show-paren-when-point-in-periphery t))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Diminish: This package implements hiding or
 ;;           abbreviation of the mode line displays
