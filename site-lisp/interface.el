@@ -179,16 +179,6 @@
   :hook
   (neotree-mode . hide-mode-line-mode))
 
-;;
-;; Visually highlight the selected buffer
-;;
-(use-package dimmer
-  :custom
-  (dimmer-fraction 0.3)
-
-  :init
-  (dimmer-mode))
-
 (provide 'interface)
 
 ;;; interface.el ends here
