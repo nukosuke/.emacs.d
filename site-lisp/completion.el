@@ -55,8 +55,10 @@
   :custom
   (company-selection-wrap-around t)
 
-  :init
-  (global-company-mode) ;; To enable at startup.
+  :hook
+  ((text-mode . company-mode)
+   (prog-mode . company-mode)
+   (conf-mode . company-mode))
 
   :bind
   (:map company-active-map
