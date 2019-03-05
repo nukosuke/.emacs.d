@@ -6,20 +6,11 @@
 *** WIP ~site-lisp/~ [1/6]
     Configure these files with ~use-package~ macro.
 
-    - [X] generic.el
-      - [X] exec-path-from-shell
     - [-] interface.el
-      - [X] theme
-      - [ ] diminish
-      - [X] volatile-hightlight
       - [ ] shackle
       - [ ] switch-window
     - [-] completion.el
       - [ ] yasnippet
-      - [X] smartparen
-    - [ ] search.el
-      - [ ] Move here ivy/counsel from completion.el
-      = [ ] Add migemo
     - [ ] workspace.el
       - [ ] perspective or eyebrowse
     - [ ] vcs.el
