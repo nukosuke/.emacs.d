@@ -37,7 +37,3 @@
    - [ ] Create transient commands for frequently used packages.
    - [ ] Refresh diff marker of git-gutter-fringe after magit stage
      - Need to research magit hooks
-   - [ ] Rich and beautiful mode line
-     - What package to use?
-   - [ ] Minor Fix: VHl mode hightlight sometimes make content invisible.
-     - Comment color is especially hard to see.
