@@ -24,9 +24,7 @@
 
 (use-package ivy
   :custom
-  (ivy-count-format "[%d/%d] ")
-
-  :custom
+  (ivy-count-format             "[%d/%d] ")
   (ivy-use-virtual-buffers      t)
   (ivy-format-function          'ivy-format-function-arrow)
   (ivy-wrap                     t)
