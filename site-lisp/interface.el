@@ -130,6 +130,13 @@
     "..XX...."
     "...X...."))
 
+;;
+;; Hide unnecessary mode line
+;;
+(use-package hide-mode-line
+  :hook
+  (neotree-mode . hide-mode-line-mode))
+
 (provide 'interface)
 
 ;;; interface.el ends here
