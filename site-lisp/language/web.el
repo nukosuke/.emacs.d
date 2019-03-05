@@ -22,7 +22,12 @@
 
 (use-package web-mode
   :mode
-  ("\\.html\\'" . web-mode))
+  ("\\.html?\\'" . web-mode)
+  ("\\.s?css\\'" . web-mode)
+
+  :custom
+  (web-mode-markup-indent-offset 2)
+  (web-mode-css-indent-offset    2))
 
 (provide 'web)
 
