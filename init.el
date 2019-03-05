@@ -83,6 +83,8 @@
          (concat user-emacs-directory "site-lisp/language/typescript"))
 (require 'golang
          (concat user-emacs-directory "site-lisp/language/golang"))
+(require 'web
+         (concat user-emacs-directory "site-lisp/language/web"))
 (require 'graphql
          (concat user-emacs-directory "site-lisp/language/graphql"))
 
