@@ -32,7 +32,11 @@
  '(make-backup-files            nil)
  '(scroll-step                  1)
  '(tab-width                    2)
- '(x-select-enable-clipboard    t))
+ '(x-select-enable-clipboard    t)
+ ;; Org customs must be set here.
+ ;; Because it cannot be overwritten by use-package (Bug or design).
+ '(org-return-follows-link      t)
+ '(org-use-speed-commands       t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Import $PATH from shell
