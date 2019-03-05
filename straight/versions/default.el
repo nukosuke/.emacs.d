@@ -9,6 +9,7 @@
  ("emacs-git-gutter" . "00c05264af046b5ce248e5b0bc42f117d9c27a09")
  ("emacs-git-gutter-fringe" . "16226caab44174301f1659f7bf8cc67a76153445")
  ("emacs-hcl-mode" . "0f2c5ec7e7bcf77c8548e8cac8721ea935ca1b5e")
+ ("emacs-hide-mode-line" . "86b9057391edad75467261c2e579603567e608f9")
  ("emacs-memoize" . "9a561268ffb550b257a08710489a95cd087998b6")
  ("emacs-neotree" . "5e1271655170f4cdc6849258e383c548a4e6e3d0")
  ("emacs-terraform-mode" . "6973d1acaba2835dfdf174f5a5e27de6366002e1")
@@ -42,6 +43,7 @@
  ("typescript.el" . "18dc5a36a60d7c5465bb161000fefbcc192fe9b5")
  ("use-package" . "12731665e068a68883bdb280e9844dbfd14e5626")
  ("volatile-highlights.el" . "9a20091f0ce7fc0a6b3e641a6a46d5f3ac4d8392")
+ ("web-mode" . "c8a3b33e088d2a910c000804966b804bba33f982")
  ("with-editor" . "38df9bfc2227bcb7ac4899c83a03756d5f171450")
  ("yaml-mode" . "40067a10ac1360f0b9533f0bbbb2eea128e2574d"))
 :saturn
