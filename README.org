@@ -2,6 +2,10 @@
 #+title: nukosuke/.emacs.d
 #+author: nukosuke
 
++ Work with GNU Emacs >= 26.1
++ Package management with [[https://github.com/raxod502/straight.el][straight.el]]
++ Grouping commands with [[https://github.com/magit/transient][transient.el]]
+
 ** Installation
    #+begin_src console
    git clone git@github.com:nukosuke/.emacs.d.git ~/.emacs.d
