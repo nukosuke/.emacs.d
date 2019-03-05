@@ -33,7 +33,8 @@
   :diminish)
 
 (use-package ivy-rich
-  :after ivy
+  :after
+  (ivy counsel)
 
   :custom
   (ivy-format-function #'ivy-format-function-line)
