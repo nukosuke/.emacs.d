@@ -65,6 +65,8 @@
          (concat user-emacs-directory "site-lisp/dispatcher/straight-dispatch"))
 (require 'zoom-dispatch
          (concat user-emacs-directory "site-lisp/dispatcher/zoom-dispatch"))
+(require 'counsel-dispatch
+         (concat user-emacs-directory "site-lisp/dispatcher/counsel-dispatch"))
 
 ;; Structured text format
 (require 'markdown
