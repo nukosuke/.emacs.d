@@ -23,7 +23,7 @@
 (use-package web-mode
   :mode
   ("\\.html?\\'" . web-mode)
-  ("\\.s?css\\'" . web-mode)
+  ("\\.erb\\'"   . web-mode)
 
   :custom
   (web-mode-markup-indent-offset 2)
