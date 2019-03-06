@@ -33,6 +33,10 @@
  '(scroll-step                  1)
  '(tab-width                    2)
  '(x-select-enable-clipboard    t)
+ ;; For auto refresh branch name of modeline.
+ ;; Don't set this in particular package :custom section because
+ ;; branch can be changed at many situations.
+ '(auto-revert-check-vc-info    t)
  ;; Org customs must be set here.
  ;; Because it cannot be overwritten by use-package (Bug or design).
  '(org-return-follows-link      t)
