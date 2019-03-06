@@ -40,6 +40,8 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
+(define-key global-map (kbd "C-c p") 'straight-dispatch)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Local Emacs Lisp
 ;; FIXME: more dry
