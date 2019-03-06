@@ -43,12 +43,12 @@
 
 (use-package counsel
   :bind
-  ("C-l"     . counsel-dispatch) ;; Defined at dispatcher/counsel-dispatch.el
   ("C-s"     . swiper)
   ("M-x"     . counsel-M-x)
   ("C-x b"   . counsel-switch-buffer)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
+  ("C-c l"   . counsel-dispatch) ;; Defined at dispatcher/counsel-dispatch.el
   (:map minibuffer-local-map
         ("C-r" . counsel-minibuffer-history)))
 
