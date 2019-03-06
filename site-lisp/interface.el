@@ -179,6 +179,16 @@
   :hook
   (neotree-mode . hide-mode-line-mode))
 
+;;
+;; Switching window with jump
+;;
+(use-package ace-window
+  :custom
+  (aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+
+  :bind
+  ("M-o" . ace-window))
+
 (provide 'interface)
 
 ;;; interface.el ends here
