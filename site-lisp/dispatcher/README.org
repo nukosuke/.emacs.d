@@ -6,6 +6,7 @@ Dispatcher list including NOT original commands.
 | Dispatcher            | Description                                                                               |
 |-----------------------+-------------------------------------------------------------------------------------------|
 | [[./straight-dispatch.el][straight-dispatch]]     | Commands for package management with straight.el.                                         |
+| [[./counsel-dispatch.el][counsel-dispatch]]      | Commands for Counsel and its extensions.                                                  |
 | [[./zoom-dispatch.el][zoom-dispatch]]         | Commands to zoom in/out window.                                                           |
 | ~magit-dispatch~      | NOT defined here. It's magit built-in command. See the [[https://magit.vc/manual/magit/Transient-Commands.html#Transient-Commands][magit document]] for details.        |
 | ~org-export-dispatch~ | NOT defined here. It's Org built-in command. NOT transient command, but similar behavior. |
