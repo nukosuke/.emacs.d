@@ -28,19 +28,23 @@
   ["Transient commands\n"
 
    ["Counsel"
-    ("a" "ag"                 counsel-ag)
-    ("b" "Bookmark"           counsel-bookmark)
-    ("B" "Bookmark directory" counsel-bookmarked-directory)]
+    ("a" "ag"       counsel-ag)
+    ("b" "Bookmark" counsel-bookmark)]
 
    ["Git" ;; TODO check if current directory is a git worktree
-    ("g" "Find file"          counsel-git)
-    ("c" "Checkout branch"    counsel-git-checkout)
-    ("l" "Log"                counsel-git-log)
-    ("w" "Change worktree"    counsel-git-change-worktree)]
+    ("g" "Find file"       counsel-git)
+    ("c" "Checkout branch" counsel-git-checkout)
+    ("l" "Log"             counsel-git-log)
+    ("w" "Change worktree" counsel-git-change-worktree)]
 
    ["Projectile"
-    ("A" "ag"                 counsel-projectile-ag)
-    ("p" "Switch project"     counsel-projectile-switch-project)]])
+    ("A" "ag"                     counsel-projectile-ag)
+    ("f" "Find file"              counsel-projectile-find-file)
+    ("d" "Find directory"         counsel-projectile-find-dir)
+    ("p" "Switch project"         counsel-projectile-switch-project)]
+
+   ["Org" ;; TODO: only from org-mode
+    ("o" "Goto outline" counsel-org-goto)]])
 
 (provide 'counsel-dispatch)
 
