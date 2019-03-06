@@ -30,4 +30,3 @@
    - [ ] Create transient commands for frequently used packages.
    - [ ] Refresh diff marker of git-gutter-fringe after magit stage
      - Need to research magit hooks
-   - [ ] Refresh branch name in modeline after magit operation and counsel-checkout.
