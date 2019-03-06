@@ -50,6 +50,12 @@
   (:map minibuffer-local-map
         ("C-r" . counsel-minibuffer-history)))
 
+(use-package counsel-projectile
+  :after counsel
+
+  :bind
+  ("C-x B" . counsel-projectile-switch-to-buffer))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Company: Modular in-buffer completion framework
 ;;          for Emacs
