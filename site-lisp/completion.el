@@ -45,6 +45,7 @@
   :bind
   ("C-s"     . swiper)
   ("M-x"     . counsel-M-x)
+  ("C-x b"   . counsel-switch-buffer)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
   (:map minibuffer-local-map
