@@ -1,6 +1,7 @@
 (("all-the-icons.el" . "160f5a496fa1816c304a70bff70c6c7a796ad982")
  ("cl-lib" . "deb92588d9d83d46c4698936ea31c5f58d244f04")
  ("company-mode" . "20fe01542bf7665ba90f9fe1a86cbe0eea4d9f8a")
+ ("counsel-projectile" . "d64e5275c578a494102852c466a3696bde466739")
  ("dash.el" . "f1ffdf7beb8b4fc6aa156873162c98f84b9465bd")
  ("diminish.el" . "565a983a39d2e2cffab5df13b34f3b6116723208")
  ("doom-modeline" . "5c926b81de74e8d50d7ef9d68ec485d90f295438")
