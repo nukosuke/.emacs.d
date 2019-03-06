@@ -38,10 +38,10 @@
     ("w" "Change worktree" counsel-git-change-worktree)]
 
    ["Projectile"
-    ("A" "ag"                     counsel-projectile-ag)
-    ("f" "Find file"              counsel-projectile-find-file)
-    ("d" "Find directory"         counsel-projectile-find-dir)
-    ("p" "Switch project"         counsel-projectile-switch-project)]
+    ("A" "ag"             counsel-projectile-ag)
+    ("f" "Find file"      counsel-projectile-find-file)
+    ("d" "Find directory" counsel-projectile-find-dir)
+    ("p" "Switch project" counsel-projectile-switch-project)]
 
    ["Org" ;; TODO: only from org-mode
     ("o" "Goto outline" counsel-org-goto)]])
