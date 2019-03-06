@@ -92,6 +92,10 @@
 (require 'graphql
          (concat user-emacs-directory "site-lisp/language/graphql"))
 
+
+(require 'mailer
+         (concat user-emacs-directory "site-lisp/mailer"))
+
 (provide 'init)
 
 ;;; init.el ends here
