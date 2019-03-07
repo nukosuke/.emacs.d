@@ -13,6 +13,16 @@
                                (nnimap-server-port 993)
                                (nnimap-stream ssl))))
 
+(use-package rmail
+  :straight nil ;; rmail is built-in Emacs
+
+  :custom
+  (rmail-remote-password-required t)
+  (rmail-primary-inbox-list '("pop://nukosuke@lavabit.com:110"))
+
+  :config
+  (setenv "MAILHOST" "lavabit.com"))
+
 (provide 'mailer)
 
 ;;; mailer.el ends here
