@@ -1,4 +1,6 @@
-(("all-the-icons.el" . "160f5a496fa1816c304a70bff70c6c7a796ad982")
+(("ace-window" . "a429c66f318af0452a009f96b39a18f9b0fe232b")
+ ("all-the-icons.el" . "160f5a496fa1816c304a70bff70c6c7a796ad982")
+ ("avy" . "e80251056de24ef67b12d4e81f5aba45d3719c7c")
  ("cl-lib" . "deb92588d9d83d46c4698936ea31c5f58d244f04")
  ("company-mode" . "20fe01542bf7665ba90f9fe1a86cbe0eea4d9f8a")
  ("counsel-projectile" . "d64e5275c578a494102852c466a3696bde466739")
