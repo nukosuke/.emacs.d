@@ -18,7 +18,7 @@
 
   :custom
   (rmail-remote-password-required t)
-  (rmail-primary-inbox-list '("pop://nukosuke@lavabit.com:110"))
+  (rmail-primary-inbox-list '("imaps://yosuke.tamura%40mixi.co.jp@imap.gmail.com:993"))
 
   :config
   (setenv "MAILHOST" "lavabit.com"))
