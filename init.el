@@ -44,10 +44,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Local Emacs Lisp
-;; FIXME: more dry
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load settings
 (cl-dolist (pkg
 	    '((generic    "generic")
         (interface  "interface")
