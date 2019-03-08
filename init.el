@@ -47,7 +47,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (cl-dolist (pkg
-	          '((generic    "generic")
+            '((generic    "generic")
               (interface  "interface")
               (workspace  "workspace")
               (completion "completion")
