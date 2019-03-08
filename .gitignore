@@ -62,3 +62,7 @@ bookmarks
 
 # lsp-mode
 .lsp-session-*
+
+# mailer config
+# because it differ between private account and my corporate account
+/site-lisp/mailer.el
