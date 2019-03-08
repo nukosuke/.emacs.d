@@ -8,7 +8,6 @@
 
     - [ ] interface.el
       - [ ] shackle
-      - [ ] ace-window
     - [ ] completion.el
       - [ ] yasnippet
       - [ ] avy
