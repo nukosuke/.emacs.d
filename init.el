@@ -47,30 +47,30 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (cl-dolist (pkg
-	    '((generic    "generic")
-        (interface  "interface")
-        (workspace  "workspace")
-        (completion "completion")
-        (vcs        "vcs")
+	          '((generic    "generic")
+              (interface  "interface")
+              (workspace  "workspace")
+              (completion "completion")
+              (vcs        "vcs")
 
-        ;; Dispatchers
-        (straight-dispatch "dispatcher/straight-dispatch")
-        (zoom-dispatch     "dispatcher/zoom-dispatch")
-        (counsel-dispatch  "dispatcher/counsel-dispatch")
+              ;; Dispatchers
+              (straight-dispatch "dispatcher/straight-dispatch")
+              (zoom-dispatch     "dispatcher/zoom-dispatch")
+              (counsel-dispatch  "dispatcher/counsel-dispatch")
 
-        ;; Text
-        (markdown "language/markdown")
-        (yaml     "language/yaml")
+              ;; Text
+              (markdown "language/markdown")
+              (yaml     "language/yaml")
 
-        ;; Config
-        (gitignore "language/gitignore")
-        (terraform "language/terraform")
+              ;; Config
+              (gitignore "language/gitignore")
+              (terraform "language/terraform")
 
-        ;; Programming language
-        (typescript "language/typescript")
-        (web        "language/web")
-        (graphql    "language/graphql")
-        (golang     "language/golang")))
+              ;; Programming language
+              (typescript "language/typescript")
+              (web        "language/web")
+              (graphql    "language/graphql")
+              (golang     "language/golang")))
   (let ((name (car pkg))
         (path (nth 1 pkg)))
     (require name (concat user-emacs-directory "site-lisp/" path))))
