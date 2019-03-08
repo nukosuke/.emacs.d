@@ -3,38 +3,29 @@
 #+TODO: TODO WIP | DONE
 
 ** Next
-*** WIP ~site-lisp/~ [0/6]
+*** WIP ~site-lisp/~ [0/4]
     Configure these files with ~use-package~ macro.
 
-    - [ ] generic.el
-      - [ ] exec-path-from-shell
-    - [-] interface.el
-      - [X] theme
-      - [ ] diminish
-      - [ ] volatile-hightlight
+    - [ ] interface.el
       - [ ] shackle
-      - [ ] switch-window
-    - [-] completion.el
+    - [ ] completion.el
       - [ ] yasnippet
-      - [X] smartparen
+      - [ ] avy
     - [ ] workspace.el
       - [ ] perspective or eyebrowse
     - [ ] vcs.el
       - [ ] forge
       - [ ] git-gutter hunk operations
         - Create transient command and add it to magit-dispatch transient
-    - [ ] transient.el
-      - should have sub-directory ~/site-lisp/dispatcher/~
+    - [ ] Use SKK
 
-*** Minor Fixes
-    - [ ] Ivy/Counsel map
-      - ~C-h~ doesn't work
-    - [X] Org mode map
-      - Use ~org-seq-home~ and ~org-seq-end~ in ~org-mode-map~
+*** Bugs
+    - [ ] Fix this: exec-path-from-shell
+      #+begin_src console
+      You appear to be setting environment variables ("PATH") in your .bashrc or .zshrc: those files are only read by interactive shells, so you should instead set environment variables in startup files like .profile, .bash_profile or .zshenv.  Refer to your shell’s man page for more info.  Customize ‘exec-path-from-shell-arguments’ to remove "-i" when done, or disable ‘exec-path-from-shell-check-startup-files’ to disable this message.
+      #+end_src
 
 ** Not planned yet
    - [ ] Create transient commands for frequently used packages.
    - [ ] Refresh diff marker of git-gutter-fringe after magit stage
      - Need to research magit hooks
-   - [ ] Rich and beautiful mode line
-     - What package to use?

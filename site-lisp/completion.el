@@ -23,12 +23,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package ivy
+  :custom
+  (ivy-count-format             "[%d/%d] ")
+  (ivy-use-virtual-buffers      t)
+  (ivy-format-function          'ivy-format-function-arrow)
+  (ivy-wrap                     t)
+  (enable-recursive-minibuffers t)
+  (ivy-height                   20)
+
   :config
-  (ivy-mode                          1)
-  (setq ivy-use-virtual-buffers      t)
-  (setq ivy-wrap                     t)
-  (setq enable-recursive-minibuffers t)
-  (setq ivy-height                   20))
+  (ivy-mode 1)
+
+  :diminish)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Counsel: a collection of Ivy-enhanced versions
@@ -39,9 +45,18 @@
   :bind
   ("C-s"     . swiper)
   ("M-x"     . counsel-M-x)
+  ("C-x b"   . counsel-switch-buffer)
   ("C-x C-f" . counsel-find-file)
+  ("C-x C-r" . counsel-recentf)
+  ("C-c l"   . counsel-dispatch) ;; Defined at dispatcher/counsel-dispatch.el
   (:map minibuffer-local-map
         ("C-r" . counsel-minibuffer-history)))
+
+(use-package counsel-projectile
+  :after counsel
+
+  :bind
+  ("C-x B" . counsel-projectile-switch-to-buffer))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Company: Modular in-buffer completion framework
@@ -52,8 +67,10 @@
   :custom
   (company-selection-wrap-around t)
 
-  :init
-  (global-company-mode) ;; To enable at startup.
+  :hook
+  ((text-mode . company-mode)
+   (prog-mode . company-mode)
+   (conf-mode . company-mode))
 
   :bind
   (:map company-active-map
@@ -61,7 +78,9 @@
         ("M-n" . nil)
         ("M-p" . nil)
         ("C-n" . company-select-next)
-        ("C-p" . company-select-previous)))
+        ("C-p" . company-select-previous))
+
+  :diminish)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smartparens: Minor mode for Emacs that deals with
@@ -73,7 +92,9 @@
   ;; Enable after open file.
   :hook ((text-mode . smartparens-mode)
          (prog-mode . smartparens-mode)
-         (conf-mode . smartparens-mode)))
+         (conf-mode . smartparens-mode))
+
+  :diminish)
 
 (provide 'completion)
 

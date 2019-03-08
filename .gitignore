@@ -46,9 +46,13 @@ flycheck_*.el
 # projectiles files
 .projectile
 projectile-bookmarks.eld
+bookmarks
 
 # directory configuration
 .dir-locals.el
+
+# request.el
+/request/
 
 # network security
 /network-security.data
@@ -58,3 +62,7 @@ projectile-bookmarks.eld
 
 # lsp-mode
 .lsp-session-*
+
+# mailer config
+# because it differ between private account and my corporate account
+/site-lisp/mailer.el

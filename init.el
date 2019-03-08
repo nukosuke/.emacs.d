@@ -40,35 +40,44 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
+(define-key global-map (kbd "C-c p") 'straight-dispatch)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Local Emacs Lisp
-;; FIXME: more dry
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; General settings
-(require 'generic (concat user-emacs-directory "site-lisp/generic"))
+(cl-dolist (pkg
+            '((generic    "generic")
+              (interface  "interface")
+              (workspace  "workspace")
+              (completion "completion")
+              (vcs        "vcs")
 
-;; User interface settings
-(require 'interface (concat user-emacs-directory "site-lisp/interface"))
+              ;; Dispatchers
+              (straight-dispatch "dispatcher/straight-dispatch")
+              (zoom-dispatch     "dispatcher/zoom-dispatch")
+              (counsel-dispatch  "dispatcher/counsel-dispatch")
 
-;; Workspace settings
-(require 'workspace (concat user-emacs-directory "site-lisp/workspace"))
+              ;; Text
+              (markdown "language/markdown")
+              (yaml     "language/yaml")
 
-;; Completion settings
-(require 'completion (concat user-emacs-directory "site-lisp/completion"))
+              ;; Config
+              (gitignore "language/gitignore")
+              (terraform "language/terraform")
 
-;; Version Control System settings
-(require 'vcs (concat user-emacs-directory "site-lisp/vcs"))
+              ;; Programming language
+              (typescript "language/typescript")
+              (web        "language/web")
+              (graphql    "language/graphql")
+              (golang     "language/golang")))
+  (let ((name (car pkg))
+        (path (nth 1 pkg)))
+    (require name (concat user-emacs-directory "site-lisp/" path))))
 
-;; Dispatchers (transient commands)
-(require 'straight-dispatch
-         (concat user-emacs-directory "site-lisp/dispatcher/straight-dispatch"))
-(require 'zoom-dispatch
-         (concat user-emacs-directory "site-lisp/dispatcher/zoom-dispatch"))
-
-;; Programming languages
-(require 'typescript
-         (concat user-emacs-directory "site-lisp/language/typescript"))
+(if (executable-find "mu")
+    (require 'mailer
+             (concat user-emacs-directory "site-lisp/mailer")))
 
 (provide 'init)
 
