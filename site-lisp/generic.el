@@ -99,6 +99,16 @@
         ("C-a" . org-seq-home)
         ("C-e" . org-seq-end)))
 
+;; SKK
+;; TODO: input-method.elに移動
+
+(use-package ddskk
+  :commands
+  skk-mode
+
+  :bind
+  ("C-\\" . skk-mode))
+
 (provide 'generic)
 
 ;;; generic.el ends here
