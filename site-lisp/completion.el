@@ -36,6 +36,13 @@
 
   :diminish)
 
+(use-package ivy-rich
+  :after
+  counsel
+
+  :config
+  (ivy-rich-mode 1))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Counsel: a collection of Ivy-enhanced versions
 ;;          of common Emacs commands
