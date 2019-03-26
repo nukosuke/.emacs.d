@@ -83,6 +83,16 @@
   :diminish)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; LSP mode: Language Server Protocol support for Emacs
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package lsp-mode
+  :commands lsp)
+
+(use-package company-lsp
+  :commands company-lsp)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smartparens: Minor mode for Emacs that deals with
 ;;              parens pairs and tries to be smart
 ;;              about it.
