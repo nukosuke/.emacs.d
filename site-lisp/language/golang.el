@@ -28,6 +28,14 @@
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-copy-env "GOPATH")))
 
+;;;###autoload
+(defun install-language-server/golang ()
+  "Install language server, bingo for golang.  GO111MODULE environment variable should be set to 'on'."
+  (interactive)
+  (if (executable-find "go")
+      (message (shell-command-to-string "go get -u github.com/saibing/bingo"))
+    (message "Couldn't find go. Install golang first.")))
+
 (provide 'golang)
 
 ;;; golang.el ends here
