@@ -66,7 +66,8 @@
   :after counsel
 
   :bind
-  ("C-x B" . counsel-projectile-switch-to-buffer))
+  ("C-x B" . counsel-projectile-switch-to-buffer)
+  ("C-x f" . counsel-projectile-find-file))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Company: Modular in-buffer completion framework
