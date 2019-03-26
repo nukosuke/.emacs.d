@@ -82,6 +82,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package doom-modeline
+  :custom
+  (doom-modeline-buffer-file-name-style 'truncate-with-project)
+
   :config
   (line-number-mode 0)
 
