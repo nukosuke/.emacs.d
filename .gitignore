@@ -37,6 +37,9 @@ tramp
 /straight/modified/
 /straight/repos/
 
+# Cask
+/.cask/
+
 # Flycheck
 flycheck_*.el
 
@@ -51,8 +54,9 @@ bookmarks
 # directory configuration
 .dir-locals.el
 
-# request.el
+# http
 /request/
+/url/
 
 # network security
 /network-security.data
@@ -66,3 +70,7 @@ bookmarks
 # mailer config
 # because it differ between private account and my corporate account
 /site-lisp/mailer.el
+
+# forge database
+forge-database.sqlite
+

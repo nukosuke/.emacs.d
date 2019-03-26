@@ -15,6 +15,9 @@
 ;;    - Configure ivy/counsel
 ;;      https://github.com/abo-abo/swiper#ivy
 ;;      https://github.com/abo-abo/swiper#counsel
+;;  * 2019/03/26:
+;;    Start using ivy-rich
+;;    - https://github.com/Yevgnen/ivy-rich
 
 ;;; Code:
 
