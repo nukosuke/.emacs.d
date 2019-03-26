@@ -11,6 +11,9 @@ auto-save-list
 tramp
 .\#*
 
+# SKK dictionary
+/skk-get-jisyo/
+
 # Org-mode
 .org-id-locations
 *_archive
