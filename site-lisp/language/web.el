@@ -29,6 +29,10 @@
   (web-mode-markup-indent-offset 2)
   (web-mode-css-indent-offset    2))
 
+(use-package json-mode
+  :mode
+  ("\\.json\\'" . json-mode))
+
 (provide 'web)
 
 ;;; web.el ends here
