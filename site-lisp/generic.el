@@ -106,6 +106,9 @@
   :commands
   skk-mode
 
+  :custom
+  (skk-show-inline 'vertical)
+
   :bind
   ("C-\\" . skk-mode))
 
