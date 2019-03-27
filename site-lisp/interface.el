@@ -43,6 +43,7 @@
   (show-paren-when-point-inside-paren t)
   (show-paren-when-point-in-periphery t))
 
+;; FIXME: no longer necessary because of doom-modeline
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Diminish: This package implements hiding or
 ;;           abbreviation of the mode line displays
@@ -53,15 +54,25 @@
 ;; So, install here.
 (use-package diminish)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; volatile-highlights:
 ;;   Minor mode for visual feedback on some operations
-;; TODO:
-;; - Fix vhl/default-face
+;; beacon:
+;;   A light that follows your cursor around
+;;   so you don't lose it!
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package volatile-highlights
   :init
   (volatile-highlights-mode t)
 
   :diminish)
+
+(use-package beacon
+  :custom
+  (beacon-color "green")
+
+  :config
+  (beacon-mode 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme
