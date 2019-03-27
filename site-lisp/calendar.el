@@ -18,7 +18,8 @@
 
 (use-package calfw)
 
-(use-package calfw-org)
+(use-package calfw-org
+  :after calfw)
 
 (provide 'calendar)
 
