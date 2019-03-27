@@ -203,6 +203,9 @@
   :custom
   (aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
+  :custom-face
+  (aw-leading-char-face ((t (:height 3.0 :foreground "#f1fa8c"))))
+
   :bind
   ("M-o" . ace-window))
 
