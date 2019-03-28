@@ -75,9 +75,9 @@
         (path (nth 1 pkg)))
     (require name (concat user-emacs-directory "site-lisp/" path))))
 
-(if (executable-find "mu")
-    (require 'mailer
-             (concat user-emacs-directory "site-lisp/mailer")))
+;; (if (executable-find "mu")
+;;    (require 'mailer
+;;             (concat user-emacs-directory "site-lisp/mailer")))
 
 (provide 'init)
 
