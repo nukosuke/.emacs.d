@@ -34,6 +34,7 @@
  ("graphql.el" . "e2b309689f4faf9225f290080f836e988c5a576d")
  ("highlight-indent-guides" . "0b10f38c54ffc099861ce8463e16a1b07ddbb203")
  ("ht.el" . "8ec3eb96ee63430fb24257e4aa8169b50cb7be12")
+ ("imenu-list" . "46008738f8fef578a763c308cf6695e5b4d4aa77")
  ("ivy-rich" . "e24f58046550b1aa520cd2c756c05dccf676db24")
  ("json-mode" . "0e819e519ae17a2686e0881c4ca51fa873fa9b83")
  ("json-reformat" . "8eb6668ed447988aea06467ba8f42e1f2178246f")
