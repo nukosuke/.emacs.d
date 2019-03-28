@@ -194,7 +194,8 @@
 ;;
 (use-package hide-mode-line
   :hook
-  (neotree-mode . hide-mode-line-mode))
+  (neotree-mode . hide-mode-line-mode)
+  (imenu-list-minor-mode . hide-mode-line-mode))
 
 ;;
 ;; Switching window with jump
