@@ -12,7 +12,7 @@
  ("doom-modeline" . "3b704ee080e29c10a3eaeb72ffa53278ee52848c")
  ("eldoc-eval" . "4a1cf92dc5c4eca7519eb32f61b95e9e9f5755e4")
  ("emacs-async" . "81dc034572e963550c5403a2b3c28047e46b4029")
- ("emacs-dashboard" . "e99c0c8a20a54a7745e7ec5e062da8264a3e3135")
+ ("emacs-dashboard" . "17accfce424a18c4120ad99dfc1d7d93591dbce0")
  ("emacs-doom-themes" . "cbac92578aba8eff8edd18b3e1ea72c295e3631e")
  ("emacs-git-gutter" . "00c05264af046b5ce248e5b0bc42f117d9c27a09")
  ("emacs-git-gutter-fringe" . "16226caab44174301f1659f7bf8cc67a76153445")
