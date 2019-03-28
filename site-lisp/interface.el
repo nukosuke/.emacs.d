@@ -209,6 +209,17 @@
   :bind
   ("M-o" . ace-window))
 
+;;
+;; imenu-list
+;;
+(use-package imenu-list
+  :custom
+  (imenu-list-focus-after-activation t)
+  (imenu-list-auto-resize            t)
+
+  :bind
+  ("C-'" . imenu-list-smart-toggle))
+
 (provide 'interface)
 
 ;;; interface.el ends here
