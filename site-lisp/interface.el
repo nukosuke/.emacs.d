@@ -195,7 +195,6 @@
 (use-package hide-mode-line
   :hook
   (neotree-mode . hide-mode-line-mode)
-  (imenu-list-minor-mode . hide-mode-line-mode))
 
 ;;
 ;; Switching window with jump
@@ -216,7 +215,7 @@
 (use-package imenu-list
   :custom
   (imenu-list-focus-after-activation t)
-  (imenu-list-auto-resize            t)
+  (imenu-list-auto-resize            nil)
 
   :bind
   ("C-'" . imenu-list-smart-toggle))
