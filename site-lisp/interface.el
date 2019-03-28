@@ -43,6 +43,7 @@
   (show-paren-when-point-inside-paren t)
   (show-paren-when-point-in-periphery t))
 
+;; FIXME: no longer necessary because of doom-modeline
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Diminish: This package implements hiding or
 ;;           abbreviation of the mode line displays
@@ -53,15 +54,25 @@
 ;; So, install here.
 (use-package diminish)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; volatile-highlights:
 ;;   Minor mode for visual feedback on some operations
-;; TODO:
-;; - Fix vhl/default-face
+;; beacon:
+;;   A light that follows your cursor around
+;;   so you don't lose it!
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package volatile-highlights
   :init
   (volatile-highlights-mode t)
 
   :diminish)
+
+(use-package beacon
+  :custom
+  (beacon-color "green")
+
+  :config
+  (beacon-mode 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme
@@ -82,6 +93,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package doom-modeline
+  :custom
+  (doom-modeline-buffer-file-name-style 'truncate-with-project)
+
   :config
   (line-number-mode 0)
 
@@ -99,6 +113,9 @@
   :custom
   (dashboard-banner-logo-title (concat "GNU Emacs " emacs-version))
   (dashboard-startup-banner    'logo)
+  (dashboard-items             '((recents  . 5)
+                                 (projects . 5)
+                                 (agenda   . 5)))
 
   :config
   (dashboard-setup-startup-hook))
@@ -186,8 +203,26 @@
   :custom
   (aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
+  :custom-face
+  (aw-leading-char-face ((t (:height 3.0 :foreground "#f1fa8c"))))
+
   :bind
   ("M-o" . ace-window))
+
+;;
+;; imenu-list
+;;
+(use-package imenu-list
+  :custom
+  (imenu-list-focus-after-activation t)
+  (imenu-list-auto-resize            nil)
+
+  ;; Don't use hide-mode-line-mode
+  ;; It hide major mode mode-line after toggle
+  (imenu-list-mode-line-format nil)
+
+  :bind
+  ("C-'" . imenu-list-smart-toggle))
 
 (provide 'interface)
 

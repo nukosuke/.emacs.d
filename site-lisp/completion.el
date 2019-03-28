@@ -66,7 +66,8 @@
   :after counsel
 
   :bind
-  ("C-x B" . counsel-projectile-switch-to-buffer))
+  ("C-x B" . counsel-projectile-switch-to-buffer)
+  ("C-x f" . counsel-projectile-find-file))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Company: Modular in-buffer completion framework
@@ -115,6 +116,22 @@
          (conf-mode . smartparens-mode))
 
   :diminish)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; YASnippet: A template system for Emacs
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; TODO: keybind
+(use-package yasnippet
+  :custom
+  (yas-snippet-dirs
+   '("~/.emacs.d/snippets"
+     "~/.emacs.d/straight/repos/yasnippet-snippets/snippets"))
+
+  :config
+  (yas-global-mode 1))
+
+(use-package yasnippet-snippets)
 
 (provide 'completion)
 
