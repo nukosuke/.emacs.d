@@ -45,6 +45,19 @@
   :config
   (projectile-mode 1))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; eyebrowse: A simple-minded way of managing
+;;            window configs in emacs
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package eyebrowse
+  :custom
+  (eyebrowse-new-workspace t)
+  (eyebrowse-wrap-around   t)
+
+  :config
+  (eyebrowse-mode t))
+
 (provide 'workspace)
 
 ;;; workspace.el ends here

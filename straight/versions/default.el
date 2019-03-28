@@ -24,6 +24,7 @@
  ("epkgs" . "ab4987566ad3d9d45b2fd1912d90a494e16904d8")
  ("epl" . "78ab7a85c08222cd15582a298a364774e3282ce6")
  ("exec-path-from-shell" . "76cd6e3fa8a7dac937af7e40507843dfae4f9184")
+ ("eyebrowse" . "52e160997a1c4b1d463e8b9cc2ba3e27408c2a89")
  ("f.el" . "8191672377816a1975414cc1f116fd3b94b30bd0")
  ("flycheck" . "9cd52ad65b4cc643b9e6ba7cefb8d82777da2a13")
  ("fringe-helper.el" . "ef4a9c023bae18ec1ddd7265f1f2d6d2e775efdd")
