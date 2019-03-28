@@ -109,6 +109,19 @@
   :custom
   (skk-show-inline 'vertical)
 
+  ;; Use doom-dracula colors
+  ;; https://github.com/hlissner/emacs-doom-themes/blob/master/themes/doom-dracula-theme.el#L38-L67
+  (skk-cursor-hiragana-color "#61bfff")
+  (skk-cursor-katakana-color "#ff79c6")
+
+  :custom-face
+  (skk-emacs-hiragana-face ((t (:background "#21a9ec"
+                                :foreground "white"
+                                :bold t))))
+  (skk-emacs-katakana-face ((t (:background "#ff79c6"
+                                :foreground "white"
+                                :bold t))))
+
   :bind
   ("C-\\" . skk-mode))
 
