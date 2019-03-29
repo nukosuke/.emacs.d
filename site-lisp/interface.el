@@ -190,6 +190,28 @@
     "...X...."))
 
 ;;
+;; Display flycheck message to posframe
+;;
+;; NOTE: flycheck-posframe is buggy on macOS when fullscreen toggle.
+;;       It creates another blackout workspace and draw frame to it.
+;; (use-package flycheck-posframe
+;;  :after
+;;  flycheck
+;;
+;;  :hook
+;;  (flycheck-mode . flycheck-posframe-mode))
+
+;;
+;; Display flycheck message to tip
+;;
+(use-package flycheck-pos-tip
+  :after
+  flycheck
+
+  :hook
+  (flycheck-mode . flycheck-pos-tip-mode))
+
+;;
 ;; Hide unnecessary mode line
 ;;
 (use-package hide-mode-line
