@@ -262,6 +262,18 @@
   ("C-c h k" . helpful-key)
   ("C-c h c" . helpful-command))
 
+;; FIXME: move to appropriate file
+;; ansi-term keybindings
+;;
+(use-package term
+  :straight nil
+  :bind
+  ("C-T" . ansi-term)   ;; new ansi-term
+  (:map term-raw-map
+        ("C-T" . nil)   ;; recover for ansi-term
+        ("M-x" . nil)   ;; recover for cousel-M-x
+        ("M-o" . nil))) ;; recover for ace-window
+
 (provide 'interface)
 
 ;;; interface.el ends here
