@@ -232,6 +232,13 @@
   ("M-o" . ace-window))
 
 ;;
+;; Avy
+;;
+(use-package avy
+  :bind
+  ("C-c a" . avy-goto-line))
+
+;;
 ;; imenu-list
 ;;
 (use-package imenu-list
