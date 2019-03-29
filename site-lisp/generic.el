@@ -107,6 +107,7 @@
   skk-mode
 
   :custom
+  (skk-sticky-key  ";")
   (skk-show-inline 'vertical)
 
   ;; Use doom-dracula colors
@@ -114,13 +115,18 @@
   (skk-cursor-hiragana-color "#61bfff")
   (skk-cursor-katakana-color "#ff79c6")
 
-  :custom-face
-  (skk-emacs-hiragana-face ((t (:background "#21a9ec"
-                                :foreground "white"
-                                :bold t))))
-  (skk-emacs-katakana-face ((t (:background "#ff79c6"
-                                :foreground "white"
-                                :bold t))))
+  :init
+  ;; SKK faces should be set before load for customizing
+  (defface skk-emacs-hiragana-face nil nil)
+  (set-face-attribute 'skk-emacs-hiragana-face nil
+                      :background "#bd93f9"
+                      :foreground "black"
+                      :bold t)
+  (defface skk-emacs-katakana-face nil nil)
+  (set-face-attribute 'skk-emacs-katakana-face nil
+                      :background "#bd93f9"
+                      :foreground "black"
+                      :bold t)
 
   :bind
   ("C-\\" . skk-mode))
