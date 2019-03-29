@@ -5,6 +5,7 @@
  ("cl-lib" . "deb92588d9d83d46c4698936ea31c5f58d244f04")
  ("company-lsp" . "4218f180688eb3ecba454d00b0e68931a0aef5c9")
  ("company-mode" . "668e4b05008c69ed74179be2634353f7810a1d17")
+ ("company-quickhelp" . "479676cade80a9f03802ca3d956591820ed5c537")
  ("counsel-projectile" . "fb19569c9799e3edac7504d21a5ecf49231e9500")
  ("dash.el" . "677c1561142db89cb151f50ce21f24096ca1a328")
  ("ddskk" . "1e73b77d7dc9cd812d90bdfce10378928f57508a")
