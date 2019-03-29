@@ -32,22 +32,10 @@
   (ivy-format-function          'ivy-format-function-arrow)
   (ivy-wrap                     t)
   (enable-recursive-minibuffers t)
-  (ivy-height                   20)
-
-  :bind
-  ("C-x b" . ivy-switch-buffer)
-
-  :config
-  (ivy-mode 1)
-
-  :diminish)
+  (ivy-height                   20))
 
 (use-package ivy-rich
-  :after
-  counsel
-
-  :config
-  (ivy-rich-mode 1))
+  :after counsel)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Counsel: a collection of Ivy-enhanced versions
@@ -55,8 +43,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package counsel
+  :hook
+  (after-init . ivy-mode)
+  (after-init . ivy-rich-mode)
+
   :bind
   ("C-s"     . swiper)
+  ("C-x b"   . ivy-switch-buffer)
   ("M-x"     . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
