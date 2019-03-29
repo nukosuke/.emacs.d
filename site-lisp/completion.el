@@ -103,6 +103,14 @@
 (use-package company-lsp
   :commands company-lsp)
 
+(use-package company-quickhelp
+  :after company
+  :hook
+  (company-mode . company-quickhelp-mode))
+
+;; TODO: company-box
+;;       But, now posframe has problem.
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smartparens: Minor mode for Emacs that deals with
 ;;              parens pairs and tries to be smart
