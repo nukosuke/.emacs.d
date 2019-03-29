@@ -32,19 +32,10 @@
   (ivy-format-function          'ivy-format-function-arrow)
   (ivy-wrap                     t)
   (enable-recursive-minibuffers t)
-  (ivy-height                   20)
-
-  :config
-  (ivy-mode 1)
-
-  :diminish)
+  (ivy-height                   20))
 
 (use-package ivy-rich
-  :after
-  counsel
-
-  :config
-  (ivy-rich-mode 1))
+  :after counsel)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Counsel: a collection of Ivy-enhanced versions
@@ -52,10 +43,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package counsel
+  :hook
+  (after-init . ivy-mode)
+  (after-init . ivy-rich-mode)
+
   :bind
   ("C-s"     . swiper)
+  ("C-x b"   . ivy-switch-buffer)
   ("M-x"     . counsel-M-x)
-  ("C-x b"   . counsel-switch-buffer)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
   ("C-c l"   . counsel-dispatch) ;; Defined at dispatcher/counsel-dispatch.el
@@ -102,6 +97,14 @@
 
 (use-package company-lsp
   :commands company-lsp)
+
+(use-package company-quickhelp
+  :after company
+  :hook
+  (company-mode . company-quickhelp-mode))
+
+;; TODO: company-box
+;;       But, now posframe has problem.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smartparens: Minor mode for Emacs that deals with

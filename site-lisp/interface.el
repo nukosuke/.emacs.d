@@ -69,7 +69,7 @@
 
 (use-package beacon
   :custom
-  (beacon-color "green")
+  (beacon-color "#f1fa8c") ;; yellow of dracula
 
   :config
   (beacon-mode 1))
@@ -190,6 +190,28 @@
     "...X...."))
 
 ;;
+;; Display flycheck message to posframe
+;;
+;; NOTE: flycheck-posframe is buggy on macOS when fullscreen toggle.
+;;       It creates another blackout workspace and draw frame to it.
+;; (use-package flycheck-posframe
+;;  :after
+;;  flycheck
+;;
+;;  :hook
+;;  (flycheck-mode . flycheck-posframe-mode))
+
+;;
+;; Display flycheck message to tip
+;;
+(use-package flycheck-pos-tip
+  :after
+  flycheck
+
+  :hook
+  (flycheck-mode . flycheck-pos-tip-mode))
+
+;;
 ;; Hide unnecessary mode line
 ;;
 (use-package hide-mode-line
@@ -210,6 +232,13 @@
   ("M-o" . ace-window))
 
 ;;
+;; Avy
+;;
+(use-package avy
+  :bind
+  ("C-c a" . avy-goto-line))
+
+;;
 ;; imenu-list
 ;;
 (use-package imenu-list
@@ -223,6 +252,27 @@
 
   :bind
   ("C-'" . imenu-list-smart-toggle))
+
+;;
+;; Helpful: A better Emacs *help* buffer
+;;
+(use-package helpful
+  :bind
+  ("C-c h v" . helpful-variable)
+  ("C-c h k" . helpful-key)
+  ("C-c h c" . helpful-command))
+
+;; FIXME: move to appropriate file
+;; ansi-term keybindings
+;;
+(use-package term
+  :straight nil
+  :bind
+  ("C-T" . ansi-term)   ;; new ansi-term
+  (:map term-raw-map
+        ("C-T" . nil)   ;; recover for ansi-term
+        ("M-x" . nil)   ;; recover for cousel-M-x
+        ("M-o" . nil))) ;; recover for ace-window
 
 (provide 'interface)
 
