@@ -34,6 +34,9 @@
   (enable-recursive-minibuffers t)
   (ivy-height                   20)
 
+  :bind
+  ("C-x b" . ivy-switch-buffer)
+
   :config
   (ivy-mode 1)
 
@@ -55,7 +58,6 @@
   :bind
   ("C-s"     . swiper)
   ("M-x"     . counsel-M-x)
-  ("C-x b"   . counsel-switch-buffer)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
   ("C-c l"   . counsel-dispatch) ;; Defined at dispatcher/counsel-dispatch.el
