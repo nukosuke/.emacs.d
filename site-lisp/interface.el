@@ -246,6 +246,14 @@
   :bind
   ("C-'" . imenu-list-smart-toggle))
 
+;;
+;; Helpful: A better Emacs *help* buffer
+;;
+(use-package helpful
+  :bind
+  ("C-c h k" . helpful-key)
+  ("C-c h c" . helpful-command))
+
 (provide 'interface)
 
 ;;; interface.el ends here
