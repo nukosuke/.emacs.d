@@ -251,6 +251,7 @@
 ;;
 (use-package helpful
   :bind
+  ("C-c h v" . helpful-variable)
   ("C-c h k" . helpful-key)
   ("C-c h c" . helpful-command))
 
