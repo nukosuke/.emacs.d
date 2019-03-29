@@ -69,7 +69,7 @@
 
 (use-package beacon
   :custom
-  (beacon-color "green")
+  (beacon-color "#f1fa8c") ;; yellow of dracula
 
   :config
   (beacon-mode 1))
