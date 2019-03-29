@@ -46,7 +46,7 @@
 ;;
 ;; Font settings
 ;;
-(if (not (null window-system))
+(if (memq window-system '(mac ns))
     (let* ((font-family "Menlo")
            (font-size 12)
            (font-height (* font-size 10))
