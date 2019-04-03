@@ -276,4 +276,13 @@
 
 (provide 'interface)
 
+;;
+;; Iedit
+;;
+(use-package iedit
+  :bind
+  ("C-;" . iedit-mode)
+  (:map iedit-mode-keymap
+        ("C-h" . delete-backward-char)))
+
 ;;; interface.el ends here
