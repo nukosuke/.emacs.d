@@ -39,6 +39,7 @@
  '(auto-revert-check-vc-info    t)
  ;; Org customs must be set here.
  ;; Because it cannot be overwritten by use-package (Bug or design).
+ '(org-agenda-files             '("~/.emacs.d/org/"))
  '(org-return-follows-link      t)
  '(org-use-speed-commands       t))
 
