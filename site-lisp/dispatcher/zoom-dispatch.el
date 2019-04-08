@@ -16,22 +16,24 @@
 
 ;;; Code:
 
-(require 'transient)
+(use-package transient
+  :bind
+  ("<f9>" . zoom-dispatch)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; M-x zoom-dispatch
-;;
-;; g : Zoom IN
-;; l : Zoom OUT
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(define-transient-command zoom-dispatch ()
-  "Invoke a zoom command from a list of available commands."
-  :transient-suffix 'transient--do-stay
-  :transient-non-suffix 'transient--do-warn
-  ["Zoom commands"
-   ("g" "Zoom IN" text-scale-increase)
-   ("l" "Zoom OUT" text-scale-decrease)])
+  :config
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; M-x zoom-dispatch
+  ;;
+  ;; g : Zoom IN
+  ;; l : Zoom OUT
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (define-transient-command zoom-dispatch ()
+    "Invoke a zoom command from a list of available commands."
+    :transient-suffix 'transient--do-stay
+    :transient-non-suffix 'transient--do-warn
+    ["Zoom commands"
+     ("g" "Zoom IN" text-scale-increase)
+     ("l" "Zoom OUT" text-scale-decrease)]))
 
 (provide 'zoom-dispatch)
 
