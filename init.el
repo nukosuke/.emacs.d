@@ -59,6 +59,7 @@
               (counsel-dispatch  "dispatcher/counsel-dispatch")
 
               ;; Text
+              (org-ext  "language/org-ext")
               (markdown "language/markdown")
               (yaml     "language/yaml")
 
@@ -74,10 +75,6 @@
   (let ((name (car pkg))
         (path (nth 1 pkg)))
     (require name (concat user-emacs-directory "site-lisp/" path))))
-
-;; (if (executable-find "mu")
-;;    (require 'mailer
-;;             (concat user-emacs-directory "site-lisp/mailer")))
 
 (provide 'init)
 
