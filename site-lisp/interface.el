@@ -236,7 +236,7 @@
 ;;
 (use-package avy
   :bind
-  ("C-c a" . avy-goto-line))
+  ("M-a" . avy-goto-line))
 
 ;;
 ;; imenu-list
