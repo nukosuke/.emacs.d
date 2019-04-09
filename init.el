@@ -52,10 +52,11 @@
               (vcs        "vcs")
 
               ;; Dispatchers
-              (straight-dispatch "dispatcher/straight-dispatch")
-              (zoom-dispatch     "dispatcher/zoom-dispatch")
-              (avy-dispatch      "dispatcher/avy-dispatch")
-              (counsel-dispatch  "dispatcher/counsel-dispatch")
+              (straight-dispatch   "dispatcher/straight-dispatch")
+              (zoom-dispatch       "dispatcher/zoom-dispatch")
+              (avy-dispatch        "dispatcher/avy-dispatch")
+              (counsel-dispatch    "dispatcher/counsel-dispatch")
+              (git-gutter-dispatch "dispatcher/git-gutter-dispatch")
 
               ;; Text
               (org-ext  "language/org-ext")
