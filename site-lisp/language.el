@@ -15,6 +15,9 @@
 
 ;;; Code:
 
+(use-package erlang
+  :mode "\\.erl")
+
 (use-package elixir-mode
   :mode "\\.ex" "\\.exs")
 
