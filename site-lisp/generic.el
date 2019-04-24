@@ -139,6 +139,10 @@
   (skk-sticky-key  ";")
   (skk-show-inline 'vertical)
 
+  ;; Usse AZIK input method
+  (skk-use-azik t)
+  (skk-azik-keyboard-type 'us101)
+
   ;; Use doom-dracula colors
   ;; https://github.com/hlissner/emacs-doom-themes/blob/master/themes/doom-dracula-theme.el#L38-L67
   (skk-cursor-hiragana-color "#61bfff")
@@ -158,7 +162,7 @@
                       :bold t)
 
   :bind
-  ("C-\\" . skk-mode))
+  ("C-c j" . skk-mode))
 
 (provide 'generic)
 
