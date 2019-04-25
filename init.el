@@ -50,29 +50,13 @@
               (workspace  "workspace")
               (completion "completion")
               (vcs        "vcs")
-
+              (language   "language")
               ;; Dispatchers
               (straight-dispatch   "dispatcher/straight-dispatch")
               (zoom-dispatch       "dispatcher/zoom-dispatch")
               (avy-dispatch        "dispatcher/avy-dispatch")
               (counsel-dispatch    "dispatcher/counsel-dispatch")
-              (git-gutter-dispatch "dispatcher/git-gutter-dispatch")
-
-              ;; Text
-              (org-ext  "language/org-ext")
-              (markdown "language/markdown")
-              (yaml     "language/yaml")
-
-              ;; Config
-              (gitignore "language/gitignore")
-              (terraform "language/terraform")
-
-              ;; Programming language
-              (typescript "language/typescript")
-              (web        "language/web")
-              (graphql    "language/graphql")
-              (golang     "language/golang")
-              (language   "language")))
+              (git-gutter-dispatch "dispatcher/git-gutter-dispatch")))
   (let ((name (car pkg))
         (path (nth 1 pkg)))
     (require name (concat user-emacs-directory "site-lisp/" path))))
