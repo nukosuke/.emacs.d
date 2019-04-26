@@ -84,9 +84,7 @@
         ("M-n" . nil)
         ("M-p" . nil)
         ("C-n" . company-select-next)
-        ("C-p" . company-select-previous))
-
-  :diminish)
+        ("C-p" . company-select-previous)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; LSP mode: Language Server Protocol support for Emacs
@@ -116,9 +114,7 @@
   ;; Enable after open file.
   :hook ((text-mode . smartparens-mode)
          (prog-mode . smartparens-mode)
-         (conf-mode . smartparens-mode))
-
-  :diminish)
+         (conf-mode . smartparens-mode)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; YASnippet: A template system for Emacs
