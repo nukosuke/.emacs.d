@@ -3,21 +3,15 @@
 #+TODO: TODO WIP | DONE
 
 ** Next
-*** WIP ~site-lisp/~ [0/4]
+*** WIP ~site-lisp/~ [3/5]
     Configure these files with ~use-package~ macro.
 
     - [ ] interface.el
       - [ ] shackle
-    - [ ] completion.el
-      - [ ] yasnippet
-      - [ ] avy
-    - [ ] workspace.el
-      - [ ] perspective or eyebrowse
     - [ ] vcs.el
       - [ ] forge
       - [ ] git-gutter hunk operations
         - Create transient command and add it to magit-dispatch transient
-    - [ ] Use SKK
 
 *** Bugs
     - [ ] Fix this: exec-path-from-shell
@@ -27,5 +21,3 @@
 
 ** Not planned yet
    - [ ] Create transient commands for frequently used packages.
-   - [ ] Refresh diff marker of git-gutter-fringe after magit stage
-     - Need to research magit hooks
