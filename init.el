@@ -46,6 +46,7 @@
 
 (cl-dolist (pkg
             '((generic    "generic")
+              (ime        "ime")
               (interface  "interface")
               (workspace  "workspace")
               (completion "completion")

@@ -9,7 +9,6 @@
  ("counsel-projectile" . "fb19569c9799e3edac7504d21a5ecf49231e9500")
  ("dash.el" . "258c324d9840901db83b2cabef3fa75bba57c1ba")
  ("ddskk" . "ad61579af269291b4446f4bab0a58522cc454f1c")
- ("diminish.el" . "565a983a39d2e2cffab5df13b34f3b6116723208")
  ("doom-modeline" . "45b9a3e3f321dc605e36065848d59fbcda6a366e")
  ("elisp-refs" . "540daaf50a88ca0e7d7c8d5f09ca383362e67baf")
  ("elm-mode" . "b59b66a5369816c3a6d47b3702b9007431b7b4cf")

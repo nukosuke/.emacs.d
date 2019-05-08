@@ -43,17 +43,6 @@
   (show-paren-when-point-inside-paren t)
   (show-paren-when-point-in-periphery t))
 
-;; FIXME: no longer necessary because of doom-modeline
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Diminish: This package implements hiding or
-;;           abbreviation of the mode line displays
-;;           (lighters) of minor-modes.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; diminish is no longer dependencies of use-package
-;; So, install here.
-(use-package diminish)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; volatile-highlights:
 ;;   Minor mode for visual feedback on some operations
@@ -63,9 +52,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package volatile-highlights
   :init
-  (volatile-highlights-mode t)
-
-  :diminish)
+  (volatile-highlights-mode t))
 
 (use-package beacon
   :custom
@@ -144,9 +131,7 @@
   :custom
   (highlight-indent-guides-auto-enabled t)
   (highlight-indent-guides-responsive   t)
-  (highlight-indent-guides-method 'character)
-
-  :diminish)
+  (highlight-indent-guides-method 'character))
 
 ;;
 ;; Display VCS diff marker
@@ -163,9 +148,7 @@
     "XX......"
     "XXX....."
     "XXXX....")
-  (global-git-gutter-mode t)
-
-  :diminish 'git-gutter-mode)
+  (global-git-gutter-mode t))
 
 ;;
 ;; Flycheck
