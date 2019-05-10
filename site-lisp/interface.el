@@ -214,16 +214,16 @@
   :bind
   ("M-o" . ace-window))
 
-;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Avy
-;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package avy
   :bind
   ("M-a" . avy-goto-line))
 
-;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; imenu-list
-;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package imenu-list
   :custom
   (imenu-list-focus-after-activation t)
@@ -236,18 +236,19 @@
   :bind
   ("C-'" . imenu-list-smart-toggle))
 
-;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Helpful: A better Emacs *help* buffer
-;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package helpful
   :bind
   ("C-c h v" . helpful-variable)
   ("C-c h k" . helpful-key)
   ("C-c h c" . helpful-command))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; FIXME: move to appropriate file
 ;; ansi-term keybindings
-;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package term
   :straight nil
   :bind
@@ -257,15 +258,26 @@
         ("M-x" . nil)   ;; recover for cousel-M-x
         ("M-o" . nil))) ;; recover for ace-window
 
-(provide 'interface)
-
-;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Iedit
-;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package iedit
   :bind
   ("C-;" . iedit-mode)
   (:map iedit-mode-keymap
         ("C-h" . delete-backward-char)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; minimap
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package minimap
+  :custom
+  (minimap-window-location 'right)
+  (minimap-update-delay    0.2)
+  (minimap-minimum-width   20)
+  :bind
+  ("C-c m" . minimap-mode))
+
+(provide 'interface)
 
 ;;; interface.el ends here
