@@ -13,12 +13,16 @@
 ;;  * 2019/02/27:
 ;;    Create zoom-dispatch.el
 ;;    - Define transient command to zoom in/out window.
+;;
+;;  * 2019/05/13:
+;;    Add resize-dispatch
 
 ;;; Code:
 
 (use-package transient
   :bind
-  ("<f9>" . zoom-dispatch)
+  ("<f9>"  . zoom-dispatch)
+  ("C-c r" . resize-dispatch)
 
   :config
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -33,7 +37,15 @@
     :transient-non-suffix 'transient--do-warn
     ["Zoom commands"
      ("g" "Zoom IN" text-scale-increase)
-     ("l" "Zoom OUT" text-scale-decrease)]))
+     ("l" "Zoom OUT" text-scale-decrease)])
+
+  (define-transient-command resize-dispatch ()
+    "Invoke a resize command from a list of available commands."
+    :transient-suffix 'transient--do-stay
+    :transient-non-suffix 'transient--do-warn
+    ["Resize commands"
+     ("{" "Shrink window horizontally" shrink-window-horizontally)
+     ("}" "Enlarge window horizontally" enlarge-window-horizontally)]))
 
 (provide 'zoom-dispatch)
 
