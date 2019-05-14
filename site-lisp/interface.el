@@ -278,6 +278,13 @@
   :bind
   ("C-c m" . minimap-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Nyanyanyanyanyanyanyanyanyan!
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package nyan-mode
+  :hook
+  ((prog-mode text-mode conf-mode) . nyan-mode))
+
 (provide 'interface)
 
 ;;; interface.el ends here
