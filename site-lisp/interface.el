@@ -100,6 +100,8 @@
   :custom
   (dashboard-banner-logo-title (concat "GNU Emacs " emacs-version))
   (dashboard-startup-banner    'logo)
+  (dashboard-set-heading-icons t)
+  (dashboard-set-file-icons    t)
   (dashboard-items             '((recents  . 5)
                                  (projects . 5)
                                  (agenda   . 5)))
