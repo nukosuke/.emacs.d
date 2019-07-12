@@ -101,6 +101,8 @@
 (bind-key "C-m" 'newline-and-indent)
 (bind-key "C-z" 'winner-undo)
 (bind-key "M-m" 'set-mark-command)
+(bind-key "M-p" 'scroll-down)
+(bind-key "M-n" 'scroll-up)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Sequential commands
