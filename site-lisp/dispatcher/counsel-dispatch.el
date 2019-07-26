@@ -43,6 +43,9 @@
     ("d" "Find directory" counsel-projectile-find-dir)
     ("p" "Switch project" counsel-projectile-switch-project)]
 
+   ["Tabs"
+    ("G" "Switch tab group" centaur-tabs-counsel-switch-group)]
+
    ["Org" ;; TODO: only from org-mode
     ("o" "Goto outline" counsel-org-goto)]])
 
