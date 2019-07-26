@@ -17,7 +17,6 @@
   skk-mode
 
   :custom
-  (skk-sticky-key  ";")
   (skk-show-inline 'vertical)
 
   ;; Usse AZIK input method

@@ -113,6 +113,24 @@
 ;; Coding UI settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(use-package centaur-tabs
+  :straight (centaur-tabs :host github
+                          :repo "ema2159/centaur-tabs")
+
+  :custom
+  (centaur-tabs-style               "bar")
+  (centaur-tabs-set-bar             'left)
+  (centaur-tabs-set-icons           t)
+  (centaur-tabs-set-modified-marker t)
+  (centaur-tabs-modified-marker     "*")
+
+  :config
+  (centaur-tabs-mode t)
+  (centaur-tabs-inherit-tabbar-faces)
+
+  :bind
+  ("C-c ," . centaur-tabs-counsel-switch-group))
+
 ;;
 ;; Display line number
 ;;
