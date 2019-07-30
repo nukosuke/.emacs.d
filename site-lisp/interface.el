@@ -117,6 +117,8 @@
   :straight (centaur-tabs :host github
                           :repo "ema2159/centaur-tabs")
 
+  :demand ;; Load immediately
+
   :custom
   (centaur-tabs-style               "bar")
   (centaur-tabs-set-bar             'left)
