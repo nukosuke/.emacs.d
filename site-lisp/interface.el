@@ -131,7 +131,9 @@
   (centaur-tabs-inherit-tabbar-faces)
 
   :bind
-  ("C-c ," . centaur-tabs-counsel-switch-group))
+  ("C-c ,"     . centaur-tabs-counsel-switch-group)
+  ("M-<left>"  . centaur-tabs-backward-tab)
+  ("M-<right>" . centaur-tabs-forward-tab))
 
 ;;
 ;; Display line number
