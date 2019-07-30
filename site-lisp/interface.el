@@ -122,7 +122,7 @@
   (centaur-tabs-set-bar             'left)
   (centaur-tabs-set-icons           t)
   (centaur-tabs-set-modified-marker t)
-  (centaur-tabs-modified-marker     (all-the-icons-faicon "circle" :v-adjust 0.05))
+  (centaur-tabs-modified-marker     "*")
 
   :config
   (centaur-tabs-mode t)
