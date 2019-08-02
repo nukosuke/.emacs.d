@@ -13,6 +13,9 @@
 ;;  * 2019/02/27:
 ;;    Create workspace.el
 ;;    - Configure workspace extensions
+;;
+;;  * 2019/08/02:
+;;    Remove eyebrowse.el
 
 ;;; Code:
 
@@ -44,19 +47,6 @@
 
   :config
   (projectile-mode 1))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; eyebrowse: A simple-minded way of managing
-;;            window configs in emacs
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package eyebrowse
-  :custom
-  (eyebrowse-new-workspace t)
-  (eyebrowse-wrap-around   t)
-
-  :config
-  (eyebrowse-mode t))
 
 (provide 'workspace)
 
