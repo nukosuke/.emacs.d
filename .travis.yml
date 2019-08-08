@@ -1,0 +1,44 @@
+sudo: false
+language: generic
+env:
+  global:
+    - CURL="curl -fsSkL --retry 9 --retry-delay 9"
+    - GHRAW="https://raw.githubusercontent.com"
+  matrix:
+    - EMACS_VERSION=26.2
+    - EMACS_VERSION=26     # 26.1.50, emacs-26 branch, built daily
+    - EMACS_VERSION=master # 27.0.50, master branch, built daily
+  allow_failures:
+    - env: EMACS_VERSION=master
+
+cache:
+  - $HOME/.emacs.d/straight/build
+  - $HOME/.emacs.d/straight/modified
+  - $HOME/.emacs.d/straight/repos
+
+install:
+  - mv $HOME/build/nukosuke/.emacs.d $HOME/.emacs.d
+  - cd $HOME/.emacs.d
+  - $CURL -O https://github.com/npostavs/emacs-travis/releases/download/bins/emacs-bin-${EMACS_VERSION}.tar.gz
+  - tar -xaf emacs-bin-${EMACS_VERSION}.tar.gz -C /
+  - export EMACS=/tmp/emacs/bin/emacs
+
+script:
+  - $EMACS --batch -l init.el --eval="(straight-pull-all)" # Fetch all packages
+  - $EMACS --batch -l init.el                              # Build packages
+  - $EMACS --version
+
+#        - git config --global user.name "Auto straight.el"
+#        - git config --global user.email nukosuke@lavabit.com
+#        - $EMACS --batch -l init.el --eval="(straight-freeze-versions)" # Fetch all packages
+#        - git checkout -b straight-`date "+%Y%m%d-%H%M%S"`
+#        - git add ./straight/versions/default.el
+#        - git commit -m "straight.el: Auto Update"
+#        - git push origin
+        # TODO: Open PR by ghq
+
+notifications:
+  email:
+    # Default is change, but that includes a new branch's 1st success.
+    on_success: never
+    on_failure: always # The default.

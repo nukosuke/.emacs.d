@@ -2,6 +2,9 @@
 #+title: nukosuke/.emacs.d
 #+author: nukosuke
 
+#+attr_html: title="Build Status"
+[[https://travis-ci.com/nukosuke/.emacs.d][https://travis-ci.com/nukosuke/.emacs.d.svg?branch=master]]
+
 + Work with GNU Emacs >= 26.1
 + Package management with [[https://github.com/raxod502/straight.el][straight.el]]
 + Grouping commands with [[https://github.com/magit/transient][transient.el]]
