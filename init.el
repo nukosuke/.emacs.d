@@ -52,6 +52,7 @@
               (completion "completion")
               (vcs        "vcs")
               (language   "language")
+              (shell      "shell")
               ;; Dispatchers
               (straight-dispatch   "dispatcher/straight-dispatch")
               (zoom-dispatch       "dispatcher/zoom-dispatch")

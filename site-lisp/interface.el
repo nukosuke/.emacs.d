@@ -28,9 +28,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Disabled modes
-(tool-bar-mode   0)
-(menu-bar-mode   0)
-(scroll-bar-mode 0)
+(if (display-graphic-p)
+    (progn
+      (scroll-bar-mode 0)
+      (tool-bar-mode   0)
+      (menu-bar-mode   0)))
 
 ;; Enabled modes
 (winner-mode         1)
@@ -272,19 +274,6 @@
   ("C-c h v" . helpful-variable)
   ("C-c h k" . helpful-key)
   ("C-c h c" . helpful-command))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; FIXME: move to appropriate file
-;; ansi-term keybindings
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package term
-  :straight nil
-  :bind
-  ("C-T" . ansi-term)   ;; new ansi-term
-  (:map term-raw-map
-        ("C-T" . nil)   ;; recover for ansi-term
-        ("M-x" . nil)   ;; recover for cousel-M-x
-        ("M-o" . nil))) ;; recover for ace-window
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Iedit
