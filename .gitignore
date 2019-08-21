@@ -80,3 +80,7 @@ forge-database.sqlite
 # Org mode documents
 /org
 /org/
+
+# YASnippet
+/snippets/**/*
+!/snippets/.keep
