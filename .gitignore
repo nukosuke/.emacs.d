@@ -82,5 +82,5 @@ forge-database.sqlite
 /org/
 
 # YASnippet
-/snippets/**/*
-!/snippets/.keep
+/snippets
+/snippets/
