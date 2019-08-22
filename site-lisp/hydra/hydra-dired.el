@@ -1,4 +1,4 @@
-;;; dired-hydra.el --- Hydra for Dired -*- lexical-binding: t -*-
+;;; hydra-dired.el --- Hydra for Dired -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -60,3 +60,7 @@ T - tag prefix
   :bind
   (:map dired-mode-map
         ("." . hydra-dired/body)))
+
+(provide 'hydra/dired)
+
+;;; hydra-dired.el ends here

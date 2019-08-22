@@ -57,4 +57,4 @@ _R_ebuild package |_P_ull package  |_V_ersions thaw  |_W_atcher quit    |prun_e_
 
 (provide 'hydra/straight)
 
-;; hydra-straight.el ends here
+;;; hydra-straight.el ends here
