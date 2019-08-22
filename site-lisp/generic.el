@@ -25,9 +25,7 @@
 (custom-set-variables
  ;; Variable                    Value
  '(current-language-environment "UTF-8")
- ;; FIXME: emacs-version includes build number from Emacs 27.0.50
- ;;   Want just only "GNU Emacs <major>.<minor>.<patch>"
- '(frame-title-format           (emacs-version))
+ '(frame-title-format           (format "GNU Emacs %s" emacs-version))
  '(indent-tabs-mode             nil)
  '(make-backup-files            nil)
  '(scroll-step                  1)
