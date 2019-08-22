@@ -128,7 +128,12 @@
   :straight (centaur-tabs :host github
                           :repo "ema2159/centaur-tabs")
 
-  :demand ;; Load immediately
+  :hook
+  ((dashboard-mode
+    term-mode
+    calendar-mode
+    org-agenda-mode
+    helpful-mode) . centaur-tabs-local-mode)
 
   :custom
   (centaur-tabs-style               "bar")
@@ -138,6 +143,7 @@
   (centaur-tabs-modified-marker     "*")
 
   :config
+  (centaur-tabs-headline-match)
   (centaur-tabs-mode t)
 
   :bind
