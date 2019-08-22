@@ -17,6 +17,11 @@
 ;;  * 2019/07/29:
 ;;    Add tab UI
 ;;    - Configure centaur-tabs
+;;
+;;  * 2019/08/22:
+;;    Fix void function error caused by
+;;    https://github.com/ema2159/centaur-tabs/commit/de3738c14b8e73e135c16e26ca405f18459fbb20
+;;    - Remove centaur-tabs-inherit-tabbar-faces
 
 ;;; Code:
 
@@ -134,7 +139,6 @@
 
   :config
   (centaur-tabs-mode t)
-  (centaur-tabs-inherit-tabbar-faces)
 
   :bind
   ("C-c ,"     . centaur-tabs-counsel-switch-group)
