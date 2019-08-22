@@ -38,6 +38,10 @@
         (append '((ns-transparent-titlebar . t)
                   (ns-appearance           . dark))))) ;; supported in 26.1 (light or dark)))
 
+;; Deafult local variable
+(setq-default indicate-empty-lines       'left
+              indicate-buffer-boundaries 'right)
+
 ;; Disabled modes
 (if (display-graphic-p)
     (progn
