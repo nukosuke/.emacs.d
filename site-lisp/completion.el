@@ -111,6 +111,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package smartparens
+  :config
+  (require 'smartparens-config)
+
   ;; Enable after open file.
   :hook ((text-mode . smartparens-mode)
          (prog-mode . smartparens-mode)
