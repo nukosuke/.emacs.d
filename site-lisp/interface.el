@@ -32,6 +32,12 @@
 ;; General UI settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Initial ALIST
+(when (memq window-system '(mac ns))
+  (setq default-frame-alist
+        (append '((ns-transparent-titlebar . t)
+                  (ns-appearance           . dark))))) ;; supported in 26.1 (light or dark)))
+
 ;; Disabled modes
 (if (display-graphic-p)
     (progn
