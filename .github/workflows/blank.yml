@@ -16,8 +16,10 @@ jobs:
         tar -xaf emacs-bin-${{ matrix.emacs_version }}.tar.gz -C /
         export EMACS=/tmp/emacs/bin/emacs
     - uses: actions/checkout@v1
-    - name: current dir
-      run: pwd
+    - name: Install .emacs.d
+      run: |
+        mv /home/runner/work/.emacs.d/.emacs.d ~/.emacs.d
+        cd ~/.emacs.d
     - name: Pull Elisp packages
       run: $EMACS --batch -l init.el --eval="(straight-pull-all)"
     - name: Build Elisp packages
