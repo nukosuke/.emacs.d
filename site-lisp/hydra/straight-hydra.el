@@ -1,3 +1,24 @@
+;;; hydra-straight.el --- Hydra for straight.el -*- lexical-binding: t; -*-
+;;
+;; Copyright (c) 2019- nukosuke.
+;;
+;; Author:  nukosuke <nukosuke@lavabit.com>
+;; URL:     https://github.com/nukosuke/.emacs.d
+;; License: GPLv3+
+;;
+;;; Commentary:
+;;
+;;  These files are NOT part of GNU Emacs.
+;;
+;;  * 2019/02/27:
+;;    Create straight-dispatch.el
+;;    - Define transient commands for straight.el
+;;
+;;  * 2019/08/22:
+;;    Migrate from transient.el to hydra
+
+;;; Code:
+
 (use-package lv)
 (use-package hydra
   :after lv
@@ -33,3 +54,7 @@ _R_ebuild package |_P_ull package  |_V_ersions thaw  |_W_atcher quit    |prun_e_
 
   :bind
   ("C-c p" . hydra-straight/body))
+
+(provide 'hydra/straight)
+
+;; hydra-straight.el ends here
