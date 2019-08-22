@@ -125,6 +125,9 @@
 
 ;; TODO: keybind
 (use-package yasnippet
+  ;; Load path of snippets/ dir before YASnippet itself
+  :after yasnippet-snippets
+
   :custom
   (yas-snippet-dirs
    '("~/.emacs.d/snippets"
