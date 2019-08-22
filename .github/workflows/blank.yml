@@ -13,7 +13,7 @@ jobs:
     - name: Install GNU Emacs ${{ matrix.emacs_version }}
       run: |
         curl -fsSkL --retry 9 --retry-delay 9 -O https://github.com/npostavs/emacs-travis/releases/download/bins/emacs-bin-${{ matrix.emacs_version }}.tar.gz
-        tar -xaf emacs-bin-${EMACS_VERSION}.tar.gz -C /
+        tar -xaf emacs-bin-${{ matrix.emacs_version }}.tar.gz -C /
         export EMACS=/tmp/emacs/bin/emacs
     - uses: actions/checkout@v1
     - name: current dir
