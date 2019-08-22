@@ -53,8 +53,13 @@
               (vcs        "vcs")
               (language   "language")
               (shell      "shell")
+
+              ;; Hydra
+              (hydra/dired     "hydra/hydra-dired")
+              (hydra/yasnippet "hydra/hydra-yasnippet")
+              (hydra/straight  "hydra/hydra-straight")
+
               ;; Dispatchers
-              (straight-dispatch   "dispatcher/straight-dispatch")
               (zoom-dispatch       "dispatcher/zoom-dispatch")
               (avy-dispatch        "dispatcher/avy-dispatch")
               (counsel-dispatch    "dispatcher/counsel-dispatch")
