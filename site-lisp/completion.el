@@ -123,8 +123,11 @@
 ;; YASnippet: A template system for Emacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; TODO: keybind
+;; TODO: create transient command and bind key
 (use-package yasnippet
+  ;; Load path of snippets/ dir before YASnippet itself
+  :after yasnippet-snippets
+
   :custom
   (yas-snippet-dirs
    '("~/.emacs.d/snippets"
