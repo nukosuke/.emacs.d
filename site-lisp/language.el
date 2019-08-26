@@ -39,8 +39,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package ruby-mode
+  :straight nil ;; Use built-in
   :mode
-  ("\\.rb\\'" . ruby-mode))
+  ("\\.rb\\'" . ruby-mode)
+
+  :custom
+  (ruby-insert-encoding-magic-comment nil))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for Erlang
