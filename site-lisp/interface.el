@@ -233,16 +233,27 @@
 ;;
 ;;  :hook
 ;;  (flycheck-mode . flycheck-posframe-mode))
+;;
+;; Or this is alternative
+;;
+;; (use-package flycheck-pos-tip
+;;  :after
+;;  flycheck
+;;
+;;  :hook
+;;  (flycheck-mode . flycheck-pos-tip-mode)
+;;
+;;  :custom
+;;  (flycheck-pos-tip-timeout 30))
 
 ;;
 ;; Display flycheck message to tip
 ;;
-(use-package flycheck-pos-tip
-  :after
-  flycheck
 
+(use-package flycheck-inline
+  :after flycheck
   :hook
-  (flycheck-mode . flycheck-pos-tip-mode))
+  (flycheck-mode . flycheck-inline-mode))
 
 ;;
 ;; Hide unnecessary mode line
