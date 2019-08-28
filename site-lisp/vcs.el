@@ -32,6 +32,13 @@
         ("C-c C-c" . magit-dispatch)
         ("C-c c"   . org-ctrl-c-ctrl-c)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; github-review: GitHub code reviews with Emacs
+;;                https://github.com/charignon/github-review
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package github-review)
+
 (provide 'vcs)
 
 ;;; vcs.el ends here
