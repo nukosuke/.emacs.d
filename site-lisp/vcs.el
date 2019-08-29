@@ -32,6 +32,8 @@
         ("C-c C-c" . magit-dispatch)
         ("C-c c"   . org-ctrl-c-ctrl-c)))
 
+(use-package forge)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; github-review: GitHub code reviews with Emacs
 ;;                https://github.com/charignon/github-review
