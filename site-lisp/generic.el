@@ -39,7 +39,8 @@
  ;; Because it cannot be overwritten by use-package (Bug or design).
  '(org-agenda-files             '("~/.emacs.d/org/"))
  '(org-return-follows-link      t)
- '(org-use-speed-commands       t))
+ '(org-use-speed-commands       t)
+ '(viper-mode                   nil))
 
 ;;
 ;; Font settings
