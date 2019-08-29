@@ -38,7 +38,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package forge
-  :after magit)
+  :after magit
+
+  :custom
+  (ghub-use-workaround-for-emacs-bug 'force))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; github-review: GitHub code reviews with Emacs
