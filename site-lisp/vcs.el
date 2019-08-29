@@ -37,7 +37,8 @@
 ;;        https://github.com/magit/forge
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package forge)
+(use-package forge
+  :after magit)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; github-review: GitHub code reviews with Emacs
