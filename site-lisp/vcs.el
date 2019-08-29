@@ -32,6 +32,11 @@
         ("C-c C-c" . magit-dispatch)
         ("C-c c"   . org-ctrl-c-ctrl-c)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Forge: Work with Git forges from the comfort of Magit
+;;        https://github.com/magit/forge
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package forge)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
