@@ -10,9 +10,20 @@
 + Grouping commands with [[https://github.com/magit/transient][transient.el]]
 
 ** Installation
+
    #+begin_src console
    git clone git@github.com:nukosuke/.emacs.d.git ~/.emacs.d
    #+end_src
+
+*** emacs-version >= 27.0.50
+
+    Emacs 27 supports XDG compatible new convention
+    for the config location.
+
+    #+begin_src console
+    mkdir ~/.config # if not exists
+    git clone git@github.com:nukosuke/.emacs.d.git ~/.config/emacs
+    #+end_src
 
 ** Dispatchers
    ~/site-lisp/dispatcher/~ holds [[https://github.com/magit/transient#transient-commands][transient commands]] like ~magit-dispatch~.
