@@ -30,14 +30,15 @@
 
    Dispatcher list including NOT original commands.
 
-   | Dispatcher            | Description                                                                               |
-   |-----------------------+-------------------------------------------------------------------------------------------|
-   | [[./site-lisp/dispatcher/straight-dispatch.el][straight-dispatch]]     | Commands for package management with straight.el.                                         |
-   | [[./site-lisp/dispatcher/counsel-dispatch.el][counsel-dispatch]]      | Commands for [[https://github.com/abo-abo/swiper#counsel][Counsel]] and its extensions.                                                  |
-   | [[./site-lisp/dispatcher/zoom-dispatch.el][zoom-dispatch]]         | Commands to zoom in/out window.                                                           |
-   | [[./site-lisp/dispatcher/avy-dispatch.el][avy-dispatch]]          | Commands for [[https://github.com/abo-abo/avy][Avy]].                                                                         |
-   | ~magit-dispatch~      | NOT defined here. It's magit built-in command. See the [[https://magit.vc/manual/magit/Transient-Commands.html#Transient-Commands][magit document]] for details.        |
-   | ~org-export-dispatch~ | NOT defined here. It's Org built-in command. NOT transient command, but similar behavior. |
+   | Dispatcher            | Bind      | Description                                                                               |
+   |-----------------------+-----------+-------------------------------------------------------------------------------------------|
+   | [[./site-lisp/dispatcher/straight-dispatch.el][straight-dispatch]]     | ~C-c p~   | Commands for package management with straight.el.                                         |
+   | [[./site-lisp/dispatcher/counsel-dispatch.el][counsel-dispatch]]      | ~C-c l~   | Commands for [[https://github.com/abo-abo/swiper#counsel][Counsel]] and its extensions.                                                  |
+   | [[./site-lisp/dispatcher/zoom-dispatch.el][zoom-dispatch]]         | ~[F9]~    | Commands to zoom in/out window.                                                           |
+   | [[./site-lisp/dispatcher/zoom-dispatch.el][resize-dispatch]]       | ~C-c r~   | Commands to resize window.                                                                |
+   | [[./site-lisp/dispatcher/avy-dispatch.el][avy-dispatch]]          | ~C-c a~   | Commands for [[https://github.com/abo-abo/avy][Avy]].                                                                         |
+   | ~magit-dispatch~      | ~C-c C-c~ | NOT defined here. It's magit built-in command. See the [[https://magit.vc/manual/magit/Transient-Commands.html#Transient-Commands][magit document]] for details.        |
+   | ~org-export-dispatch~ | ~C-c C-e~ | NOT defined here. It's Org built-in command. NOT transient command, but similar behavior. |
 
 ** Copying
    Copyright (c) 2019- [[https://github.com/nukosuke][nukosuke]].
