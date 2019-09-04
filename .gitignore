@@ -51,6 +51,7 @@ flycheck_*.el
 
 # projectiles files
 .projectile
+projectile.cache
 projectile-bookmarks.eld
 bookmarks
 
