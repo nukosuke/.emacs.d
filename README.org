@@ -10,14 +10,35 @@
 + Grouping commands with [[https://github.com/magit/transient][transient.el]]
 
 ** Installation
+
    #+begin_src console
    git clone git@github.com:nukosuke/.emacs.d.git ~/.emacs.d
    #+end_src
 
+*** emacs-version >= 27.0.50
+
+    Emacs 27 supports XDG compatible new convention
+    for the config location.
+
+    #+begin_src console
+    mkdir ~/.config # if not exists
+    git clone git@github.com:nukosuke/.emacs.d.git ~/.config/emacs
+    #+end_src
+
 ** Dispatchers
    ~/site-lisp/dispatcher/~ holds [[https://github.com/magit/transient#transient-commands][transient commands]] like ~magit-dispatch~.
 
-   Command list is [[./site-lisp/dispatcher/README.org][here]].
+   Dispatcher list including NOT original commands.
+
+   | Dispatcher            | Bind      | Description                                                                               |
+   |-----------------------+-----------+-------------------------------------------------------------------------------------------|
+   | [[./site-lisp/dispatcher/straight-dispatch.el][straight-dispatch]]     | ~C-c p~   | Commands for package management with straight.el.                                         |
+   | [[./site-lisp/dispatcher/counsel-dispatch.el][counsel-dispatch]]      | ~C-c l~   | Commands for [[https://github.com/abo-abo/swiper#counsel][Counsel]] and its extensions.                                                  |
+   | [[./site-lisp/dispatcher/zoom-dispatch.el][zoom-dispatch]]         | ~[F9]~    | Commands to zoom in/out window.                                                           |
+   | [[./site-lisp/dispatcher/zoom-dispatch.el][resize-dispatch]]       | ~C-c r~   | Commands to resize window.                                                                |
+   | [[./site-lisp/dispatcher/avy-dispatch.el][avy-dispatch]]          | ~C-c a~   | Commands for [[https://github.com/abo-abo/avy][Avy]].                                                                         |
+   | ~magit-dispatch~      | ~C-c C-c~ | NOT defined here. It's magit built-in command. See the [[https://magit.vc/manual/magit/Transient-Commands.html#Transient-Commands][magit document]] for details.        |
+   | ~org-export-dispatch~ | ~C-c C-e~ | NOT defined here. It's Org built-in command. NOT transient command, but similar behavior. |
 
 ** Copying
    Copyright (c) 2019- [[https://github.com/nukosuke][nukosuke]].
