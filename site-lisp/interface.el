@@ -44,7 +44,7 @@
 
 ;; Deafult local variable
 (setq-default indicate-empty-lines       'left
-              indicate-buffer-boundaries 'right)
+              indicate-buffer-boundaries 'left)
 
 ;; Disabled modes
 (if (display-graphic-p)
