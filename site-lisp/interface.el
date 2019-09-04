@@ -22,6 +22,10 @@
 ;;    Fix void function error caused by
 ;;    https://github.com/ema2159/centaur-tabs/commit/de3738c14b8e73e135c16e26ca405f18459fbb20
 ;;    - Remove centaur-tabs-inherit-tabbar-faces
+;;
+;;  * 2019/09/04:
+;;    - Add term-mode config
+;;    - Add docker.el
 
 ;;; Code:
 
@@ -71,6 +75,7 @@
 ;;   A light that follows your cursor around
 ;;   so you don't lose it!
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package volatile-highlights
   :init
   (volatile-highlights-mode t))
@@ -164,6 +169,7 @@
 ;;
 ;; Display line number
 ;;
+
 (cl-dolist (hook (list
                   'prog-mode-hook
                   'text-mode-hook
@@ -174,6 +180,7 @@
 ;;
 ;; Display indent
 ;;
+
 (use-package highlight-indent-guides
   :hook
   ((prog-mode yaml-mode) . highlight-indent-guides-mode)
@@ -186,6 +193,7 @@
 ;;
 ;; Display VCS diff marker
 ;;
+
 (use-package git-gutter-fringe
   :config
   ;; Custom fringe bitmaps
@@ -203,6 +211,7 @@
 ;;
 ;; Flycheck
 ;; FIXME: move to appropriate file.
+
 (use-package flycheck
   :hook
   (prog-mode . flycheck-mode)
@@ -258,6 +267,7 @@
 ;;
 ;; Hide unnecessary mode line
 ;;
+
 (use-package hide-mode-line
   :hook
   (neotree-mode . hide-mode-line-mode))
@@ -265,6 +275,7 @@
 ;;
 ;; Switching window with jump
 ;;
+
 (use-package ace-window
   :custom
   (aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
@@ -278,6 +289,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Avy
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package avy
   :bind
   ("M-a" . avy-goto-line))
@@ -285,6 +297,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; imenu-list
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package imenu-list
   :custom
   (imenu-list-focus-after-activation t)
@@ -300,6 +313,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Helpful: A better Emacs *help* buffer
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package helpful
   :bind
   ("C-c h v" . helpful-variable)
@@ -309,6 +323,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Iedit
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package iedit
   :bind
   ("C-;" . iedit-mode)
@@ -318,6 +333,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; minimap
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package minimap
   :custom
   (minimap-window-location 'right)
@@ -327,8 +343,30 @@
   ("C-c m" . minimap-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ansi-term keybindings
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package term
+  :straight nil
+  :bind
+  ("C-c t" . ansi-term)   ;; new ansi-term
+  (:map term-raw-map
+        ("C-c t" . nil)   ;; recover for ansi-term
+        ("M-x"   . nil)   ;; recover for cousel-M-x
+        ("M-o"   . nil))) ;; recover for ace-window
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Emacs integration for Docker
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package docker
+  :bind
+  ("C-c d" . docker))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Nyanyanyanyanyanyanyanyanyan!
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package nyan-mode
   :hook
   ((prog-mode text-mode conf-mode) . nyan-mode))
