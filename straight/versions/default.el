@@ -29,6 +29,7 @@
  ("emacs-hide-mode-line" . "88888825b5b27b300683e662fa3be88d954b1cea")
  ("emacs-memoize" . "8c1e5569550e783dd7814735e22c935416c4462d")
  ("emacs-neotree" . "5e1271655170f4cdc6849258e383c548a4e6e3d0")
+ ("emacs-scala-mode" . "44772cbf1e1ade52bc5066555ff0aed68569aaec")
  ("emacs-terraform-mode" . "6973d1acaba2835dfdf174f5a5e27de6366002e1")
  ("emacsmirror-mirror" . "c31546f458bc9ab59f964bfc83615ca06196fc60")
  ("emacsql" . "a118b6c95af1306f0288a383d274b5dd93efbbda")
