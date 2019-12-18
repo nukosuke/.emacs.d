@@ -26,6 +26,9 @@
 ;;  * 2019/09/04:
 ;;    - Add term-mode config
 ;;    - Add docker.el
+;;
+;;  * 2019/12/18:
+;;    Customize eshell prompt
 
 ;;; Code:
 
