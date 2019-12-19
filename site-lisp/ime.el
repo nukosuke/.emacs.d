@@ -30,16 +30,20 @@
 
   :init
   ;; SKK faces should be set before load for customizing
-  (defface skk-emacs-hiragana-face nil nil)
-  (set-face-attribute 'skk-emacs-hiragana-face nil
-                      :background "#bd93f9"
-                      :foreground "black"
-                      :bold t)
-  (defface skk-emacs-katakana-face nil nil)
-  (set-face-attribute 'skk-emacs-katakana-face nil
-                      :background "#bd93f9"
-                      :foreground "black"
-                      :bold t)
+  (defface skk-emacs-hiragana-face
+    '((t (:inherit (highlight bold)))) nil)
+
+  (defface skk-emacs-katakana-face
+    '((t (:inherit (highlight bold)))) nil)
+
+  (defface skk-emacs-jisx0208-latin-face
+    '((t (:inherit (highlight bold)))) nil)
+
+  (defface skk-emacs-jisx0201-face
+    '((t (:inherit (highlight bold)))) nil)
+
+  (defface skk-emacs-abbrev-face
+    '((t (:inherit (highlight bold)))) nil)
 
   :bind
   ("C-c j" . skk-mode))

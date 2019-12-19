@@ -79,7 +79,7 @@ bookmarks
 /site-lisp/mailer.el
 
 # forge database
-forge-database.sqlite
+forge-database.sqlite*
 
 # Org mode documents
 /org
