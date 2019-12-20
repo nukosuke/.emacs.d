@@ -181,6 +181,13 @@
                    (display-line-numbers-mode))))
 
 ;;
+;; Display fill column indicator
+;;
+(when (version<= "27.0.50" emacs-version)
+  (add-hook 'text-mode-hook (lambda ()
+                              (display-fill-column-indicator-mode))))
+
+;;
 ;; Display indent
 ;;
 
