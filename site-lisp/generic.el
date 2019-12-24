@@ -102,6 +102,7 @@
 (bind-key "M-m" 'set-mark-command)
 (bind-key "M-p" 'scroll-down)
 (bind-key "M-n" 'scroll-up)
+(bind-key [remap list-buffers] 'buffer-menu-other-window)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Sequential commands
