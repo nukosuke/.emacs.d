@@ -438,17 +438,17 @@
   (esh-section esh-dir
                (all-the-icons-faicon "folder") ; faicon folder icon: "\xf07c"
                (abbreviate-file-name (eshell/pwd))
-               '(:foreground "gold" :bold ultra-bold :underline t))
+               `(:foreground ,(doom-color 'yellow) :bold ultra-bold :underline t))
 
   (esh-section esh-git
                (all-the-icons-alltheicon "git") ; git icon: "\xe907"
                (magit-get-current-branch)
-               '(:foreground "pink"))
+               `(:foreground ,(doom-color 'magenta)))
 
   (esh-section esh-clock
                (all-the-icons-faicon "clock-o") ; clock icon: "\xf017"
                (format-time-string "%H:%M" (current-time))
-               '(:foreground "forest green"))
+               `(:foreground ,(doom-color 'green)))
 
   ;; Below I implement a "prompt number" section
   (setq esh-prompt-num 0)
@@ -459,7 +459,7 @@
   (esh-section esh-num
                (all-the-icons-faicon "list") ; list icon: "\xf0c9"
                (number-to-string esh-prompt-num)
-               '(:foreground "brown"))
+               `(:foreground ,(doom-color 'orange)))
 
   ;; Choose which eshell-funcs to enable
   (setq eshell-funcs (list esh-dir esh-git esh-clock esh-num))
