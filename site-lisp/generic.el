@@ -102,7 +102,13 @@
 (bind-key "M-m" 'set-mark-command)
 (bind-key "M-p" 'scroll-down)
 (bind-key "M-n" 'scroll-up)
-(bind-key [remap list-buffers] 'buffer-menu-other-window)
+
+;; Use ibuffer to manage buffers and turn off confirmation for
+;; destructive operation.
+(use-package ibuffer
+  :straight nil
+  :custom (ibuffer-expert t)
+  :bind ("C-x C-b" . ibuffer))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Sequential commands
