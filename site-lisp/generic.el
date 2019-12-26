@@ -103,6 +103,13 @@
 (bind-key "M-p" 'scroll-down)
 (bind-key "M-n" 'scroll-up)
 
+;; Use ibuffer to manage buffers and turn off confirmation for
+;; destructive operation.
+(use-package ibuffer
+  :straight nil
+  :custom (ibuffer-expert t)
+  :bind ("C-x C-b" . ibuffer))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Sequential commands
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
