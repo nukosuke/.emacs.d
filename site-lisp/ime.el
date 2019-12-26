@@ -12,12 +12,7 @@
 
 ;;; Code:
 
-(use-package skk
-  :straight nil
-
-  :load-path
-  "vendor/sskk"
-
+(use-package ddskk
   :commands
   skk-mode
 
@@ -34,9 +29,6 @@
   (skk-cursor-katakana-color "#ff79c6")
 
   :init
-  (require 'skk-autoloads)
-
-  :config
   ;; SKK faces should be set before load for customizing
   (defface skk-emacs-hiragana-face
     '((t (:inherit (highlight bold)))) nil)
