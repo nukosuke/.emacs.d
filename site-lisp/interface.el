@@ -123,9 +123,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package dashboard
-  :init
-  (require 'seq)
-
   :custom
   (dashboard-banner-logo-title (concat "GNU Emacs " emacs-version))
   (dashboard-startup-banner    'logo)
