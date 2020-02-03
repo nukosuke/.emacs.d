@@ -91,3 +91,10 @@ forge-database.sqlite*
 
 # meghanada-mode
 /meghanada
+
+# macOS
+.DS_Store
+
+# vendoring
+/vendor
+
