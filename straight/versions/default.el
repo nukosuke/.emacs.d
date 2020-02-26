@@ -10,7 +10,7 @@
  ("company-quickhelp" . "479676cade80a9f03802ca3d956591820ed5c537")
  ("counsel-projectile" . "b556ed8995f375e57496f3482aef4b0def565de8")
  ("dash.el" . "721436b04da4e2795387cb48a98ac6de37ece0fd")
- ("ddskk" . "a96ee4aa28b8b200f62209ed4c8b119884bec1a0")
+ ("ddskk" . "e7e2ea27f5ba7bf47bcd8de26b316140c59642d2")
  ("docker-tramp.el" . "8e2b671eff7a81af43b76d9dfcf94ddaa8333a23")
  ("docker.el" . "a2092b3b170214587127b6c05f386504cae6981b")
  ("dockerfile-mode" . "d31f7685ebc5832d957e25070a930aa42984327d")
