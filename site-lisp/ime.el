@@ -13,8 +13,6 @@
 ;;; Code:
 
 (use-package ddskk
-  :straight (:host github :repo "nukosuke/ddskk" :branch "workaround")
-
   :commands
   skk-mode
 
