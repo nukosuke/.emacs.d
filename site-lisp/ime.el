@@ -17,6 +17,7 @@
   skk-mode
 
   :custom
+  (skk-jisyo-code 'utf-8)
   (skk-show-inline 'vertical)
 
   ;; Usse AZIK input method
