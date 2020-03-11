@@ -1,5 +1,6 @@
 (("ace-window" . "b93380cdf3ee3079ec0d048be8c4feeda2997e1d")
  ("alchemist.el" . "6f99367511ae209f8fe2c990779764bbb4ccb6ed")
+ ("all-the-icons-ivy-rich" . "3e02da9a166df7ebea25aae476efd7b8d74d63e0")
  ("all-the-icons.el" . "1416f37984486a44c6c0cbe0a2c985e82f965b6b")
  ("avy" . "cf95ba9582121a1c2249e3c5efdc51acd566d190")
  ("beacon" . "bde78180c678b233c94321394f46a81dc6dce1da")
