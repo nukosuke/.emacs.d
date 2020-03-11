@@ -399,6 +399,16 @@
   ;; Separator between an esh-section icon and form
   (esh-section-delim " ")
 
+  (eshell-banner-message (concat "Welcome to the\n"
+                                 "           _          _ _ \n"
+                                 "          | |        | | |\n"
+                                 "  ___  ___| |__   ___| | |\n"
+                                 " / _ \\/ __| '_ \\ / _ \\ | |\n"
+                                 "|  __/\\__ \\ | | |  __/ | |\n"
+                                 " \\___||___/_| |_|\\___|_|_|\n"
+                                 "                          \n"
+                                 "                          "))
+
   :config
   (require 'dash)
   (require 's)
