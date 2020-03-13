@@ -105,8 +105,14 @@
   :hook
   (company-mode . company-quickhelp-mode))
 
-;; TODO: company-box
-;;       But, now posframe has problem.
+;; NOTE: macOS has fullscreen problem with childframe
+;;       until the commit bellow would be merged.
+;;       https://emba.gnu.org/emacs/emacs/-/commit/bbc48b263485c26c6823eabdbbd7e9af62178e34
+;;
+;; NOTE: company-box is alternative, but it seems abandoned project
+(use-package company-posframe
+  :after company
+  :hook (company-mode . company-posframe-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smartparens: Minor mode for Emacs that deals with
