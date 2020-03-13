@@ -34,8 +34,21 @@
   (enable-recursive-minibuffers t)
   (ivy-height                   20))
 
+;; (use-package ivy-posframe
+;;   :requires ivy-posframe-mode
+;;   :init
+;;   (setq ivy-posframe-display-functions-alist
+;;       '((swiper          . ivy-posframe-display-at-point)
+;;         (complete-symbol . ivy-posframe-display-at-point)
+;;         (counsel-M-x     . ivy-posframe-display-at-window-bottom-left)
+;;         (t               . ivy-posframe-display))))
+
 (use-package ivy-rich
   :after counsel)
+
+(use-package all-the-icons-ivy-rich
+  :after ivy-rich
+  :init (all-the-icons-ivy-rich-mode 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Counsel: a collection of Ivy-enhanced versions
@@ -101,8 +114,14 @@
   :hook
   (company-mode . company-quickhelp-mode))
 
-;; TODO: company-box
-;;       But, now posframe has problem.
+;; NOTE: macOS has fullscreen problem with childframe
+;;       until the commit bellow would be merged.
+;;       https://emba.gnu.org/emacs/emacs/-/commit/bbc48b263485c26c6823eabdbbd7e9af62178e34
+;;
+;; NOTE: company-box is alternative, but it seems abandoned project
+(use-package company-posframe
+  :after company
+  :hook (company-mode . company-posframe-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smartparens: Minor mode for Emacs that deals with

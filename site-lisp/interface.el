@@ -243,13 +243,11 @@
 ;;
 ;; NOTE: flycheck-posframe is buggy on macOS when fullscreen toggle.
 ;;       It creates another blackout workspace and draw frame to it.
-;; (use-package flycheck-posframe
-;;  :after
-;;  flycheck
-;;
-;;  :hook
-;;  (flycheck-mode . flycheck-posframe-mode))
-;;
+(use-package flycheck-posframe
+  :after flycheck
+  :hook
+  (flycheck-mode . flycheck-posframe-mode))
+
 ;; Or this is alternative
 ;;
 ;; (use-package flycheck-pos-tip
@@ -261,15 +259,6 @@
 ;;
 ;;  :custom
 ;;  (flycheck-pos-tip-timeout 30))
-
-;;
-;; Display flycheck message to tip
-;;
-
-(use-package flycheck-inline
-  :after flycheck
-  :hook
-  (flycheck-mode . flycheck-inline-mode))
 
 ;;
 ;; Hide unnecessary mode line
@@ -398,6 +387,16 @@
   (esh-sep " | ")
   ;; Separator between an esh-section icon and form
   (esh-section-delim " ")
+
+  (eshell-banner-message (concat "Welcome to the\n"
+                                 "           _          _ _ \n"
+                                 "          | |        | | |\n"
+                                 "  ___  ___| |__   ___| | |\n"
+                                 " / _ \\/ __| '_ \\ / _ \\ | |\n"
+                                 "|  __/\\__ \\ | | |  __/ | |\n"
+                                 " \\___||___/_| |_|\\___|_|_|\n"
+                                 "                          \n"
+                                 "                          "))
 
   :config
   (require 'dash)
