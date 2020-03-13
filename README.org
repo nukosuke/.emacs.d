@@ -2,10 +2,7 @@
 #+title: nukosuke/.emacs.d
 #+author: nukosuke
 
-[[https://travis-ci.com/nukosuke/.emacs.d][https://travis-ci.com/nukosuke/.emacs.d.svg?branch=master]]
-[[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPLv3-blue.svg]]
-
-+ Work with GNU Emacs >= 26.1
++ Work with GNU Emacs >= 26.3
 + Package management with [[https://github.com/raxod502/straight.el][straight.el]]
 + Grouping commands with [[https://github.com/magit/transient][transient.el]]
 
