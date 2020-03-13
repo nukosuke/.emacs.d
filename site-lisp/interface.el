@@ -266,9 +266,7 @@
 
 (use-package hide-mode-line
   :hook
-  (neotree-mode . hide-mode-line-mode)
-  ;; TODO: Remove after docker.el move to transient.el
-  (magit-popup-mode . hide-mode-line-mode))
+  (neotree-mode . hide-mode-line-mode))
 
 ;;
 ;; Switching window with jump
