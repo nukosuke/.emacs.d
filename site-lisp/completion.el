@@ -149,8 +149,8 @@
 
   :custom
   (yas-snippet-dirs
-   '("~/.emacs.d/snippets"
-     "~/.emacs.d/straight/repos/yasnippet-snippets/snippets"))
+   `(,(concat user-emacs-directory "snippets")
+     ,(concat user-emacs-directory "straight/repos/yasnippet-snippets/snippets")))
 
   :config
   (yas-global-mode 1))
