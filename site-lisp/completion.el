@@ -34,6 +34,15 @@
   (enable-recursive-minibuffers t)
   (ivy-height                   20))
 
+;; (use-package ivy-posframe
+;;   :requires ivy-posframe-mode
+;;   :init
+;;   (setq ivy-posframe-display-functions-alist
+;;       '((swiper          . ivy-posframe-display-at-point)
+;;         (complete-symbol . ivy-posframe-display-at-point)
+;;         (counsel-M-x     . ivy-posframe-display-at-window-bottom-left)
+;;         (t               . ivy-posframe-display))))
+
 (use-package ivy-rich
   :after counsel)
 
