@@ -145,6 +145,8 @@
 
   :hook
   ((dashboard-mode
+    eshell-mode
+    ;;imenu-list-minor-mode
     term-mode
     calendar-mode
     org-agenda-mode
@@ -266,9 +268,7 @@
 
 (use-package hide-mode-line
   :hook
-  (neotree-mode . hide-mode-line-mode)
-  ;; TODO: Remove after docker.el move to transient.el
-  (magit-popup-mode . hide-mode-line-mode))
+  (neotree-mode . hide-mode-line-mode))
 
 ;;
 ;; Switching window with jump

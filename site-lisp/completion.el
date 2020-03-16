@@ -85,6 +85,7 @@
 (use-package company
   :custom
   (company-selection-wrap-around t)
+  (company-minimum-prefix-length 2)
 
   :hook
   ((text-mode . company-mode)
@@ -149,8 +150,8 @@
 
   :custom
   (yas-snippet-dirs
-   '("~/.emacs.d/snippets"
-     "~/.emacs.d/straight/repos/yasnippet-snippets/snippets"))
+   `(,(concat user-emacs-directory "snippets")
+     ,(concat user-emacs-directory "straight/repos/yasnippet-snippets/snippets")))
 
   :config
   (yas-global-mode 1))
