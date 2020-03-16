@@ -85,6 +85,7 @@
 (use-package company
   :custom
   (company-selection-wrap-around t)
+  (company-minimum-prefix-length 2)
 
   :hook
   ((text-mode . company-mode)
