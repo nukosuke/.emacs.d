@@ -145,6 +145,8 @@
 
   :hook
   ((dashboard-mode
+    eshell-mode
+    ;;imenu-list-minor-mode
     term-mode
     calendar-mode
     org-agenda-mode
