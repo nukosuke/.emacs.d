@@ -146,7 +146,7 @@
   :hook
   ((dashboard-mode
     eshell-mode
-    ;;imenu-list-minor-mode
+    imenu-list-major-mode
     term-mode
     calendar-mode
     org-agenda-mode
