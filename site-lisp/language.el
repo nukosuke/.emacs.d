@@ -200,6 +200,12 @@
   ("\\.md\\'"       . gfm-mode)
   ("\\.markdown\\'" . gfm-mode))
 
+;;
+;; Graphviz DOT DSL
+;;
+(use-package graphviz-dot-mode
+  :mode "\\.dot\\'")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Extension for Org
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
