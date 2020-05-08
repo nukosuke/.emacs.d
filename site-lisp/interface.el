@@ -146,7 +146,7 @@
   :hook
   ((dashboard-mode
     eshell-mode
-    ;;imenu-list-minor-mode
+    imenu-list-major-mode
     term-mode
     calendar-mode
     org-agenda-mode
@@ -304,6 +304,10 @@
   ;; Don't use hide-mode-line-mode
   ;; It hide major mode mode-line after toggle
   (imenu-list-mode-line-format nil)
+
+  ;; Close Ilist frame after jump
+  :hook
+  (imenu-list-after-jump . imenu-list-smart-toggle)
 
   :bind
   ("C-'" . imenu-list-smart-toggle))

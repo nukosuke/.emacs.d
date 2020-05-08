@@ -97,8 +97,10 @@
 
 (use-package web-mode
   :mode
-  ("\\.html?\\'" . web-mode)
-  ("\\.erb\\'"   . web-mode)
+  "\\.html?\\'"
+  "\\.erb\\'"
+  "\\.eex\\'"
+
   :custom
   (web-mode-markup-indent-offset 2)
   (web-mode-css-indent-offset    2))
@@ -197,6 +199,12 @@
   ;; Use GitHub Flavored Markdown instead of Common Markdown
   ("\\.md\\'"       . gfm-mode)
   ("\\.markdown\\'" . gfm-mode))
+
+;;
+;; Graphviz DOT DSL
+;;
+(use-package graphviz-dot-mode
+  :mode "\\.dot\\'")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Extension for Org
