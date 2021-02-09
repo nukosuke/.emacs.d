@@ -31,6 +31,7 @@
  '(scroll-step                  1)
  '(tab-width                    2)
  '(x-select-enable-clipboard    t)
+ '(ring-bell-function           'ignore)
  ;; For auto refresh branch name of modeline.
  ;; Don't set this in particular package :custom section because
  ;; branch can be changed at many situations.
