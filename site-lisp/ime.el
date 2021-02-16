@@ -9,9 +9,17 @@
 ;;; Commentary:
 ;;
 ;;  These files are NOT part of GNU Emacs.
+;;
+;;  * 2021/02/16:
+;;    Add migemo(cmigemo) config and integrate with ivy-swiper
+;;    - https://github.com/emacs-jp/migemo
 
 ;;; Code:
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Daredevil SKK: Simple Kana to Kanji conversion program,
+;;                an input method of Japanese
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package ddskk
   :commands
   skk-mode
@@ -48,6 +56,38 @@
 
   :bind
   ("C-c j" . skk-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; migemo: Japanese increment search
+;;         with 'Romanization of Japanese'
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package migemo
+  :if (executable-find "cmigemo")
+  :after ivy
+
+  :custom
+  (migemo-command "cmigemo")
+  (migemo-options '("-q" "--emacs"))
+  (migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
+  (migemo-coding-system 'utf-8-unix)
+
+  ;; Use cmigemo with Swiper
+  (ivy-re-builders-alist '((t . ivy--regex-plus)
+                           (swiper . migemo-ivy-re-builder)))
+
+  :init
+  (defun migemo-ivy-re-builder (str)
+    (let* ((sep " \\|\\^\\|\\.\\|\\*")
+           (splitted (--map (s-join "" it)
+                            (--partition-by (s-matches-p " \\|\\^\\|\\.\\|\\*" it)
+                                            (s-split "" str t)))))
+      (s-join "" (--map (cond ((s-equals? it " ") ".*?")
+                              ((s-matches? sep it) it)
+                              (t (migemo-get-pattern it)))
+                        splitted))))
+
+  :config
+  (migemo-init))
 
 (provide 'ime)
 
