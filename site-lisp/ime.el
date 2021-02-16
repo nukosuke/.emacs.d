@@ -9,6 +9,10 @@
 ;;; Commentary:
 ;;
 ;;  These files are NOT part of GNU Emacs.
+;;
+;;  * 2021/02/16:
+;;    Add migemo(cmigemo) config and integrate with ivy-swiper
+;;    - https://github.com/emacs-jp/migemo
 
 ;;; Code:
 
