@@ -71,7 +71,7 @@
   (migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
   (migemo-coding-system 'utf-8-unix)
 
-  ;; Swiperでcmigemoを使う
+  ;; Use cmigemo with Swiper
   (ivy-re-builders-alist '((t . ivy--regex-plus)
                            (swiper . migemo-ivy-re-builder)))
 
