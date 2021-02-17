@@ -47,7 +47,11 @@
     ("G" "Switch tab group" centaur-tabs-counsel-switch-group)]
 
    ["Org" ;; TODO: only from org-mode
-    ("o" "Goto outline" counsel-org-goto)]])
+    ("o" "Goto outline" counsel-org-goto)]
+
+   ["Dash"
+    ("D" "Query docset"   counsel-dash)
+    ("i" "Install docset" counsel-dash-install-docset)]])
 
 (provide 'counsel-dispatch)
 
