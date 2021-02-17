@@ -218,6 +218,14 @@
   :hook
   (org-mode toc-org-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Search Dash docsets by counsel and browse with eww
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package counsel-dash
+  :if (executable-find "sqlite3")
+  :config
+  (setq counsel-dash-browser-func 'eww))
+
 (provide 'language)
 
 ;;; language.el ends here
