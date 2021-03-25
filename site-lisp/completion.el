@@ -106,7 +106,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package lsp-mode
-  :commands lsp)
+  :commands lsp
+  :hook
+  (elixir-mode . lsp)
+  :init
+  (add-to-list 'exec-path (concat user-emacs-directory "lsp/elixir")))
 
 (use-package company-lsp
   :commands company-lsp)
