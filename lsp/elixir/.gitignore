@@ -1,0 +1,4 @@
+*.ez
+*.sh
+*.bat
+!install.sh
