@@ -112,9 +112,6 @@
   :init
   (add-to-list 'exec-path (concat user-emacs-directory "lsp/elixir")))
 
-(use-package company-lsp
-  :commands company-lsp)
-
 (use-package company-quickhelp
   :after company
   :hook
