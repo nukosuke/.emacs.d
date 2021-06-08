@@ -6,7 +6,6 @@
  ("beacon" . "bde78180c678b233c94321394f46a81dc6dce1da")
  ("centaur-tabs" . "9c7c936e4e1de6f4f4095d70e43c9ae738d05086")
  ("closql" . "1b0e5bfef95de49bf669c54a15571386f10f4705")
- ("company-lsp" . "f921ffa0cdc542c21dc3dd85f2c93df4288e83bd")
  ("company-mode" . "e0f8c9ad754bdc2c02318f4baf433886c7aa83e3")
  ("company-posframe" . "c7a820a35ff132aaec53c81e05afc829de39eb68")
  ("company-quickhelp" . "530b29380f0f95ae338cbe089693d786e6f53d86")
