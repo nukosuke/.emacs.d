@@ -2,9 +2,14 @@
 #+title: nukosuke/.emacs.d
 #+author: nukosuke
 
-+ Work with GNU Emacs >= 26.3
+** Requirements
+
++ GNU Emacs >= 28.0.50
+
+** Features
+
 + Package management with [[https://github.com/raxod502/straight.el][straight.el]]
-+ Grouping commands with [[https://github.com/magit/transient][transient.el]]
++ Command menus with built-in [[https://github.com/magit/transient][transient.el]]
 
 ** Installation
 
@@ -12,15 +17,13 @@
    git clone git@github.com:nukosuke/.emacs.d.git ~/.emacs.d
    #+end_src
 
-*** emacs-version >= 27.0.50
+   Emacs 27+ supports XDG compatible new convention
+   for the config location.
 
-    Emacs 27 supports XDG compatible new convention
-    for the config location.
-
-    #+begin_src console
-    mkdir ~/.config # if not exists
-    git clone git@github.com:nukosuke/.emacs.d.git ~/.config/emacs
-    #+end_src
+   #+begin_src console
+   mkdir ~/.config # if not exists
+   git clone git@github.com:nukosuke/.emacs.d.git ~/.config/emacs
+   #+end_src
 
 ** Dispatchers
    ~/site-lisp/dispatcher/~ holds [[https://github.com/magit/transient#transient-commands][transient commands]] like ~magit-dispatch~.
