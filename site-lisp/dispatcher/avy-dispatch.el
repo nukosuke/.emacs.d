@@ -16,30 +16,29 @@
 
 ;;; Code:
 
-(use-package transient
-  :bind
-  ("C-c a" . avy-dispatch)
+(require 'transient)
 
-  :config
-  (define-transient-command avy-dispatch ()
-    "Invoke a Avy command from a list of available commands."
-    ["Avy commands\n"
-     ["Line"
-      ("y" "Yank" avy-copy-line)
-      ("m" "Move" avy-move-line)
-      ("k" "Kill" avy-kill-whole-line)]
+(transient-define-prefix avy-dispatch ()
+  "Invoke a Avy command from a list of available commands."
+  ["Avy commands\n"
+   ["Line"
+    ("y" "Yank" avy-copy-line)
+    ("m" "Move" avy-move-line)
+    ("k" "Kill" avy-kill-whole-line)]
 
-     ["Region"
-      ("Y" "Yank" avy-copy-region)
-      ("M" "Move" avy-move-region)
-      ("K" "Kill" avy-kill-region)]
+   ["Region"
+    ("Y" "Yank" avy-copy-region)
+    ("M" "Move" avy-move-region)
+    ("K" "Kill" avy-kill-region)]
 
-     ["Goto"
-      ("c" "Timed char" avy-goto-char-timer)
-      ("C" "Char"       avy-goto-char)
-      ("w" "Word"       avy-goto-word-1)
-      ("W" "Any word"   avy-goto-word-0)
-      ("l" "Line"       avy-goto-line)]]))
+   ["Goto"
+    ("c" "Timed char" avy-goto-char-timer)
+    ("C" "Char"       avy-goto-char)
+    ("w" "Word"       avy-goto-word-1)
+    ("W" "Any word"   avy-goto-word-0)
+    ("l" "Line"       avy-goto-line)]])
+
+(global-set-key (kbd "C-c a") 'avy-dispatch)
 
 (provide 'avy-dispatch)
 

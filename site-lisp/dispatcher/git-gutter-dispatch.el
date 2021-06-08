@@ -17,13 +17,15 @@
 ;;; Code:
 
 (use-package transient
+  :straight nil
+  :ensure t
   :after magit
 
   :config
   (transient-append-suffix 'magit-dispatch "%" ;; change suffix if use forge
     '("g" "GitGutter" git-gutter-dispatch ?%))
 
-  (define-transient-command git-gutter-dispatch ()
+  (transient-define-prefix git-gutter-dispatch ()
     "Invoke a git-gutter command from a list of available commands."
     :transient-suffix     'transient--do-stay
     :transient-non-suffix 'transient--do-warn

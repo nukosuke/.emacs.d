@@ -19,33 +19,33 @@
 
 ;;; Code:
 
-(use-package transient
-  :bind
-  ("<f9>"  . zoom-dispatch)
-  ("C-c r" . resize-dispatch)
+(require 'transient)
 
-  :config
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; M-x zoom-dispatch
-  ;;
-  ;; g : Zoom IN
-  ;; l : Zoom OUT
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  (define-transient-command zoom-dispatch ()
-    "Invoke a zoom command from a list of available commands."
-    :transient-suffix 'transient--do-stay
-    :transient-non-suffix 'transient--do-warn
-    ["Zoom commands"
-     ("g" "Zoom IN" text-scale-increase)
-     ("l" "Zoom OUT" text-scale-decrease)])
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; M-x zoom-dispatch
+;;
+;; g : Zoom IN
+;; l : Zoom OUT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-  (define-transient-command resize-dispatch ()
-    "Invoke a resize command from a list of available commands."
-    :transient-suffix 'transient--do-stay
-    :transient-non-suffix 'transient--do-warn
-    ["Resize commands"
-     ("{" "Shrink window horizontally" shrink-window-horizontally)
-     ("}" "Enlarge window horizontally" enlarge-window-horizontally)]))
+(transient-define-prefix zoom-dispatch ()
+  "Invoke a zoom command from a list of available commands."
+  :transient-suffix 'transient--do-stay
+  :transient-non-suffix 'transient--do-warn
+  ["Zoom commands"
+   ("g" "Zoom IN" text-scale-increase)
+   ("l" "Zoom OUT" text-scale-decrease)])
+
+(transient-define-prefix resize-dispatch ()
+  "Invoke a resize command from a list of available commands."
+  :transient-suffix 'transient--do-stay
+  :transient-non-suffix 'transient--do-warn
+  ["Resize commands"
+   ("{" "Shrink window horizontally" shrink-window-horizontally)
+   ("}" "Enlarge window horizontally" enlarge-window-horizontally)])
+
+(global-set-key (kbd "<f9>") 'zoom-dispatch)
+(global-set-key (kbd "C-c r") 'resize-dispatch)
 
 (provide 'zoom-dispatch)
 

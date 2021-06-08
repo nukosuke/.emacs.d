@@ -23,7 +23,7 @@
 ;; transient commands for counsel and its extensions.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(define-transient-command counsel-dispatch ()
+(transient-define-prefix counsel-dispatch ()
   "Invoke a Counsel command from a list of available commands."
   ["Transient commands\n"
 
