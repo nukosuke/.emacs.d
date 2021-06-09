@@ -30,6 +30,9 @@
 ;;
 ;;  * 2019/05/13:
 ;;    Add resize-dispatch
+;;
+;;  * 2021/06/09:
+;;    Unify *-dispatch.el into dispatch.el
 
 ;;; Code:
 
