@@ -26,7 +26,7 @@
    #+end_src
 
 ** Dispatchers
-   ~/site-lisp/dispatcher/~ holds [[https://github.com/magit/transient#transient-commands][transient commands]] like ~magit-dispatch~.
+   ~/site-lisp/dispatch.el~ holds [[https://github.com/magit/transient#transient-commands][transient commands]].
 
    Dispatcher list including NOT original commands.
 
