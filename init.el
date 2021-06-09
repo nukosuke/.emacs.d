@@ -52,12 +52,7 @@
               (completion "completion")
               (vcs        "vcs")
               (language   "language")
-              ;; Dispatchers
-              (straight-dispatch   "dispatcher/straight-dispatch")
-              (zoom-dispatch       "dispatcher/zoom-dispatch")
-              (avy-dispatch        "dispatcher/avy-dispatch")
-              (counsel-dispatch    "dispatcher/counsel-dispatch")
-              (git-gutter-dispatch "dispatcher/git-gutter-dispatch")))
+              (dispatch   "dispatch")))
   (let ((name (car pkg))
         (path (nth 1 pkg)))
     (require name (concat user-emacs-directory "site-lisp/" path))))
@@ -65,3 +60,27 @@
 (provide 'init)
 
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(auto-revert-check-vc-info t)
+ '(current-language-environment "UTF-8")
+ '(frame-title-format (format "GNU Emacs %s" emacs-version) t)
+ '(indent-tabs-mode nil)
+ '(make-backup-files nil)
+ '(org-agenda-files nil)
+ '(org-return-follows-link t)
+ '(org-use-speed-commands t)
+ '(ring-bell-function 'ignore)
+ '(scroll-step 1)
+ '(select-enable-clipboard t)
+ '(tab-width 2)
+ '(viper-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(aw-leading-char-face ((t (:height 3.0 :foreground "#f1fa8c")))))
