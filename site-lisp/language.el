@@ -16,6 +16,19 @@
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; LSP mode: Language Server Protocol support for Emacs
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package lsp-mode
+  :commands lsp
+  :custom
+  (lsp-completion-provider :capf)
+  :hook
+  (elixir-mode . lsp)
+  :init
+  (add-to-list 'exec-path (concat user-emacs-directory "lsp/elixir")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for Go
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -42,7 +55,6 @@
   :straight nil ;; Use built-in
   :mode
   ("\\.rb\\'" . ruby-mode)
-
   :custom
   (ruby-insert-encoding-magic-comment nil))
 
@@ -104,7 +116,6 @@
   "\\.html?\\'"
   "\\.erb\\'"
   "\\.eex\\'"
-
   :custom
   (web-mode-markup-indent-offset 2)
   (web-mode-css-indent-offset    2))

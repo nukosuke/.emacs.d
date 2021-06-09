@@ -101,22 +101,6 @@
         ("C-n" . company-select-next)
         ("C-p" . company-select-previous)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; LSP mode: Language Server Protocol support for Emacs
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package lsp-mode
-  :commands lsp
-
-  :custom
-  (lsp-completion-provider :capf)
-
-  :hook
-  (elixir-mode . lsp)
-
-  :init
-  (add-to-list 'exec-path (concat user-emacs-directory "lsp/elixir")))
-
 (use-package company-quickhelp
   :after company
   :hook
