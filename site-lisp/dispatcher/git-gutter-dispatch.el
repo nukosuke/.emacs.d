@@ -16,28 +16,25 @@
 
 ;;; Code:
 
-(use-package transient
-  :straight nil
-  :ensure t
-  :after magit
+(require 'transient)
 
-  :config
+(transient-define-prefix git-gutter-dispatch ()
+  "Invoke a git-gutter command from a list of available commands."
+  :transient-suffix     'transient--do-stay
+  :transient-non-suffix 'transient--do-warn
+  ["git-gutter hunk"
+   ["Move"
+    ("p"   "Prev"   git-gutter:previous-hunk)
+    ("n"   "Next"   git-gutter:next-hunk)
+    ("m"   "Mark"   git-gutter:mark-hunk)]
+   ["Git"
+    ("s"   "Stage"  git-gutter:stage-hunk)
+    ("r"   "Revert" git-gutter:revert-hunk)
+    ("SPC" "Popup"  git-gutter:popup-hunk)]])
+
+(with-eval-after-load 'magit
   (transient-append-suffix 'magit-dispatch "%" ;; change suffix if use forge
-    '("g" "GitGutter" git-gutter-dispatch ?%))
-
-  (transient-define-prefix git-gutter-dispatch ()
-    "Invoke a git-gutter command from a list of available commands."
-    :transient-suffix     'transient--do-stay
-    :transient-non-suffix 'transient--do-warn
-    ["git-gutter hunk"
-     ["Move"
-      ("p"   "Prev"   git-gutter:previous-hunk)
-      ("n"   "Next"   git-gutter:next-hunk)
-      ("m"   "Mark"   git-gutter:mark-hunk)]
-     ["Git"
-      ("s"   "Stage"  git-gutter:stage-hunk)
-      ("r"   "Revert" git-gutter:revert-hunk)
-      ("SPC" "Popup"  git-gutter:popup-hunk)]]))
+    '("g" "GitGutter" git-gutter-dispatch ?%)))
 
 (provide 'git-gutter-dispatch)
 
