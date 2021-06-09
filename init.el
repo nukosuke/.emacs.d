@@ -52,12 +52,7 @@
               (completion "completion")
               (vcs        "vcs")
               (language   "language")
-              ;; Dispatchers
-              (straight-dispatch   "dispatcher/straight-dispatch")
-              (zoom-dispatch       "dispatcher/zoom-dispatch")
-              (avy-dispatch        "dispatcher/avy-dispatch")
-              (counsel-dispatch    "dispatcher/counsel-dispatch")
-              (git-gutter-dispatch "dispatcher/git-gutter-dispatch")))
+              (dispatch   "dispatch")))
   (let ((name (car pkg))
         (path (nth 1 pkg)))
     (require name (concat user-emacs-directory "site-lisp/" path))))

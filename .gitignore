@@ -82,7 +82,6 @@ bookmarks
 forge-database.sqlite*
 
 # Org mode documents
-/org
 /org/
 
 # YASnippet
@@ -97,4 +96,3 @@ forge-database.sqlite*
 
 # vendoring
 /vendor
-
