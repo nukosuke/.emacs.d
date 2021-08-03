@@ -35,9 +35,6 @@
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode 'always))
 
-(use-package treemacs-all-the-icons
-  :after (treemacs))
-
 (use-package treemacs-projectile
   :after (treemacs projectile))
 
