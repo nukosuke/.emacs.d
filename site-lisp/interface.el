@@ -101,7 +101,7 @@
 
   :config
   (load-theme 'doom-dracula t)
-  (doom-themes-neotree-config)
+  (doom-themes-treemacs-config)
   (doom-themes-org-config))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

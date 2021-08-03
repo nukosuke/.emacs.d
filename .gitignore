@@ -10,6 +10,7 @@ recentf
 auto-save-list
 tramp
 .\#*
+.cache
 
 # SKK dictionary
 /skk-get-jisyo/

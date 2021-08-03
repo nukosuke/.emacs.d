@@ -16,22 +16,28 @@
 ;;
 ;;  * 2019/08/02:
 ;;    Remove eyebrowse.el
+;;
+;;  * 2021/08/03:
+;;    Use treemacs instead of neotree
 
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Neotree
+;; Treemacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package neotree
+(use-package treemacs
   :bind
-  ("<f8>" . neotree-toggle)
-
+  ("<f8>" . treemacs)
   :config
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq neo-show-hidden-files t))
+  (treemacs-filewatch-mode t)
+  (treemacs-fringe-indicator-mode 'always))
 
-(use-package all-the-icons)
+(use-package treemacs-projectile
+  :after (treemacs projectile))
+
+(use-package treemacs-magit
+  :after (treemacs magit))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Projectile
