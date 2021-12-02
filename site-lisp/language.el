@@ -201,7 +201,7 @@
 ;; Major mode for .gitignore
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package gitignore-mode
+(use-package git-modes
   :mode
   ("\\'\\.gitignore\\'" . gitignore-mode))
 
