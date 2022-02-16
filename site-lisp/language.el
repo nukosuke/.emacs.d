@@ -127,7 +127,7 @@
 (use-package typescript-mode
   ;; defer load until open any .ts file.
   :mode
-  "\\.ts\\'"
+  "\\.tsx?\\'"
   :custom
   (typescript-indent-level 2))
 
