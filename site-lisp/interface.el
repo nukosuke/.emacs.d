@@ -49,13 +49,6 @@
 (setq-default indicate-empty-lines       'left
               indicate-buffer-boundaries 'left)
 
-;; Disabled modes
-(if (display-graphic-p)
-    (progn
-      (scroll-bar-mode 0)
-      (tool-bar-mode   0)
-      (menu-bar-mode   0)))
-
 ;; Enabled modes
 (winner-mode         1)
 (global-hl-line-mode t)
