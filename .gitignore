@@ -63,6 +63,9 @@ bookmarks
 /request/
 /url/
 
+# multisession
+/multisession
+
 # network security
 /network-security.data
 
