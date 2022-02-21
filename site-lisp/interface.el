@@ -52,6 +52,9 @@
 ;; Enabled modes
 (winner-mode         1)
 (global-hl-line-mode t)
+(pixel-scroll-mode   1)
+;; for Emacs >= 29
+;; (pixel-scroll-precision-mode 1)
 
 (use-package paren
   :straight nil

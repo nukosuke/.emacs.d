@@ -41,7 +41,7 @@
  '(org-agenda-files             `(,(concat user-emacs-directory "org/")))
  '(org-return-follows-link      t)
  '(org-use-speed-commands       t)
- '(viper-mode                   nil))
+ '(use-short-answers            t))
 
 ;;
 ;; Font settings
