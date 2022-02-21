@@ -29,7 +29,6 @@
  ("emacs-deferred" . "2239671d94b38d92e9b28d4e12fd79814cfb9c16")
  ("emacs-elixir" . "6f61e04c8537c2e9a807dc29908f619b5202b0f8")
  ("emacs-hcl-mode" . "e4d9eef631e8a386341ae8f94f7c2579586e65b5")
- ("emacs-hide-mode-line" . "bc5d293576c5e08c29e694078b96a5ed85631942")
  ("emacs-reformatter" . "b57f5d480003ab7b0880e0059dcc51747fb2e088")
  ("emacs-scala-mode" . "598cb680f321d9609295aa9b4679040cc703b602")
  ("emacsmirror-mirror" . "7db5065124f0d2ded382e111b75dd72ff48c8e40")

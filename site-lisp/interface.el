@@ -259,14 +259,6 @@
 ;;  (flycheck-pos-tip-timeout 30))
 
 ;;
-;; Hide unnecessary mode line
-;;
-
-(use-package hide-mode-line
-  :hook
-  (neotree-mode . hide-mode-line-mode))
-
-;;
 ;; Switching window with jump
 ;;
 
@@ -296,10 +288,7 @@
   :custom
   (imenu-list-focus-after-activation t)
   (imenu-list-auto-resize            nil)
-
-  ;; Don't use hide-mode-line-mode
-  ;; It hide major mode mode-line after toggle
-  (imenu-list-mode-line-format nil)
+  (imenu-list-mode-line-format       nil)
 
   ;; Close Ilist frame after jump
   :hook
