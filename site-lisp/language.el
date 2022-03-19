@@ -157,7 +157,9 @@
 
 (use-package json-mode
   :mode
-  ("\\.json\\'" . json-mode))
+  ("\\.json\\'" . json-mode)
+  :custom
+  (js-indent-level 2))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for ProtocolBuffers
