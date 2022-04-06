@@ -37,6 +37,7 @@
   ("\\.go\\'" . go-mode)
   :config
   (when (memq window-system '(mac ns))
+    ;; FIXME: maybe unnecessary
     (exec-path-from-shell-copy-env "GOPATH")))
 
 ;;;###autoload
@@ -44,7 +45,7 @@
   "Install Go language server, gopls for golang."
   (interactive)
   (if (executable-find "go")
-      (message (shell-command-to-string "go install golang.org/x/tools/gopls@latest"))
+      (message (shell-command-to-string "go install golang.org/x/tools/gopls@latest && asdf reshim golang"))
     (message "Couldn't find go. Install golang first.")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
