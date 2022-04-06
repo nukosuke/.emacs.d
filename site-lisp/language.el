@@ -41,10 +41,10 @@
 
 ;;;###autoload
 (defun install-language-server/golang ()
-  "Install language server, bingo for golang.  GO111MODULE environment variable should be set to 'on'."
+  "Install Go language server, gopls for golang."
   (interactive)
   (if (executable-find "go")
-      (message (shell-command-to-string "go get -u github.com/saibing/bingo"))
+      (message (shell-command-to-string "go install golang.org/x/tools/gopls@latest"))
     (message "Couldn't find go. Install golang first.")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
