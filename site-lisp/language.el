@@ -224,6 +224,10 @@
 (use-package graphviz-dot-mode
   :mode "\\.dot\\'")
 
+;; mermaid (https://mermaid-js.github.io)
+(use-package mermaid-mode
+  :mode "\\.mermaid\\'")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Search Dash docsets by counsel and browse with eww
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
