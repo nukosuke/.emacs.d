@@ -90,15 +90,19 @@
 ;; Theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package doom-themes
-  :custom
-  (doom-themes-enable-italic t)
-  (doom-themes-enable-bold   t)
+(use-package emacs
+  :straight nil
+
+  :init
+  (setq modus-themes-italic-constructs t
+        modus-themes-bold-constructs nil
+        modus-themes-region '(bg-only no-extend))
 
   :config
-  (load-theme 'doom-dracula t)
-  (doom-themes-treemacs-config)
-  (doom-themes-org-config))
+  (load-theme 'modus-vivendi)
+
+  :bind
+  ("<f5>" . modus-themes-toggle))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Mode line
