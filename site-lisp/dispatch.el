@@ -33,6 +33,9 @@
 ;;
 ;;  * 2021/06/09:
 ;;    Unify *-dispatch.el into dispatch.el
+;;
+;;  * 2022/11/07:
+;;    Replace counsel-ag to counsel-rg
 
 ;;; Code:
 
@@ -72,7 +75,7 @@
   "Invoke a Counsel command from a list of available commands."
   ["Transient commands\n"
    ["Counsel"
-    ("a" "ag"       counsel-ag)
+    ("r" "ripgrep"  counsel-rg)
     ("b" "Bookmark" counsel-bookmark)]
    ["Git" ;; TODO check if current directory is a git worktree
     ("g" "Find file"       counsel-git)
