@@ -84,6 +84,7 @@ bookmarks
 
 # forge database
 forge-database.sqlite*
+forge-database-*.sql
 
 # Org mode documents
 /org/

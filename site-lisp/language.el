@@ -37,14 +37,15 @@
   ("\\.go\\'" . go-mode)
   :config
   (when (memq window-system '(mac ns))
+    ;; FIXME: maybe unnecessary
     (exec-path-from-shell-copy-env "GOPATH")))
 
 ;;;###autoload
 (defun install-language-server/golang ()
-  "Install language server, bingo for golang.  GO111MODULE environment variable should be set to 'on'."
+  "Install Go language server, gopls for golang."
   (interactive)
   (if (executable-find "go")
-      (message (shell-command-to-string "go get -u github.com/saibing/bingo"))
+      (message (shell-command-to-string "go install golang.org/x/tools/gopls@latest && asdf reshim golang"))
     (message "Couldn't find go. Install golang first.")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -70,7 +71,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package erlang
-  :mode "\\.erl")
+  :mode "\\.erl" "\\.hrl")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for Elixir
@@ -85,6 +86,13 @@
 
 (use-package rust-mode
   :mode "\\.rs\\'")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Major mode for Zig
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package zig-mode
+  :mode "\\.zig\\'")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language Server for Java
@@ -222,6 +230,10 @@
 ;;
 (use-package graphviz-dot-mode
   :mode "\\.dot\\'")
+
+;; mermaid (https://mermaid-js.github.io)
+(use-package mermaid-mode
+  :mode "\\.mermaid\\'")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Search Dash docsets by counsel and browse with eww
