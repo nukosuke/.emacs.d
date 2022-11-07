@@ -96,13 +96,12 @@
   :init
   (setq modus-themes-italic-constructs t
         modus-themes-bold-constructs nil
-        modus-themes-region '(bg-only no-extend))
+        modus-themes-region '(bg-only no-extend)
+        modus-themes-mode-line '(accented borderless 4 0.9)
+        modus-themes-paren-match '(bold intense))
 
   :config
-  (load-theme 'modus-vivendi)
-
-  :bind
-  ("<f5>" . modus-themes-toggle))
+  (load-theme 'modus-vivendi))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Mode line
@@ -201,19 +200,16 @@
 ;; Display VCS diff marker
 ;;
 
-(use-package git-gutter-fringe
+(use-package diff-hl
+  :init
+  (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+
+  :custom
+  (diff-hl-draw-borders nil)
+
   :config
-  ;; Custom fringe bitmaps
-  (fringe-helper-define 'git-gutter-fr:added    '(center repeated)
-    "XXX.....")
-  (fringe-helper-define 'git-gutter-fr:modified '(center repeated)
-    "XXX.....")
-  (fringe-helper-define 'git-gutter-fr:deleted  'bottom
-    "X......."
-    "XX......"
-    "XXX....."
-    "XXXX....")
-  (global-git-gutter-mode t))
+  (global-diff-hl-mode))
 
 ;;
 ;; Flycheck
@@ -224,19 +220,22 @@
   (prog-mode . flycheck-mode)
 
   :custom
-  ;; Because left-fringe is used by git-gutter-fringe
+  ;; Because left-fringe is used by diff-hl
   (flycheck-indication-mode 'right-fringe)
 
   :config
   ;; Custom fringe bitmap
-  (fringe-helper-define 'flycheck-fringe-bitmap-double-arrow 'center
-    "...X...."
-    "..XX...."
-    ".XXX...."
-    "XXXX...."
-    ".XXX...."
-    "..XX...."
-    "...X...."))
+  (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
+    (vector #b00010000
+            #b00110000
+            #b01110000
+            #b11110000
+            #b01110000
+            #b00110000
+            #b00010000)
+    nil
+    4
+    'center))
 
 ;;
 ;; Display flycheck message to posframe
