@@ -204,14 +204,14 @@
   :config
   ;; Custom fringe bitmaps
   (fringe-helper-define 'git-gutter-fr:added    '(center repeated)
-                        "XXX.....")
+    "XXX.....")
   (fringe-helper-define 'git-gutter-fr:modified '(center repeated)
-                        "XXX.....")
+    "XXX.....")
   (fringe-helper-define 'git-gutter-fr:deleted  'bottom
-                        "X......."
-                        "XX......"
-                        "XXX....."
-                        "XXXX....")
+    "X......."
+    "XX......"
+    "XXX....."
+    "XXXX....")
   (global-git-gutter-mode t))
 
 ;;
