@@ -245,7 +245,7 @@
     "XXXX...."
     ".XXX...."
     "..XX...."
-    "...X....")  
+    "...X....")
   (set-face-attribute 'flycheck-fringe-error nil
                       :foreground (modus-themes-color 'red-fringe-bg)
                       :background "black")
