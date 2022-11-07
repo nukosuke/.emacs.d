@@ -200,16 +200,19 @@
 ;; Display VCS diff marker
 ;;
 
-(use-package diff-hl
-  :init
-  (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
-  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
-
-  :custom
-  (diff-hl-draw-borders nil)
-
+(use-package git-gutter-fringe
   :config
-  (global-diff-hl-mode))
+  ;; Custom fringe bitmaps
+  (fringe-helper-define 'git-gutter-fr:added    '(center repeated)
+                        "XXX.....")
+  (fringe-helper-define 'git-gutter-fr:modified '(center repeated)
+                        "XXX.....")
+  (fringe-helper-define 'git-gutter-fr:deleted  'bottom
+                        "X......."
+                        "XX......"
+                        "XXX....."
+                        "XXXX....")
+  (global-git-gutter-mode t))
 
 ;;
 ;; Flycheck
@@ -220,22 +223,19 @@
   (prog-mode . flycheck-mode)
 
   :custom
-  ;; Because left-fringe is used by diff-hl
+  ;; Because left-fringe is used by git-gutter-fringe
   (flycheck-indication-mode 'right-fringe)
 
   :config
   ;; Custom fringe bitmap
-  (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
-    (vector #b00010000
-            #b00110000
-            #b01110000
-            #b11110000
-            #b01110000
-            #b00110000
-            #b00010000)
-    nil
-    4
-    'center))
+  (fringe-helper-define 'flycheck-fringe-bitmap-double-arrow 'center
+    "...X...."
+    "..XX...."
+    ".XXX...."
+    "XXXX...."
+    ".XXX...."
+    "..XX...."
+    "...X...."))
 
 ;;
 ;; Display flycheck message to posframe
