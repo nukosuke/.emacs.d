@@ -99,7 +99,8 @@
         modus-themes-region '(bg-only no-extend)
         modus-themes-mode-line '(accented borderless 4 0.9)
         modus-themes-paren-match '(bold intense)
-        ;modus-themes-diffs 'deuteranopia)
+        ;modus-themes-diffs 'deuteranopia
+        )
 
   :config
   (load-theme 'modus-vivendi))
