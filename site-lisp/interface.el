@@ -29,6 +29,9 @@
 ;;
 ;;  * 2019/12/18:
 ;;    Customize eshell prompt
+;;
+;;  * 2022/11/07:
+;;    Use built-in modus themes
 
 ;;; Code:
 
@@ -90,15 +93,20 @@
 ;; Theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package doom-themes
-  :custom
-  (doom-themes-enable-italic t)
-  (doom-themes-enable-bold   t)
+(use-package emacs
+  :straight nil
+
+  :init
+  (setq modus-themes-italic-constructs t
+        modus-themes-bold-constructs nil
+        modus-themes-region '(bg-only no-extend)
+        modus-themes-mode-line '(accented borderless 4 0.9)
+        modus-themes-paren-match '(bold intense)
+        ;modus-themes-diffs 'deuteranopia
+        )
 
   :config
-  (load-theme 'doom-dracula t)
-  (doom-themes-treemacs-config)
-  (doom-themes-org-config))
+  (load-theme 'modus-vivendi))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Mode line
@@ -209,6 +217,15 @@
     "XX......"
     "XXX....."
     "XXXX....")
+  (set-face-attribute 'git-gutter-fr:added nil
+                      :foreground (modus-themes-color 'green-fringe-bg)
+                      :background "black")
+  (set-face-attribute 'git-gutter-fr:modified nil
+                      :foreground (modus-themes-color 'yellow-fringe-bg)
+                      :background "black")
+  (set-face-attribute 'git-gutter-fr:deleted nil
+                      :foreground (modus-themes-color 'red-fringe-bg)
+                      :background "black")
   (global-git-gutter-mode t))
 
 ;;
@@ -232,7 +249,16 @@
     "XXXX...."
     ".XXX...."
     "..XX...."
-    "...X...."))
+    "...X....")
+  (set-face-attribute 'flycheck-fringe-error nil
+                      :foreground (modus-themes-color 'red-fringe-bg)
+                      :background "black")
+  (set-face-attribute 'flycheck-fringe-warning nil
+                      :foreground (modus-themes-color 'yellow-fringe-bg)
+                      :background "black")
+  (set-face-attribute 'flycheck-fringe-info nil
+                      :foreground (modus-themes-color 'blue-fringe-bg)
+                      :background "black"))
 
 ;;
 ;; Display flycheck message to posframe
