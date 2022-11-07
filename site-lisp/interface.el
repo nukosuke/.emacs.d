@@ -29,6 +29,9 @@
 ;;
 ;;  * 2019/12/18:
 ;;    Customize eshell prompt
+;;
+;;  * 2022/11/07:
+;;    Use built-in modus themes
 
 ;;; Code:
 
