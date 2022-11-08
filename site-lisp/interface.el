@@ -150,11 +150,10 @@
   :hook
   ((dashboard-mode
     eshell-mode
+    helpful-mode
     imenu-list-major-mode
     term-mode
-    calendar-mode
-    org-agenda-mode
-    helpful-mode) . centaur-tabs-local-mode)
+    org-agenda-mode) . centaur-tabs-local-mode)
 
   :custom
   (centaur-tabs-style               "bar")
