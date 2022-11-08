@@ -147,6 +147,7 @@
   :hook
   ((calendar-mode
     dashboard-mode
+    denote-backlinks-mode
     eshell-mode
     git-commit-setup ;; magit COMMIT_MSG buffer
     helpful-mode
