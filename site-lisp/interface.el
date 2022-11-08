@@ -84,7 +84,7 @@
 
 (use-package beacon
   :custom
-  (beacon-color "#f1fa8c") ;; yellow of dracula
+  (beacon-color "#2fafff") ; modus-theme blue
 
   :config
   (beacon-mode 1))
@@ -144,17 +144,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package centaur-tabs
-  :straight (centaur-tabs :host github
-                          :repo "ema2159/centaur-tabs")
-
   :hook
-  ((dashboard-mode
+  ((calendar-mode
+    dashboard-mode
+    denote-backlinks-mode
     eshell-mode
+    git-commit-setup ;; magit COMMIT_MSG buffer
+    helpful-mode
     imenu-list-major-mode
     term-mode
-    calendar-mode
-    org-agenda-mode
-    helpful-mode) . centaur-tabs-local-mode)
+    org-agenda-mode) . centaur-tabs-local-mode)
 
   :custom
   (centaur-tabs-style               "bar")

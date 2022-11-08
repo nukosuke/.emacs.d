@@ -88,6 +88,7 @@ forge-database-*.sql
 
 # Org mode documents
 /org/
+/notes/
 
 # YASnippet
 /snippets
