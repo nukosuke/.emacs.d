@@ -84,7 +84,7 @@
 
 (use-package beacon
   :custom
-  (beacon-color (modus-themes-color 'blue))
+  (beacon-color "#2fafff") ; modus-theme blue
 
   :config
   (beacon-mode 1))
@@ -144,9 +144,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package centaur-tabs
-  :straight (centaur-tabs :host github
-                          :repo "ema2159/centaur-tabs")
-
   :hook
   ((calendar-mode
     dashboard-mode
