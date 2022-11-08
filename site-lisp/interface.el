@@ -84,7 +84,7 @@
 
 (use-package beacon
   :custom
-  (beacon-color "#f1fa8c") ;; yellow of dracula
+  (beacon-color (modus-themes-color 'blue))
 
   :config
   (beacon-mode 1))
