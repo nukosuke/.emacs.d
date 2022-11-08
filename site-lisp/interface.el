@@ -148,8 +148,10 @@
                           :repo "ema2159/centaur-tabs")
 
   :hook
-  ((dashboard-mode
+  ((calendar-mode
+    dashboard-mode
     eshell-mode
+    git-commit-setup ;; magit COMMIT_MSG buffer
     helpful-mode
     imenu-list-major-mode
     term-mode
