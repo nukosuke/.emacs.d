@@ -62,9 +62,6 @@
 (use-package paren
   :straight nil
 
-  :hook
-  (after-init . show-paren-mode)
-
   :custom
   (show-paren-style 'mixed)
   (show-paren-when-point-inside-paren t)
