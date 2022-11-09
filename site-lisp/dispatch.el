@@ -83,7 +83,7 @@
     ("l" "Log"             counsel-git-log)
     ("w" "Change worktree" counsel-git-change-worktree)]
    ["Projectile"
-    ("A" "ag"             counsel-projectile-ag)
+    ("R" "ripgrep"        counsel-projectile-rg)
     ("f" "Find file"      counsel-projectile-find-file)
     ("d" "Find directory" counsel-projectile-find-dir)
     ("p" "Switch project" counsel-projectile-switch-project)]
