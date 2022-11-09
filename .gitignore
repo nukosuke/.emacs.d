@@ -26,6 +26,9 @@ tramp
 /eshell/history
 /eshell/lastdir
 
+# project.el
+/projects
+
 # elpa packages
 /elpa/
 
@@ -49,12 +52,6 @@ flycheck_*.el
 
 # server auth directory
 /server/
-
-# projectiles files
-.projectile
-projectile.cache
-projectile-bookmarks.eld
-bookmarks
 
 # directory configuration
 .dir-locals.el

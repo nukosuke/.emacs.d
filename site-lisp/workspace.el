@@ -33,26 +33,8 @@
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode 'always))
 
-(use-package treemacs-projectile
-  :after (treemacs projectile))
-
 (use-package treemacs-magit
   :after (treemacs magit))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Projectile
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package projectile
-  :custom
-  projectile-completion-system 'ivy
-
-  :bind
-  (:map projectile-mode-map
-        ("C-x p" . projectile-switch-project)) ;; FIXME: dispatch-projectile (transient)
-
-  :config
-  (projectile-mode 1))
 
 (provide 'workspace)
 

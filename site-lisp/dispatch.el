@@ -40,6 +40,7 @@
 ;;; Code:
 
 (require 'transient)
+(require 'bind-key)
 
 (global-set-key (kbd "C-c a") 'avy-dispatch)
 (global-set-key (kbd "C-c p") 'straight-dispatch)
@@ -78,15 +79,11 @@
     ("r" "ripgrep"  counsel-rg)
     ("b" "Bookmark" counsel-bookmark)]
    ["Git" ;; TODO check if current directory is a git worktree
+    ("R" "Grep"            counsel-git-grep)
     ("g" "Find file"       counsel-git)
     ("c" "Checkout branch" counsel-git-checkout)
     ("l" "Log"             counsel-git-log)
     ("w" "Change worktree" counsel-git-change-worktree)]
-   ["Projectile"
-    ("A" "ag"             counsel-projectile-ag)
-    ("f" "Find file"      counsel-projectile-find-file)
-    ("d" "Find directory" counsel-projectile-find-dir)
-    ("p" "Switch project" counsel-projectile-switch-project)]
    ["Tabs"
     ("G" "Switch tab group" centaur-tabs-counsel-switch-group)]
    ["Org" ;; TODO: only from org-mode
@@ -95,23 +92,26 @@
     ("D" "Query docset"   counsel-dash)
     ("i" "Install docset" counsel-dash-install-docset)]])
 
-(transient-define-prefix git-gutter-dispatch ()
-  "Invoke a git-gutter command from a list of available commands."
-  :transient-suffix     'transient--do-stay
-  :transient-non-suffix 'transient--do-warn
-  ["git-gutter hunk"
-   ["Move"
-    ("p"   "Prev"   git-gutter:previous-hunk)
-    ("n"   "Next"   git-gutter:next-hunk)
-    ("m"   "Mark"   git-gutter:mark-hunk)]
-   ["Git"
-    ("s"   "Stage"  git-gutter:stage-hunk)
-    ("r"   "Revert" git-gutter:revert-hunk)
-    ("SPC" "Popup"  git-gutter:popup-hunk)]])
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; project.el
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(with-eval-after-load 'magit
-  (transient-append-suffix 'magit-dispatch "%" ;; change suffix if use forge
-    '("g" "GitGutter" git-gutter-dispatch ?%)))
+(transient-define-prefix project-dispatch ()
+  "Invoke a project command from a list of available commands."
+  ["Project\n"
+   ["File/Dir"
+    ("f" "Find file"      project-find-file)
+    ("d" "Find directory" project-find-dir)
+    ("D" "Dired"          project-dired)]
+   ["Switch"
+    ("b" "Switch to buffer" project-switch-to-buffer)
+    ("s" "Switch project"   project-switch-project)]
+   ["Shell"
+    ("!" "Shell command"       project-shell-command)
+    ("&" "Async shell command" project-async-shell-command)
+    ("e" "Eshell"              project-eshell)]])
+
+(bind-key* "C-x p" 'project-dispatch)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; M-x straight-dispatch

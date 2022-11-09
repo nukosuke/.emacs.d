@@ -93,6 +93,13 @@
 (bind-key "M-p" 'scroll-down)
 (bind-key "M-n" 'scroll-up)
 
+;; built-in project.el bindings
+(use-package project
+  :straight nil
+  :bind
+  ("C-x B" . project-switch-to-buffer)
+  ("C-x f" . project-find-file))
+
 ;; Use ibuffer to manage buffers and turn off confirmation for
 ;; destructive operation.
 (use-package ibuffer
