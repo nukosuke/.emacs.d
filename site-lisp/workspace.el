@@ -36,17 +36,6 @@
 (use-package treemacs-magit
   :after (treemacs magit))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Projectile
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package projectile
-  :custom
-  projectile-completion-system 'ivy
-
-  :config
-  (projectile-mode 1))
-
 (provide 'workspace)
 
 ;;; workspace.el ends here

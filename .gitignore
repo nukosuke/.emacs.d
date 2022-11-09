@@ -50,12 +50,6 @@ flycheck_*.el
 # server auth directory
 /server/
 
-# projectiles files
-.projectile
-projectile.cache
-projectile-bookmarks.eld
-bookmarks
-
 # directory configuration
 .dir-locals.el
 
