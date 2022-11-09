@@ -26,6 +26,9 @@ tramp
 /eshell/history
 /eshell/lastdir
 
+# project.el
+/projects
+
 # elpa packages
 /elpa/
 
