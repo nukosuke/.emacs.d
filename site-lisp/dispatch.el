@@ -78,15 +78,11 @@
     ("r" "ripgrep"  counsel-rg)
     ("b" "Bookmark" counsel-bookmark)]
    ["Git" ;; TODO check if current directory is a git worktree
+    ("R" "Grep"            counsel-git-grep)
     ("g" "Find file"       counsel-git)
     ("c" "Checkout branch" counsel-git-checkout)
     ("l" "Log"             counsel-git-log)
     ("w" "Change worktree" counsel-git-change-worktree)]
-   ["Projectile"
-    ("R" "ripgrep"        counsel-projectile-rg)
-    ("f" "Find file"      counsel-projectile-find-file)
-    ("d" "Find directory" counsel-projectile-find-dir)
-    ("p" "Switch project" counsel-projectile-switch-project)]
    ["Tabs"
     ("G" "Switch tab group" centaur-tabs-counsel-switch-group)]
    ["Org" ;; TODO: only from org-mode
@@ -94,6 +90,20 @@
    ["Dash"
     ("D" "Query docset"   counsel-dash)
     ("i" "Install docset" counsel-dash-install-docset)]])
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; project.el
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(transient-define-prefix project-dispatch ()
+  "Invoke a project command from a list of available commands."
+  ["Project\n"
+   ["Commands"
+    ("f" "Find file" project-find-file)
+    ("d" "Find directory" project-find-dir)
+    ("s" "Switch project" project-switch-project)]])
+
+(bind-key "C-x p" project-dispatch)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; M-x straight-dispatch
