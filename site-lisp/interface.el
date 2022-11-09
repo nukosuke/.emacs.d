@@ -132,6 +132,7 @@
   (dashboard-startup-banner    'logo)
   (dashboard-set-heading-icons t)
   (dashboard-set-file-icons    t)
+  (dashboard-projects-backend  'project-el)
   (dashboard-items             '((recents  . 5)
                                  (projects . 5)
                                  (agenda   . 5)))
