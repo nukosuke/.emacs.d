@@ -40,6 +40,7 @@
 ;;; Code:
 
 (require 'transient)
+(require 'bind-key)
 
 (global-set-key (kbd "C-c a") 'avy-dispatch)
 (global-set-key (kbd "C-c p") 'straight-dispatch)
@@ -98,12 +99,19 @@
 (transient-define-prefix project-dispatch ()
   "Invoke a project command from a list of available commands."
   ["Project\n"
-   ["Commands"
-    ("f" "Find file" project-find-file)
+   ["File/Dir"
+    ("f" "Find file"      project-find-file)
     ("d" "Find directory" project-find-dir)
-    ("s" "Switch project" project-switch-project)]])
+    ("D" "Dired"          project-dired)]
+   ["Switch"
+    ("b" "Switch to buffer" project-switch-to-buffer)
+    ("s" "Switch project"   project-switch-project)]
+   ["Shell"
+    ("!" "Shell command"       project-shell-command)
+    ("&" "Async shell command" project-async-shell-command)
+    ("e" "Eshell"              project-eshell)]])
 
-(bind-key "C-x p" project-dispatch)
+(bind-key* "C-x p" 'project-dispatch)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; M-x straight-dispatch
