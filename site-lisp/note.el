@@ -1,4 +1,4 @@
-;;; org.el --- org-mode configurations -*- lexical-binding: t -*-
+;;; note.el --- note taking configurations -*- lexical-binding: t -*-
 ;;
 ;; Copyright (c) 2019- nukosuke.
 ;;
@@ -77,6 +77,6 @@
   ("C-c n r" . denote-rename-file)
   ("C-c n R" . denote-rename-file-using-front-matter))
 
-(provide 'org)
+(provide 'note)
 
-;;; org.el ends here
+;;; note.el ends here
