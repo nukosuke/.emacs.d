@@ -62,6 +62,7 @@
   :custom
   (denote-directory (concat user-emacs-directory "notes/"))
   (denote-backlinks-show-context t)
+  (denote-date-prompt-use-org-read-date t)
 
   :bind
   ("C-c n" . denote-dispatch)
@@ -73,7 +74,8 @@
      ["Create"
       ("n" "New note" denote)
       ("N" "New note with file type" denote-type)
-      ("d" "New note for date and time" denote-date)]
+      ("d" "New note for date and time" denote-date)
+      ("s" "New note into subdirectory" denote-subdirectory)]
      ["Rename"
       ("r" "Rename file" denote-rename-file)
       ("R" "Rename file using front matter" denote-rename-file-using-front-matter)]]
