@@ -99,3 +99,6 @@ forge-database-*.sql
 
 # vendoring
 /vendor
+
+# Dash docsets
+/docsets
