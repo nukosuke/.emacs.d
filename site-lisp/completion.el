@@ -72,41 +72,29 @@
         ("C-r" . counsel-minibuffer-history)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Company: Modular in-buffer completion framework
-;;          for Emacs
+;; corfu.el: Completion Overlay Region FUnction
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package company
+(use-package corfu
   :custom
-  (company-selection-wrap-around t)
-  (company-minimum-prefix-length 2)
+  (corfu-cycle t)
+  (corfu-auto  t)
+  (corfu-preview-current    nil)
+  (corfu-echo-documentation nil) ;; use corfu-doc instead
 
   :hook
-  ((text-mode . company-mode)
-   (prog-mode . company-mode)
-   (conf-mode . company-mode))
+  ((text-mode
+    prog-mode
+    conf-mode) . corfu-mode))
+
+(use-package corfu-doc
+  :hook
+  (corfu-mode . corfu-doc-mode)
 
   :bind
-  (:map company-active-map
-        ("C-h" . nil)
-        ("M-n" . nil)
-        ("M-p" . nil)
-        ("C-n" . company-select-next)
-        ("C-p" . company-select-previous)))
-
-(use-package company-quickhelp
-  :after company
-  :hook
-  (company-mode . company-quickhelp-mode))
-
-;; NOTE: macOS has fullscreen problem with childframe
-;;       until the commit bellow would be merged.
-;;       https://emba.gnu.org/emacs/emacs/-/commit/bbc48b263485c26c6823eabdbbd7e9af62178e34
-;;
-;; NOTE: company-box is alternative, but it seems abandoned project
-(use-package company-posframe
-  :after company
-  :hook (company-mode . company-posframe-mode))
+  (:map corfu-map
+        ("M-p" . corfu-doc-scroll-down)
+        ("M-n" . corfu-doc-scroll-up)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smartparens: Minor mode for Emacs that deals with

@@ -153,7 +153,7 @@
 
 (use-package tide
   :after
-  (typescript-mode company flycheck)
+  (typescript-mode flycheck)
   :hook
   ((typescript-mode . tide-setup)
    (typescript-mode . tide-hl-identifier-mode)
