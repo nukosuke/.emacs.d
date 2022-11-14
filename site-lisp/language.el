@@ -25,6 +25,8 @@
   (lsp-completion-provider :capf)
   :hook
   (elixir-mode . lsp)
+  (elixir-mode . (lambda ()
+                   (setq-local consult-dash-docsets '("Elixir"))))
   :init
   (add-to-list 'exec-path (concat user-emacs-directory "lsp/elixir")))
 
@@ -243,12 +245,15 @@
   :mode "\\.mermaid\\'")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Search Dash docsets by counsel and browse with eww
+;; Search Dash docsets by consult and browse with eww
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package counsel-dash
+
+(use-package consult-dash
   :if (executable-find "sqlite3")
-  :config
-  (setq counsel-dash-browser-func 'eww))
+
+  :custom
+  (dash-docs-docsets-path (concat user-emacs-directory "docsets"))
+  (dash-docs-browser-func 'eww))
 
 (provide 'language)
 
