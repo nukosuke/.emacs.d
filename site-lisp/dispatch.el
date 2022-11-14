@@ -68,29 +68,24 @@
     ("l" "Line"       avy-goto-line)]])
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; M-x counsel-dispatch
-;; transient commands for counsel and its extensions.
+;; M-x consult-dispatch
+;; transient commands for consult and its extensions.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(transient-define-prefix counsel-dispatch ()
-  "Invoke a Counsel command from a list of available commands."
+(transient-define-prefix consult-dispatch ()
+  "Invoke a Consult command from a list of available commands."
   ["Transient commands\n"
-   ["Counsel"
-    ("r" "ripgrep"  counsel-rg)
-    ("b" "Bookmark" counsel-bookmark)]
-   ["Git" ;; TODO check if current directory is a git worktree
-    ("R" "Grep"            counsel-git-grep)
-    ("g" "Find file"       counsel-git)
-    ("c" "Checkout branch" counsel-git-checkout)
-    ("l" "Log"             counsel-git-log)
-    ("w" "Change worktree" counsel-git-change-worktree)]
+   ["Consult"
+    ("f" "Find file" consult-find)
+    ("g" "Git grep"  consult-git-grep)
+    ("r" "Ripgrep"   consult-ripgrep)
+    ("b" "Bookmark"  consult-bookmark)]
    ["Tabs"
-    ("G" "Switch tab group" centaur-tabs-counsel-switch-group)]
-   ["Org" ;; TODO: only from org-mode
-    ("o" "Goto outline" counsel-org-goto)]
-   ["Dash"
-    ("D" "Query docset"   counsel-dash)
-    ("i" "Install docset" counsel-dash-install-docset)]])
+    ("G" "Switch tab group" centaur-tabs-switch-group)]
+   ;["Dash"
+   ; ("D" "Query docset"   counsel-dash)
+   ; ("i" "Install docset" counsel-dash-install-docset)]
+   ])
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; project.el
