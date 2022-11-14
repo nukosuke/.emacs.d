@@ -21,12 +21,16 @@
 
 (use-package lsp-mode
   :commands lsp
+
   :custom
   (lsp-completion-provider :capf)
+
   :hook
   (elixir-mode . lsp)
   (elixir-mode . (lambda ()
-                   (setq-local consult-dash-docsets '("Elixir"))))
+                   (setq-local consult-dash-docsets '("Elixir"
+                                                      "Erlang"))))
+
   :init
   (add-to-list 'exec-path (concat user-emacs-directory "lsp/elixir")))
 
