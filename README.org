@@ -4,7 +4,7 @@
 
 ** Requirements
 
-+ GNU Emacs >= 28.0.50
++ GNU Emacs >= 28.2
 
 ** Features
 
@@ -21,15 +21,15 @@
 ** Dispatchers
    ~/site-lisp/dispatch.el~ holds [[https://github.com/magit/transient#transient-commands][transient commands]].
 
-   Dispatcher list including NOT original commands.
+   [[https://github.com/nukosuke/.emacs.d/blob/master/site-lisp/dispatch.el][Dispatcher]] list including NOT original commands.
 
    | Dispatcher            | Bind      | Description                                                                               |
    |-----------------------+-----------+-------------------------------------------------------------------------------------------|
-   | [[./site-lisp/dispatcher/straight-dispatch.el][straight-dispatch]]     | ~C-c p~   | Commands for package management with straight.el.                                         |
-   | [[./site-lisp/dispatcher/counsel-dispatch.el][counsel-dispatch]]      | ~C-c l~   | Commands for [[https://github.com/abo-abo/swiper#counsel][Counsel]] and its extensions.                                                  |
-   | [[./site-lisp/dispatcher/zoom-dispatch.el][zoom-dispatch]]         | ~[F9]~    | Commands to zoom in/out window.                                                           |
-   | [[./site-lisp/dispatcher/zoom-dispatch.el][resize-dispatch]]       | ~C-c r~   | Commands to resize window.                                                                |
-   | [[./site-lisp/dispatcher/avy-dispatch.el][avy-dispatch]]          | ~C-c a~   | Commands for [[https://github.com/abo-abo/avy][Avy]].                                                                         |
+   | ~straight-dispatch~   | ~C-c p~   | Commands for package management with straight.el.                                         |
+   | ~consult-dispatch~    | ~C-c l~   | Commands for [[https://github.com/minad/consult][Consult]] and its extensions.                                                  |
+   | ~zoom-dispatch~       | ~[F9]~    | Commands to zoom in/out window.                                                           |
+   | ~resize-dispatch~     | ~C-c r~   | Commands to resize window.                                                                |
+   | ~avy-dispatch~        | ~C-c a~   | Commands for [[https://github.com/abo-abo/avy][Avy]].                                                                         |
    | ~magit-dispatch~      | ~C-c C-c~ | NOT defined here. It's magit built-in command. See the [[https://magit.vc/manual/magit/Transient-Commands.html#Transient-Commands][magit document]] for details.        |
    | ~org-export-dispatch~ | ~C-c C-e~ | NOT defined here. It's Org built-in command. NOT transient command, but similar behavior. |
 
