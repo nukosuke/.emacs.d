@@ -1,4 +1,4 @@
-;;; org.el --- org-mode configurations -*- lexical-binding: t -*-
+;;; note.el --- note taking configurations -*- lexical-binding: t -*-
 ;;
 ;; Copyright (c) 2019- nukosuke.
 ;;
@@ -62,21 +62,30 @@
   :custom
   (denote-directory (concat user-emacs-directory "notes/"))
   (denote-backlinks-show-context t)
+  (denote-date-prompt-use-org-read-date t)
 
   :bind
-  ;; TODO: create transient prefix C-n
-  ("C-c n n" . denote)
-  ("C-c n N" . denote-type)
-  ("C-c n d" . denote-date)
-  ("C-c n t" . denote-template)
-  ("C-c n i" . denote-link)
-  ("C-c n I" . denote-link-add-links)
-  ("C-c n b" . denote-link-backlinks)
-  ("C-c n f f" . denote-link-find-file)
-  ("C-c n f b" . denote-link-find-backlink)
-  ("C-c n r" . denote-rename-file)
-  ("C-c n R" . denote-rename-file-using-front-matter))
+  ("C-c n" . denote-dispatch)
 
-(provide 'org)
+  :config
+  (transient-define-prefix denote-dispatch ()
+    "Invoke a denote.el command from a list of available commands."
+    ["Denote"
+     ["Create"
+      ("n" "New note" denote)
+      ("N" "New note with file type" denote-type)
+      ("d" "New note for date and time" denote-date)
+      ("s" "New note into subdirectory" denote-subdirectory)]
+     ["Rename"
+      ("r" "Rename file" denote-rename-file)
+      ("R" "Rename file using front matter" denote-rename-file-using-front-matter)]]
+    ["Link"
+     ("i" "Insert link to target note" denote-link)
+     ("I" "Insert links to all notes matching regex" denote-link-add-links)
+     ("b" "Show backlinks" denote-link-backlinks)
+     ("f f" "Find linked file" denote-link-find-file)
+     ("f b" "Find backlinked file" denote-link-find-backlink)]))
 
-;;; org.el ends here
+(provide 'note)
+
+;;; note.el ends here
