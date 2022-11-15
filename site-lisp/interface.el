@@ -152,10 +152,11 @@
     eshell-mode
     git-commit-setup ;; magit COMMIT_MSG buffer
     helpful-mode
+    ibuffer-mode
     imenu-list-major-mode
+    org-agenda-mode
     term-mode
-    vterm-mode
-    org-agenda-mode) . centaur-tabs-local-mode)
+    vterm-mode) . centaur-tabs-local-mode)
 
   :custom
   (centaur-tabs-style               "bar")
