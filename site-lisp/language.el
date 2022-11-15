@@ -12,24 +12,22 @@
 ;;
 ;;  * 2019/04/22:
 ;;    Create language.el
+;;
+;;  * 2022/11/16:
+;;    Use eglot instead of lsp-mode
 
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; LSP mode: Language Server Protocol support for Emacs
+;; Eglot: Language Server Protocol support for Emacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package lsp-mode
-  :commands lsp
-
-  :custom
-  (lsp-completion-provider :capf)
-
+(use-package eglot
+  ;;straight nil ;; eglot is built-in from Emacs 29
   :hook
-  (elixir-mode . lsp)
-  (elixir-mode . (lambda ()
-                   (setq-local consult-dash-docsets '("Elixir"
-                                                      "Erlang"))))
+  ((elixir-mode
+    go-mode
+    rust-mode) . eglot-ensure)
 
   :init
   (add-to-list 'exec-path (concat user-emacs-directory "lsp/elixir")))
@@ -91,7 +89,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package elixir-mode
-  :mode "\\.ex" "\\.exs")
+  :mode "\\.ex" "\\.exs"
+  :hook
+  (elixir-mode . (lambda ()
+                   (setq-local consult-dash-docsets '("Elixir"
+                                                      "Erlang")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for Rust
