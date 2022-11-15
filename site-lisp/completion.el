@@ -35,6 +35,17 @@
   :init
   (vertico-mode))
 
+(use-package vertico-directory
+  :straight nil
+  :after vertico
+  :load-path "straight/repos/vertico/extensions"
+
+  :bind
+  (:map vertico-map
+        ("C-j"   . vertico-directory-enter)
+        ("C-h"   . vertico-directory-delete-char)
+        ("M-DEL" . vertico-directory-delete-word)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Orderless
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
