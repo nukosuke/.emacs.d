@@ -155,6 +155,9 @@
 
 (use-package yasnippet-snippets)
 
+(use-package consult-yasnippet
+  :after (yasnippet consult))
+
 (provide 'completion)
 
 ;;; completion.el ends here
