@@ -154,6 +154,7 @@
     helpful-mode
     imenu-list-major-mode
     term-mode
+    vterm-mode
     org-agenda-mode) . centaur-tabs-local-mode)
 
   :custom
@@ -186,9 +187,8 @@
 ;;
 ;; Display fill column indicator
 ;;
-(when (version<= "27.0.50" emacs-version)
-  (add-hook 'text-mode-hook (lambda ()
-                              (display-fill-column-indicator-mode))))
+(add-hook 'text-mode-hook (lambda ()
+                            (display-fill-column-indicator-mode)))
 
 ;;
 ;; Display indent
