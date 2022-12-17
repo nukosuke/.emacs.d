@@ -113,21 +113,16 @@
   (corfu-cycle t)
   (corfu-auto  t)
   (corfu-preview-current    nil)
-  (corfu-echo-documentation nil) ;; use corfu-doc instead
 
-  :hook
-  ((text-mode
-    prog-mode
-    conf-mode) . corfu-mode))
+  :init
+  (global-corfu-mode))
 
-(use-package corfu-doc
-  :hook
-  (corfu-mode . corfu-doc-mode)
-
-  :bind
-  (:map corfu-map
-        ("M-p" . corfu-doc-scroll-down)
-        ("M-n" . corfu-doc-scroll-up)))
+(use-package corfu-popupinfo
+  :straight nil
+  :after corfu
+  :load-path "straight/repos/corfu/extensions"
+  :config
+  (corfu-popupinfo-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smartparens: Minor mode for Emacs that deals with
