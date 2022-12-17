@@ -103,3 +103,6 @@ forge-database-*.sql
 
 # Dash docsets
 /docsets
+
+# mastodon.el token
+mastodon.plstore
