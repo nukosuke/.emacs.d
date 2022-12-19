@@ -156,7 +156,9 @@
     imenu-list-major-mode
     org-agenda-mode
     term-mode
-    vterm-mode) . centaur-tabs-local-mode)
+    vterm-mode
+    mastodon-mode
+    ement-mode) . centaur-tabs-local-mode)
 
   :custom
   (centaur-tabs-style               "bar")
