@@ -106,3 +106,4 @@ forge-database-*.sql
 
 # mastodon.el token
 mastodon.plstore
+/persist
