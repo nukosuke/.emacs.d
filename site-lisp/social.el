@@ -17,8 +17,9 @@
 (use-package mastodon
   :straight (mastodon :type git :host codeberg :repo "martianh/mastodon.el")
   :custom
-  (mastodon-instance-url "https://mastodon.social")
-  (mastodon-active-user "nukosuke"))
+  (mastodon-instance-url     "https://mastodon.social")
+  (mastodon-active-user      "nukosuke")
+  (mastodon-tl--show-avatars t))
 
 (provide 'social)
 
