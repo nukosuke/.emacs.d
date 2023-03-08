@@ -101,7 +101,7 @@
 
   :config
   (consult-customize
-   consult-buffer :preview-key (kbd "M-.")
+   consult-buffer :preview-key "M-."
    consult-line :prompt "Search: "))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
