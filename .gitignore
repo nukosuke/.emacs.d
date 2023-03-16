@@ -19,6 +19,7 @@ history
 # Org-mode
 .org-id-locations
 *_archive
+/org-persist/
 
 # flymake-mode
 *_flymake.*
