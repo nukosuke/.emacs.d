@@ -50,13 +50,6 @@
 
 (use-package github-review)
 
-;; Mercurial
-
-(use-package monky
-  :if (executable-find "hg")
-  :bind
-  ("C-x h" . monky-status))
-
 (provide 'vcs)
 
 ;;; vcs.el ends here
