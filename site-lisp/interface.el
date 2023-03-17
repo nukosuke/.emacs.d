@@ -264,24 +264,16 @@
 ;;
 ;; Display flycheck message to posframe
 ;;
-;; NOTE: flycheck-posframe is buggy on macOS when fullscreen toggle.
-;;       It creates another blackout workspace and draw frame to it.
+
 (use-package flycheck-posframe
   :after flycheck
-  :hook
-  (flycheck-mode . flycheck-posframe-mode))
 
-;; Or this is alternative
-;;
-;; (use-package flycheck-pos-tip
-;;  :after
-;;  flycheck
-;;
-;;  :hook
-;;  (flycheck-mode . flycheck-pos-tip-mode)
-;;
-;;  :custom
-;;  (flycheck-pos-tip-timeout 30))
+  :hook
+  (flycheck-mode . flycheck-posframe-mode)
+
+  :config
+  (set-face-attribute 'flycheck-posframe-error-face nil :inherit 'error)
+  (set-face-attribute 'flycheck-posframe-warning-face nil :inherit 'warning))
 
 ;;
 ;; Switching window with jump
