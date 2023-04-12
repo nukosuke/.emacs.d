@@ -26,7 +26,7 @@
   :straight nil ;; eglot is built-in from Emacs 29
 
   :hook
-  ((elixir-mode
+  ((elixir-ts-mode
     go-mode
     rust-mode) . eglot-ensure)
 
@@ -89,8 +89,12 @@
 ;; Major mode for Elixir
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package elixir-mode
-  :mode "\\.ex" "\\.exs"
+(use-package elixir-ts-mode
+  :straight nil
+  :mode
+  ("\\.ex" . elixir-ts-mode)
+  ("\\.exs" . elixir-ts-mode)
+  ("\\.heex\\'" . heex-ts-mode)
   :hook
   (elixir-mode . (lambda ()
                    (setq-local consult-dash-docsets '("Elixir"

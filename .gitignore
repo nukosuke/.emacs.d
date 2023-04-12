@@ -108,3 +108,6 @@ forge-database-*.sql
 # mastodon.el token
 mastodon.plstore
 /persist
+
+# tree sitter grammer library for languages
+/tree-sitter
