@@ -32,10 +32,9 @@
   (skk-use-azik t)
   (skk-azik-keyboard-type 'us101)
 
-  ;; Use doom-dracula colors
-  ;; https://github.com/hlissner/emacs-doom-themes/blob/master/themes/doom-dracula-theme.el#L38-L67
-  (skk-cursor-hiragana-color "#61bfff")
-  (skk-cursor-katakana-color "#ff79c6")
+  ;; Use modus-vivendi colors
+  (skk-cursor-hiragana-color "#2fafff") ;; (modus-themes-color 'blue)
+  (skk-cursor-katakana-color "#feacd0") ;; (modus-themes-color 'magenta)
 
   :init
   ;; SKK faces should be set before load for customizing

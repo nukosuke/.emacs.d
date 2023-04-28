@@ -37,18 +37,11 @@
 ;;        https://github.com/magit/forge
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package forge
-  :after magit
-
-  :custom
-  (ghub-use-workaround-for-emacs-bug 'force))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; github-review: GitHub code reviews with Emacs
-;;                https://github.com/charignon/github-review
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package github-review)
+;(use-package forge
+;  :after magit
+;
+;  :custom
+;  (ghub-use-workaround-for-emacs-bug 'force))
 
 (provide 'vcs)
 

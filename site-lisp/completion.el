@@ -13,63 +13,96 @@
 ;;  * 2019/02/26:
 ;;    Create completion.el
 ;;    - Configure ivy/counsel
-;;      https://github.com/abo-abo/swiper#ivy
-;;      https://github.com/abo-abo/swiper#counsel
+;;
 ;;  * 2019/03/26:
 ;;    Start using ivy-rich
-;;    - https://github.com/Yevgnen/ivy-rich
+;;
+;;  * 2022/11/15:
+;;    Migrate completion system
+;;    - from company-mode to corfu
+;;    - from ivy/counsel/swiper to vertico/orderless/consult
 
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Ivy: a generic completion mechanism for Emacs
+;; vertico.el - VERTical Interactive COmpletion
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package ivy
+(use-package vertico
   :custom
-  (ivy-count-format             "[%d/%d] ")
-  (ivy-use-virtual-buffers      t)
-  (ivy-format-function          'ivy-format-function-arrow)
-  (ivy-wrap                     t)
-  (enable-recursive-minibuffers t)
-  (ivy-height                   20))
+  (vertico-cycle t)
 
-;; (use-package ivy-posframe
-;;   :requires ivy-posframe-mode
-;;   :init
-;;   (setq ivy-posframe-display-functions-alist
-;;       '((swiper          . ivy-posframe-display-at-point)
-;;         (complete-symbol . ivy-posframe-display-at-point)
-;;         (counsel-M-x     . ivy-posframe-display-at-window-bottom-left)
-;;         (t               . ivy-posframe-display))))
+  :init
+  (vertico-mode))
 
-(use-package ivy-rich
-  :after counsel)
-
-(use-package all-the-icons-ivy-rich
-  :after ivy-rich
-  :init (all-the-icons-ivy-rich-mode 1))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Counsel: a collection of Ivy-enhanced versions
-;;          of common Emacs commands
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package counsel
-  :hook
-  (after-init . ivy-mode)
-  (after-init . ivy-rich-mode)
+(use-package vertico-directory
+  :straight nil
+  :after vertico
+  :load-path "straight/repos/vertico/extensions"
 
   :bind
-  ("C-s"     . swiper)
-  ("C-x b"   . ivy-switch-buffer)
-  ("M-x"     . counsel-M-x)
-  ("C-x C-f" . counsel-find-file)
-  ("C-x C-r" . counsel-recentf)
-  ("C-c i"   . counsel-imenu)
-  ("C-c l"   . counsel-dispatch) ;; Defined at dispatcher/counsel-dispatch.el
-  (:map minibuffer-local-map
-        ("C-r" . counsel-minibuffer-history)))
+  (:map vertico-map
+        ("C-j"   . vertico-directory-enter)
+        ("C-h"   . vertico-directory-delete-char)
+        ("M-DEL" . vertico-directory-delete-word)))
+
+;; Do not allow the cursor in the minibuffer prompt
+(setq minibuffer-prompt-properties
+      '(read-only t cursor-intangible t face minibuffer-prompt))
+(add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+
+;; Persist history over Emacs restarts. Vertico sorts by history position.
+(savehist-mode)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Orderless
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; marginalia.el - Marginalia in the minibuffer
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package marginalia
+  :init
+  (marginalia-mode))
+
+(use-package all-the-icons-completion
+  :hook
+  (marginalia-mode . all-the-icons-completion-marginalia-setup)
+
+  :init
+  (all-the-icons-completion-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; consult.el - Consulting completing-read
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package consult
+  :bind
+  (("M-y"     . consult-yank-pop)
+   ("C-c l"   . consult-dispatch)
+   ("C-c m"   . consult-mode-command)
+   ("C-c k"   . consult-kmacro)
+   ("C-x b"   . consult-buffer)
+   ("C-c i"   . consult-imenu)
+   ("M-s l"   . consult-line)
+   ("M-s L"   . consult-line-multi)
+   ("C-x C-r" . consult-recent-file)
+   :map isearch-mode-map
+   ("M-e"   . consult-isearch-history)
+   ("M-s e" . consult-isearch-history)
+   ("M-s l" . consult-line)
+   ("M-s L" . consult-line-multi))
+
+  :config
+  (consult-customize
+   consult-buffer :preview-key "M-."
+   consult-line :prompt "Search: "))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; corfu.el: Completion Overlay Region FUnction
@@ -80,21 +113,16 @@
   (corfu-cycle t)
   (corfu-auto  t)
   (corfu-preview-current    nil)
-  (corfu-echo-documentation nil) ;; use corfu-doc instead
 
-  :hook
-  ((text-mode
-    prog-mode
-    conf-mode) . corfu-mode))
+  :init
+  (global-corfu-mode))
 
-(use-package corfu-doc
-  :hook
-  (corfu-mode . corfu-doc-mode)
-
-  :bind
-  (:map corfu-map
-        ("M-p" . corfu-doc-scroll-down)
-        ("M-n" . corfu-doc-scroll-up)))
+(use-package corfu-popupinfo
+  :straight nil
+  :after corfu
+  :load-path "straight/repos/corfu/extensions"
+  :config
+  (corfu-popupinfo-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smartparens: Minor mode for Emacs that deals with
@@ -129,6 +157,9 @@
   (yas-global-mode 1))
 
 (use-package yasnippet-snippets)
+
+(use-package consult-yasnippet
+  :after (yasnippet consult))
 
 (provide 'completion)
 

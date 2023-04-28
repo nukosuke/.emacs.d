@@ -54,6 +54,7 @@
               (language   "language")
               (note       "note")
               (term       "term")
+              (social     "social")
               (dispatch   "dispatch")))
   (let ((name (car pkg))
         (path (nth 1 pkg)))

@@ -12,19 +12,24 @@
 ;;
 ;;  * 2019/04/22:
 ;;    Create language.el
+;;
+;;  * 2022/11/16:
+;;    Use eglot instead of lsp-mode
 
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; LSP mode: Language Server Protocol support for Emacs
+;; Eglot: Language Server Protocol support for Emacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package lsp-mode
-  :commands lsp
-  :custom
-  (lsp-completion-provider :capf)
+(use-package eglot
+  :straight nil ;; eglot is built-in from Emacs 29
+
   :hook
-  (elixir-mode . lsp)
+  ((elixir-ts-mode
+    go-mode
+    rust-mode) . eglot-ensure)
+
   :init
   (add-to-list 'exec-path (concat user-emacs-directory "lsp/elixir")))
 
@@ -84,8 +89,16 @@
 ;; Major mode for Elixir
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package elixir-mode
-  :mode "\\.ex" "\\.exs")
+(use-package elixir-ts-mode
+  :straight nil
+  :mode
+  ("\\.ex" . elixir-ts-mode)
+  ("\\.exs" . elixir-ts-mode)
+  ("\\.heex\\'" . heex-ts-mode)
+  :hook
+  (elixir-mode . (lambda ()
+                   (setq-local consult-dash-docsets '("Elixir"
+                                                      "Erlang")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for Rust
@@ -160,13 +173,6 @@
    (before-save     . tide-format-before-save)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Major mode for Elm
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package elm-mode
-  :mode "\\.elm")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for JSON
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -186,6 +192,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for Vue.js template
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package vue-mode
   :mode
   ("\\.vue" . vue-mode))
@@ -243,12 +250,15 @@
   :mode "\\.mermaid\\'")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Search Dash docsets by counsel and browse with eww
+;; Search Dash docsets by consult and browse with eww
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package counsel-dash
+
+(use-package consult-dash
   :if (executable-find "sqlite3")
-  :config
-  (setq counsel-dash-browser-func 'eww))
+
+  :custom
+  (dash-docs-docsets-path (concat user-emacs-directory "docsets"))
+  (dash-docs-browser-func 'eww))
 
 (provide 'language)
 

@@ -98,12 +98,10 @@
 
   :init
   (setq modus-themes-italic-constructs t
-        modus-themes-bold-constructs nil
-        modus-themes-region '(bg-only no-extend)
-        modus-themes-mode-line '(accented borderless 4 0.9)
-        modus-themes-paren-match '(bold intense)
-        ;modus-themes-diffs 'deuteranopia
-        )
+        modus-themes-bold-constructs nil)
+  (setq modus-themes-common-palette-overrides
+        '((border-mode-line-active unspecified)
+          (border-mode-line-inactive unspecified)))
 
   :config
   (load-theme 'modus-vivendi))
@@ -152,9 +150,13 @@
     eshell-mode
     git-commit-setup ;; magit COMMIT_MSG buffer
     helpful-mode
+    ibuffer-mode
     imenu-list-major-mode
+    org-agenda-mode
     term-mode
-    org-agenda-mode) . centaur-tabs-local-mode)
+    vterm-mode
+    mastodon-mode
+    ement-mode) . centaur-tabs-local-mode)
 
   :custom
   (centaur-tabs-style               "bar")
@@ -186,9 +188,8 @@
 ;;
 ;; Display fill column indicator
 ;;
-(when (version<= "27.0.50" emacs-version)
-  (add-hook 'text-mode-hook (lambda ()
-                              (display-fill-column-indicator-mode))))
+(add-hook 'text-mode-hook (lambda ()
+                            (display-fill-column-indicator-mode)))
 
 ;;
 ;; Display indent
@@ -218,14 +219,14 @@
     "XXX....."
     "XXXX....")
   (set-face-attribute 'git-gutter-fr:added nil
-                      :foreground (modus-themes-color 'green-fringe-bg)
-                      :background "black")
+                      :foreground (modus-themes-get-color-value 'green)
+                      :background (modus-themes-get-color-value 'fringe))
   (set-face-attribute 'git-gutter-fr:modified nil
-                      :foreground (modus-themes-color 'yellow-fringe-bg)
-                      :background "black")
+                      :foreground (modus-themes-get-color-value 'yellow)
+                      :background (modus-themes-get-color-value 'fringe))
   (set-face-attribute 'git-gutter-fr:deleted nil
-                      :foreground (modus-themes-color 'red-fringe-bg)
-                      :background "black")
+                      :foreground (modus-themes-get-color-value 'red)
+                      :background (modus-themes-get-color-value 'fringe))
   (global-git-gutter-mode t))
 
 ;;
@@ -251,36 +252,28 @@
     "..XX...."
     "...X....")
   (set-face-attribute 'flycheck-fringe-error nil
-                      :foreground (modus-themes-color 'red-fringe-bg)
-                      :background "black")
+                      :foreground (modus-themes-get-color-value 'red)
+                      :background (modus-themes-get-color-value 'fringe))
   (set-face-attribute 'flycheck-fringe-warning nil
-                      :foreground (modus-themes-color 'yellow-fringe-bg)
-                      :background "black")
+                      :foreground (modus-themes-get-color-value 'yellow)
+                      :background (modus-themes-get-color-value 'fringe))
   (set-face-attribute 'flycheck-fringe-info nil
-                      :foreground (modus-themes-color 'blue-fringe-bg)
-                      :background "black"))
+                      :foreground (modus-themes-get-color-value 'blue)
+                      :background (modus-themes-get-color-value 'fringe)))
 
 ;;
 ;; Display flycheck message to posframe
 ;;
-;; NOTE: flycheck-posframe is buggy on macOS when fullscreen toggle.
-;;       It creates another blackout workspace and draw frame to it.
+
 (use-package flycheck-posframe
   :after flycheck
-  :hook
-  (flycheck-mode . flycheck-posframe-mode))
 
-;; Or this is alternative
-;;
-;; (use-package flycheck-pos-tip
-;;  :after
-;;  flycheck
-;;
-;;  :hook
-;;  (flycheck-mode . flycheck-pos-tip-mode)
-;;
-;;  :custom
-;;  (flycheck-pos-tip-timeout 30))
+  :hook
+  (flycheck-mode . flycheck-posframe-mode)
+
+  :config
+  (set-face-attribute 'flycheck-posframe-error-face nil :inherit 'error)
+  (set-face-attribute 'flycheck-posframe-warning-face nil :inherit 'warning))
 
 ;;
 ;; Switching window with jump

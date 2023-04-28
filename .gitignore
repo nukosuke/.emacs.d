@@ -11,6 +11,7 @@ auto-save-list
 tramp
 .\#*
 .cache
+history
 
 # SKK dictionary
 /skk-get-jisyo/
@@ -18,6 +19,7 @@ tramp
 # Org-mode
 .org-id-locations
 *_archive
+/org-persist/
 
 # flymake-mode
 *_flymake.*
@@ -99,3 +101,13 @@ forge-database-*.sql
 
 # vendoring
 /vendor
+
+# Dash docsets
+/docsets
+
+# mastodon.el token
+mastodon.plstore
+/persist
+
+# tree sitter grammer library for languages
+/tree-sitter
