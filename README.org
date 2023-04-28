@@ -4,7 +4,7 @@
 
 ** Requirements
 
-+ GNU Emacs >= 28.2
++ GNU Emacs >= 30.0.50
 
 ** Features
 
