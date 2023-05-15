@@ -35,6 +35,9 @@
 ;;
 ;;  * 2022/11/09:
 ;;    Move terminal settings to term.el
+;;
+;;  * 2023/05/15
+;;    Use nerd-icons instead of all-the-icons
 
 ;;; Code:
 
@@ -128,6 +131,7 @@
   :custom
   (dashboard-banner-logo-title (concat "GNU Emacs " emacs-version))
   (dashboard-startup-banner    'logo)
+  (dashboard-icon-type         'nerd-icons)
   (dashboard-set-heading-icons t)
   (dashboard-set-file-icons    t)
   (dashboard-projects-backend  'project-el)

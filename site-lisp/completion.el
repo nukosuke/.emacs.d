@@ -71,12 +71,12 @@
   :init
   (marginalia-mode))
 
-(use-package all-the-icons-completion
+(use-package nerd-icons-completion
   :hook
-  (marginalia-mode . all-the-icons-completion-marginalia-setup)
+  (marginalia-mode . nerd-icons-completion-marginalia-setup)
 
   :init
-  (all-the-icons-completion-mode))
+  (nerd-icons-completion-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; consult.el - Consulting completing-read
