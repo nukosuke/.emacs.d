@@ -107,7 +107,7 @@
           (border-mode-line-inactive unspecified)))
 
   :config
-  (load-theme 'modus-vivendi))
+  (load-theme 'modus-vivendi-tinted))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Mode line

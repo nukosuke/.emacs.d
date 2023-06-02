@@ -33,8 +33,8 @@
   (skk-azik-keyboard-type 'us101)
 
   ;; Use modus-vivendi colors
-  (skk-cursor-hiragana-color "#2fafff") ;; (modus-themes-color 'blue)
-  (skk-cursor-katakana-color "#feacd0") ;; (modus-themes-color 'magenta)
+  (skk-cursor-hiragana-color "#2fafff") ;; (modus-themes-get-color-value 'blue)
+  (skk-cursor-katakana-color "#feacd0") ;; (modus-themes-get-color-value 'magenta)
 
   :init
   ;; SKK faces should be set before load for customizing
