@@ -132,6 +132,7 @@
   (dashboard-banner-logo-title (concat "GNU Emacs " emacs-version))
   (dashboard-startup-banner    'logo)
   (dashboard-icon-type         'nerd-icons)
+  (dashboard-center-content    t)
   (dashboard-set-heading-icons t)
   (dashboard-set-file-icons    t)
   (dashboard-projects-backend  'project-el)
