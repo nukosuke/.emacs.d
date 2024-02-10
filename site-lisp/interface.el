@@ -107,7 +107,7 @@
           (border-mode-line-inactive unspecified)))
 
   :config
-  (load-theme 'modus-vivendi-tinted))
+  (load-theme 'modus-vivendi))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Mode line
@@ -224,14 +224,14 @@
     "XXX....."
     "XXXX....")
   (set-face-attribute 'git-gutter-fr:added nil
-                      :foreground (modus-themes-get-color-value 'green)
-                      :background (modus-themes-get-color-value 'fringe))
+                      :foreground (modus-themes-color 'green-fringe-bg)
+                      :background "black")
   (set-face-attribute 'git-gutter-fr:modified nil
-                      :foreground (modus-themes-get-color-value 'yellow)
-                      :background (modus-themes-get-color-value 'fringe))
+                      :foreground (modus-themes-color 'yellow-fringe-bg)
+                      :background "black")
   (set-face-attribute 'git-gutter-fr:deleted nil
-                      :foreground (modus-themes-get-color-value 'red)
-                      :background (modus-themes-get-color-value 'fringe))
+                      :foreground (modus-themes-color 'red-fringe-bg)
+                      :background "black")
   (global-git-gutter-mode t))
 
 ;;
@@ -257,14 +257,14 @@
     "..XX...."
     "...X....")
   (set-face-attribute 'flycheck-fringe-error nil
-                      :foreground (modus-themes-get-color-value 'red)
-                      :background (modus-themes-get-color-value 'fringe))
+                      :foreground (modus-themes-color 'red-fringe-bg)
+                      :background "black")
   (set-face-attribute 'flycheck-fringe-warning nil
-                      :foreground (modus-themes-get-color-value 'yellow)
-                      :background (modus-themes-get-color-value 'fringe))
+                      :foreground (modus-themes-color 'yellow-fringe-bg)
+                      :background "black")
   (set-face-attribute 'flycheck-fringe-info nil
-                      :foreground (modus-themes-get-color-value 'blue)
-                      :background (modus-themes-get-color-value 'fringe)))
+                      :foreground (modus-themes-color 'blue-fringe-bg)
+                      :background "black"))
 
 ;;
 ;; Display flycheck message to posframe

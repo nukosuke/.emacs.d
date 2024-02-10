@@ -111,3 +111,6 @@ mastodon.plstore
 
 # tree sitter grammer library for languages
 /tree-sitter
+
+# JIT cache
+/eln-cache
