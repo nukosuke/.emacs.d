@@ -1,6 +1,0 @@
-*.ez
-*.sh
-*.bat
-*.exs
-VERSION
-!install.sh
