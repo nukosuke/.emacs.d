@@ -1,4 +1,4 @@
-ELIXIR_LSP_VERSION := v0.17.10
+ELIXIR_LSP_VERSION := v0.20.0
 
 .PHONY: elixir clean
 
