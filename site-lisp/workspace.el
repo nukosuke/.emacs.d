@@ -33,6 +33,10 @@
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode 'always))
 
+(use-package treemacs-nerd-icons
+  :config
+  (treemacs-load-theme "nerd-icons"))
+
 (use-package treemacs-magit
   :after (treemacs magit))
 
