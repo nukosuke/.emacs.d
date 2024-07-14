@@ -147,6 +147,11 @@
   :custom
   (tempel-trigger-prefix "<")
 
+  :bind
+  (:map tempel-map
+        ("<tab>" . tempel-next)
+        ("<S-tab>" . tempel-previous))
+
   :init
   (defun tempel-setup-capf ()
     (setq-local completion-at-point-functions
