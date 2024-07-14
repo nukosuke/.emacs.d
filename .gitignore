@@ -89,13 +89,6 @@ forge-database-*.sql
 /org/
 /notes/
 
-# YASnippet
-/snippets
-/snippets/
-
-# meghanada-mode
-/meghanada
-
 # macOS
 .DS_Store
 

@@ -140,26 +140,25 @@
          (conf-mode . smartparens-mode)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; YASnippet: A template system for Emacs
+;; TempEl - Simple templates for Emacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; TODO: create transient command and bind key
-(use-package yasnippet
-  ;; Load path of snippets/ dir before YASnippet itself
-  :after yasnippet-snippets
-
+(use-package tempel
   :custom
-  (yas-snippet-dirs
-   `(,(concat user-emacs-directory "snippets")
-     ,(concat user-emacs-directory "straight/repos/yasnippet-snippets/snippets")))
+  (tempel-trigger-prefix "<")
 
-  :config
-  (yas-global-mode 1))
+  :init
+  (defun tempel-setup-capf ()
+    (setq-local completion-at-point-functions
+                (cons #'tempel-complete
+                      completion-at-point-functions)))
 
-(use-package yasnippet-snippets)
+  :hook ((text-mode . tempel-setup-capf)
+         (prog-mode . tempel-setup-capf)
+         (conf-mode . tempel-setup-capf)))
 
-(use-package consult-yasnippet
-  :after (yasnippet consult))
+(use-package tempel-collection
+  :after tempel)
 
 (provide 'completion)
 
