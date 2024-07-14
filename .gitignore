@@ -89,9 +89,6 @@ forge-database-*.sql
 /org/
 /notes/
 
-# meghanada-mode
-/meghanada
-
 # macOS
 .DS_Store
 
