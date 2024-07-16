@@ -112,7 +112,7 @@
   :custom
   (corfu-cycle t)
   (corfu-auto  t)
-  (corfu-preview-current    nil)
+  (corfu-preview-current nil)
 
   :init
   (global-corfu-mode))
