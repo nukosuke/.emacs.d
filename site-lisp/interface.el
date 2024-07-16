@@ -337,7 +337,7 @@
   :bind
   ("C-;" . iedit-mode)
   (:map iedit-mode-keymap
-        ("C-h" . delete-backward-char)))
+        ("C-h" . puni-backward-delete-char)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs integration for Docker

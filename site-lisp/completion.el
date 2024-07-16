@@ -125,19 +125,18 @@
   (corfu-popupinfo-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Smartparens: Minor mode for Emacs that deals with
-;;              parens pairs and tries to be smart
-;;              about it.
+;; Puni: Structured editing
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package smartparens
-  :config
-  (require 'smartparens-config)
+(use-package puni
+  :bind (("C-h" . puni-backward-delete-char)
+         ("M-h" . puni-backward-kill-word))
 
-  ;; Enable after open file.
-  :hook ((text-mode . smartparens-mode)
-         (prog-mode . smartparens-mode)
-         (conf-mode . smartparens-mode)))
+  :init
+  (puni-global-mode)
+  ;; puni does not support auto pairing.
+  ;; so, use built-in function.
+  (electric-pair-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; TempEl - Simple templates for Emacs
@@ -158,9 +157,7 @@
                 (cons #'tempel-complete
                       completion-at-point-functions)))
 
-  :hook ((text-mode . tempel-setup-capf)
-         (prog-mode . tempel-setup-capf)
-         (conf-mode . tempel-setup-capf)))
+  :hook ((text-mode prog-mode conf-mode) . tempel-setup-capf))
 
 (use-package tempel-collection
   :after tempel)
