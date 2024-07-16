@@ -25,7 +25,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package org
-  :straight nil
+  :straight (:type built-in)
 
   :custom
   (org-latex-classes '(("ltjsarticle" "\\documentclass[a4paper]{ltjsarticle}

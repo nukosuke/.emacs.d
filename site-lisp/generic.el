@@ -95,7 +95,7 @@
 
 ;; built-in project.el bindings
 (use-package project
-  :straight nil
+  :straight (:type built-in)
   :bind
   ("C-x B" . project-switch-to-buffer)
   ("C-x f" . project-find-file))
@@ -103,7 +103,7 @@
 ;; Use ibuffer to manage buffers and turn off confirmation for
 ;; destructive operation.
 (use-package ibuffer
-  :straight nil
+  :straight (:type built-in)
   :custom (ibuffer-expert t)
   :bind ("C-x C-b" . ibuffer))
 
