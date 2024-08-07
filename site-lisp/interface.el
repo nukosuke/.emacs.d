@@ -66,7 +66,7 @@
 ;; (pixel-scroll-precision-mode 1)
 
 (use-package paren
-  :straight nil
+  :straight (:type built-in)
 
   :custom
   (show-paren-style 'mixed)
@@ -97,7 +97,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package emacs
-  :straight nil
+  :straight (:type built-in)
 
   :init
   (setq modus-themes-italic-constructs t
@@ -337,7 +337,7 @@
   :bind
   ("C-;" . iedit-mode)
   (:map iedit-mode-keymap
-        ("C-h" . delete-backward-char)))
+        ("C-h" . puni-backward-delete-char)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs integration for Docker

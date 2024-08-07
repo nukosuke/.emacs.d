@@ -23,15 +23,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package eglot
-  :straight nil ;; eglot is built-in from Emacs 29
+  :straight (:type built-in) ;; eglot is built-in from Emacs 29
 
   :hook
   ((elixir-ts-mode
     go-mode
     rust-mode) . eglot-ensure)
 
-  :init
-  (add-to-list 'exec-path (concat user-emacs-directory "lsp/elixir")))
+  :config
+  (add-to-list 'eglot-server-programs `(elixir-ts-mode ,(concat user-emacs-directory "lsp/elixir/language_server.sh"))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for fish script
@@ -65,7 +65,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package ruby-mode
-  :straight nil ;; Use built-in
+  :straight (:type built-in) ;; Use built-in
   :mode
   ("\\.rb\\'" . ruby-mode)
   :custom
@@ -90,7 +90,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package elixir-ts-mode
-  :straight nil
+  :straight (:type built-in)
   :mode
   ("\\.ex" . elixir-ts-mode)
   ("\\.exs" . elixir-ts-mode)
