@@ -193,9 +193,10 @@
 ;; Major mode for YAML
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package yaml-mode
+(use-package yaml-ts-mode
+  :straight (:type built-in)
   :mode
-  ("\\.ya?ml\\'" . yaml-mode))
+  ("\\.ya?ml\\'" . yaml-ts-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for Dockerfile

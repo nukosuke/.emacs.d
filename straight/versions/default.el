@@ -99,6 +99,5 @@
  ("vue-mode" . "4853d97ea8d7b2fab7d331d3a8aad18d02b792ad")
  ("web-mode" . "be2d59c8fa02b1a45ae54ce4079e502e659cefe6")
  ("with-editor" . "ca902ae02972bdd6919a902be2593d8cb6bd991b")
- ("yaml-mode" . "d91f878729312a6beed77e6637c60497c5786efa")
  ("zig-mode" . "f0b4a487530146f99230f4a5ff67e8d56c8f3f80"))
 :gamma
