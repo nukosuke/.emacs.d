@@ -93,7 +93,6 @@
  ("transient" . "680f079b5e2b67ef5e904168a27680cbf6831b6a")
  ("treemacs" . "32bb3dd02ddfca85661614b3b227e770fab821e2")
  ("treemacs-nerd-icons" . "eac9fb5d92b8b29e7c4fcf9f3baddb2cb0b04575")
- ("typescript.el" . "481df3ad2cdf569d8e6697679669ff6206fbd2f9")
  ("vertico" . "5679dfd6aa05fb38773cf5551aef1b657b73ac78")
  ("volatile-highlights.el" . "afccb5ce83848c3daa937098da83af45b50b71b4")
  ("vue-html-mode" . "1514939804bad558584feeb6298b38d22eadf64e")

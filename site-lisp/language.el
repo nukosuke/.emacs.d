@@ -145,12 +145,11 @@
 ;; Major mode for TypeScript
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package typescript-mode
-  ;; defer load until open any .ts file.
-  :mode
-  "\\.tsx?\\'"
+(use-package typescript-ts-mode
+  :straight (:type built-in)
+  :mode ("\\.tsx?\\'" . tsx-ts-mode)
   :custom
-  (typescript-indent-level 2))
+  (typescript-ts-mode-indent-offset 2))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Tide:
@@ -159,11 +158,11 @@
 
 (use-package tide
   :after
-  (typescript-mode flycheck)
+  (tsx-ts-mode flycheck)
   :hook
-  ((typescript-mode . tide-setup)
-   (typescript-mode . tide-hl-identifier-mode)
-   (before-save     . tide-format-before-save)))
+  ((tsx-ts-mode . tide-setup)
+   (tsx-ts-mode . tide-hl-identifier-mode)
+   (before-save . tide-format-before-save)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for JSON
