@@ -112,7 +112,7 @@
   :custom
   (corfu-cycle t)
   (corfu-auto  t)
-  (corfu-preview-current    nil)
+  (corfu-preview-current nil)
 
   :init
   (global-corfu-mode))
@@ -124,20 +124,24 @@
   :config
   (corfu-popupinfo-mode))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Smartparens: Minor mode for Emacs that deals with
-;;              parens pairs and tries to be smart
-;;              about it.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package smartparens
+(use-package kind-icon
+  :after corfu
   :config
-  (require 'smartparens-config)
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
-  ;; Enable after open file.
-  :hook ((text-mode . smartparens-mode)
-         (prog-mode . smartparens-mode)
-         (conf-mode . smartparens-mode)))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Puni: Structured editing
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package puni
+  :bind (("C-h" . puni-backward-delete-char)
+         ("M-h" . puni-backward-kill-word))
+
+  :init
+  (puni-global-mode)
+  ;; puni does not support auto pairing.
+  ;; so, use built-in function.
+  (electric-pair-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; TempEl - Simple templates for Emacs
@@ -147,15 +151,18 @@
   :custom
   (tempel-trigger-prefix "<")
 
+  :bind
+  (:map tempel-map
+        ("<tab>" . tempel-next)
+        ("<S-tab>" . tempel-previous))
+
   :init
   (defun tempel-setup-capf ()
     (setq-local completion-at-point-functions
                 (cons #'tempel-complete
                       completion-at-point-functions)))
 
-  :hook ((text-mode . tempel-setup-capf)
-         (prog-mode . tempel-setup-capf)
-         (conf-mode . tempel-setup-capf)))
+  :hook ((text-mode prog-mode conf-mode) . tempel-setup-capf))
 
 (use-package tempel-collection
   :after tempel)

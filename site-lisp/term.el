@@ -55,7 +55,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package term
-  :straight nil
+  :straight (:type built-in)
 
   :hook
   (term-exec . with-editor-export-editor)
@@ -71,7 +71,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package eshell
-  :straight nil
+  :straight (:type built-in)
   :hook eshell
   :custom
   ;; Eshell prompt header

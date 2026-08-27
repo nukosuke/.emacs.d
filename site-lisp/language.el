@@ -23,15 +23,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package eglot
-  :straight nil ;; eglot is built-in from Emacs 29
+  :straight (:type built-in) ;; eglot is built-in from Emacs 29
 
   :hook
   ((elixir-ts-mode
     go-mode
     rust-mode) . eglot-ensure)
 
-  :init
-  (add-to-list 'exec-path (concat user-emacs-directory "lsp/elixir")))
+  :config
+  (add-to-list 'eglot-server-programs `(elixir-ts-mode ,(concat user-emacs-directory "lsp/elixir/language_server.sh"))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for fish script
@@ -65,7 +65,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package ruby-mode
-  :straight nil ;; Use built-in
+  :straight (:type built-in) ;; Use built-in
   :mode
   ("\\.rb\\'" . ruby-mode)
   :custom
@@ -90,7 +90,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package elixir-ts-mode
-  :straight nil
+  :straight (:type built-in)
   :mode
   ("\\.ex" . elixir-ts-mode)
   ("\\.exs" . elixir-ts-mode)
@@ -137,6 +137,7 @@
   "\\.html?\\'"
   "\\.erb\\'"
   "\\.eex\\'"
+  "\\.svelte\\'"
   :custom
   (web-mode-markup-indent-offset 2)
   (web-mode-css-indent-offset    2))
@@ -145,12 +146,11 @@
 ;; Major mode for TypeScript
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package typescript-mode
-  ;; defer load until open any .ts file.
-  :mode
-  "\\.tsx?\\'"
+(use-package typescript-ts-mode
+  :straight (:type built-in)
+  :mode ("\\.tsx?\\'" . tsx-ts-mode)
   :custom
-  (typescript-indent-level 2))
+  (typescript-ts-mode-indent-offset 2))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Tide:
@@ -159,11 +159,11 @@
 
 (use-package tide
   :after
-  (typescript-mode flycheck)
+  (tsx-ts-mode flycheck)
   :hook
-  ((typescript-mode . tide-setup)
-   (typescript-mode . tide-hl-identifier-mode)
-   (before-save     . tide-format-before-save)))
+  ((tsx-ts-mode . tide-setup)
+   (tsx-ts-mode . tide-hl-identifier-mode)
+   (before-save . tide-format-before-save)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for JSON
@@ -194,9 +194,10 @@
 ;; Major mode for YAML
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package yaml-mode
+(use-package yaml-ts-mode
+  :straight (:type built-in)
   :mode
-  ("\\.ya?ml\\'" . yaml-mode))
+  ("\\.ya?ml\\'" . yaml-ts-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Major mode for Dockerfile
